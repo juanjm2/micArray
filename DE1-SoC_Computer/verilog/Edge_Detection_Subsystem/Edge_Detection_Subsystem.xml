@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2018.04.02.20:28:34"
+ outputDirectory="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA5F31C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="Unknown"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_SYS_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_SYS_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_SYS_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="edge_detection_control_slave" kind="avalon" start="0">
+   <property name="addressAlignment" value="NATIVE" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="4" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="sys_clk" />
+   <property name="associatedReset" value="sys_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port
+       name="edge_detection_control_slave_address"
+       direction="input"
+       role="address"
+       width="2" />
+   <port
+       name="edge_detection_control_slave_write_n"
+       direction="input"
+       role="write_n"
+       width="1" />
+   <port
+       name="edge_detection_control_slave_writedata"
+       direction="input"
+       role="writedata"
+       width="32" />
+   <port
+       name="edge_detection_control_slave_chipselect"
+       direction="input"
+       role="chipselect"
+       width="1" />
+   <port
+       name="edge_detection_control_slave_readdata"
+       direction="output"
+       role="readdata"
+       width="32" />
+  </interface>
+  <interface name="sys_clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="sys_clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="sys_reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="sys_reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="video_stream_sink" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="sys_clk" />
+   <property name="associatedReset" value="sys_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="3" />
+   <port
+       name="video_stream_sink_data"
+       direction="input"
+       role="data"
+       width="24" />
+   <port
+       name="video_stream_sink_startofpacket"
+       direction="input"
+       role="startofpacket"
+       width="1" />
+   <port
+       name="video_stream_sink_endofpacket"
+       direction="input"
+       role="endofpacket"
+       width="1" />
+   <port
+       name="video_stream_sink_valid"
+       direction="input"
+       role="valid"
+       width="1" />
+   <port
+       name="video_stream_sink_ready"
+       direction="output"
+       role="ready"
+       width="1" />
+  </interface>
+  <interface name="video_stream_source" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="sys_clk" />
+   <property name="associatedReset" value="sys_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="3" />
+   <port
+       name="video_stream_source_ready"
+       direction="input"
+       role="ready"
+       width="1" />
+   <port
+       name="video_stream_source_data"
+       direction="output"
+       role="data"
+       width="24" />
+   <port
+       name="video_stream_source_startofpacket"
+       direction="output"
+       role="startofpacket"
+       width="1" />
+   <port
+       name="video_stream_source_endofpacket"
+       direction="output"
+       role="endofpacket"
+       width="1" />
+   <port
+       name="video_stream_source_valid"
+       direction="output"
+       role="valid"
+       width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="Edge_Detection_Subsystem:1.0:AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1522718912,AUTO_SYS_CLK_CLOCK_DOMAIN=-1,AUTO_SYS_CLK_CLOCK_RATE=-1,AUTO_SYS_CLK_RESET_DOMAIN=-1,AUTO_UNIQUE_ID=(altera_up_avalon_video_chroma_resampler:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,input_bits=8,input_planes=3,input_type=YCrCb 444,output_bits=8,output_planes=1,output_type=Y only)(altera_up_avalon_video_chroma_resampler:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,input_bits=8,input_planes=1,input_type=Y only,output_bits=8,output_planes=3,output_type=YCrCb 444)(altera_up_avalon_video_edge_detection:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,intensity=1,width=720)(altera_avalon_pio:15.0:bitClearingEdgeCapReg=false,bitModifyingOutReg=false,captureEdge=false,clockRate=0,derived_capture=false,derived_do_test_bench_wiring=false,derived_edge_type=NONE,derived_has_in=false,derived_has_irq=false,derived_has_out=true,derived_has_tri=false,derived_irq_type=NONE,direction=Output,edgeType=RISING,generateIRQ=false,irqType=LEVEL,resetValue=0,simDoTestBenchWiring=false,simDrivenValue=0,width=1)(clock_source:15.0:clockFrequency=50000000,clockFrequencyKnown=false,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_up_avalon_video_stream_router:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,color_bits=8,color_planes=3,router_type=Merge,sync=true)(altera_up_avalon_video_stream_router:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,color_bits=8,color_planes=3,router_type=Split,sync=true)(avalon_streaming:15.0:)(avalon_streaming:15.0:)(avalon_streaming:15.0:)(avalon_streaming:15.0:)(avalon_streaming:15.0:)(avalon_streaming:15.0:)(clock:15.0:)(clock:15.0:)(clock:15.0:)(clock:15.0:)(clock:15.0:)(clock:15.0:)(conduit:15.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)(reset:15.0:)(reset:15.0:)(reset:15.0:)(reset:15.0:)(reset:15.0:)(reset:15.0:)"
+   instancePathKey="Edge_Detection_Subsystem"
+   kind="Edge_Detection_Subsystem"
+   version="1.0"
+   name="Edge_Detection_Subsystem">
+  <parameter name="AUTO_SYS_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1522718912" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_SYS_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_SYS_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/Edge_Detection_Subsystem.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Chroma_Filter.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Chroma_Upsampler.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_gaussian_smoothing_filter.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_sobel_operator.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_nonmaximum_suppression.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_hysteresis.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_pixel_info_shift_register.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_data_shift_register.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Edge_Detection.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Edge_Detection_Router_Controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Video_Stream_Merger.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Video_Stream_Splitter.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_chroma_resampler/altera_up_avalon_video_chroma_resampler_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_chroma_resampler/altera_up_avalon_video_chroma_resampler_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/altera_up_avalon_video_edge_detection_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_gaussian_smoothing_filter.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_sobel_operator.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_nonmaximum_suppression.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_hysteresis.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_pixel_info_shift_register.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_data_shift_register.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/sopc_builder_ip/altera_avalon_pio/altera_avalon_pio_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_stream_router/altera_up_avalon_video_stream_router_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_stream_router/altera_up_avalon_video_stream_router_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 0 starting:Edge_Detection_Subsystem "Edge_Detection_Subsystem"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>7</b> modules, <b>19</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>8</b> modules, <b>21</b> connections]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem"><![CDATA["<b>Edge_Detection_Subsystem</b>" reuses <b>altera_up_avalon_video_chroma_resampler</b> "<b>submodules/Edge_Detection_Subsystem_Chroma_Filter</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem"><![CDATA["<b>Edge_Detection_Subsystem</b>" reuses <b>altera_up_avalon_video_chroma_resampler</b> "<b>submodules/Edge_Detection_Subsystem_Chroma_Upsampler</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem"><![CDATA["<b>Edge_Detection_Subsystem</b>" reuses <b>altera_up_avalon_video_edge_detection</b> "<b>submodules/Edge_Detection_Subsystem_Edge_Detection</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem"><![CDATA["<b>Edge_Detection_Subsystem</b>" reuses <b>altera_avalon_pio</b> "<b>submodules/Edge_Detection_Subsystem_Edge_Detection_Router_Controller</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem"><![CDATA["<b>Edge_Detection_Subsystem</b>" reuses <b>altera_up_avalon_video_stream_router</b> "<b>submodules/Edge_Detection_Subsystem_Video_Stream_Merger</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem"><![CDATA["<b>Edge_Detection_Subsystem</b>" reuses <b>altera_up_avalon_video_stream_router</b> "<b>submodules/Edge_Detection_Subsystem_Video_Stream_Splitter</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem"><![CDATA["<b>Edge_Detection_Subsystem</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 6 starting:altera_up_avalon_video_chroma_resampler "submodules/Edge_Detection_Subsystem_Chroma_Filter"</message>
+   <message level="Info" culprit="Chroma_Filter">Starting Generation of Chroma Resampler</message>
+   <message level="Info" culprit="Chroma_Filter"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_chroma_resampler</b> "<b>Chroma_Filter</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 5 starting:altera_up_avalon_video_chroma_resampler "submodules/Edge_Detection_Subsystem_Chroma_Upsampler"</message>
+   <message level="Info" culprit="Chroma_Upsampler">Starting Generation of Chroma Resampler</message>
+   <message level="Info" culprit="Chroma_Upsampler"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_chroma_resampler</b> "<b>Chroma_Upsampler</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 4 starting:altera_up_avalon_video_edge_detection "submodules/Edge_Detection_Subsystem_Edge_Detection"</message>
+   <message level="Info" culprit="Edge_Detection">Starting Generation of Video In Edge Detection</message>
+   <message level="Info" culprit="Edge_Detection"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_edge_detection</b> "<b>Edge_Detection</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 3 starting:altera_avalon_pio "submodules/Edge_Detection_Subsystem_Edge_Detection_Router_Controller"</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller">Starting RTL generation for module 'Edge_Detection_Subsystem_Edge_Detection_Router_Controller'</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller">  Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Edge_Detection_Subsystem_Edge_Detection_Router_Controller --dir=C:/Users/JJ/AppData/Local/Temp/alt7624_4322713135303617336.dir/0004_Edge_Detection_Router_Controller_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7624_4322713135303617336.dir/0004_Edge_Detection_Router_Controller_gen//Edge_Detection_Subsystem_Edge_Detection_Router_Controller_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller">Done RTL generation for module 'Edge_Detection_Subsystem_Edge_Detection_Router_Controller'</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_avalon_pio</b> "<b>Edge_Detection_Router_Controller</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 2 starting:altera_up_avalon_video_stream_router "submodules/Edge_Detection_Subsystem_Video_Stream_Merger"</message>
+   <message level="Info" culprit="Video_Stream_Merger">Starting Generation of Video In Stream Router</message>
+   <message level="Info" culprit="Video_Stream_Merger"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_stream_router</b> "<b>Video_Stream_Merger</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 1 starting:altera_up_avalon_video_stream_router "submodules/Edge_Detection_Subsystem_Video_Stream_Splitter"</message>
+   <message level="Info" culprit="Video_Stream_Splitter">Starting Generation of Video In Stream Router</message>
+   <message level="Info" culprit="Video_Stream_Splitter"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_stream_router</b> "<b>Video_Stream_Splitter</b>"]]></message>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_video_chroma_resampler:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,input_bits=8,input_planes=3,input_type=YCrCb 444,output_bits=8,output_planes=1,output_type=Y only"
+   instancePathKey="Edge_Detection_Subsystem:.:Chroma_Filter"
+   kind="altera_up_avalon_video_chroma_resampler"
+   version="15.0"
+   name="Edge_Detection_Subsystem_Chroma_Filter">
+  <parameter name="output_bits" value="8" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="output_type" value="Y only" />
+  <parameter name="input_bits" value="8" />
+  <parameter name="output_planes" value="1" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="input_type" value="YCrCb 444" />
+  <parameter name="input_planes" value="3" />
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Chroma_Filter.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_chroma_resampler/altera_up_avalon_video_chroma_resampler_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Edge_Detection_Subsystem" as="Chroma_Filter" />
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 6 starting:altera_up_avalon_video_chroma_resampler "submodules/Edge_Detection_Subsystem_Chroma_Filter"</message>
+   <message level="Info" culprit="Chroma_Filter">Starting Generation of Chroma Resampler</message>
+   <message level="Info" culprit="Chroma_Filter"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_chroma_resampler</b> "<b>Chroma_Filter</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_video_chroma_resampler:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,input_bits=8,input_planes=1,input_type=Y only,output_bits=8,output_planes=3,output_type=YCrCb 444"
+   instancePathKey="Edge_Detection_Subsystem:.:Chroma_Upsampler"
+   kind="altera_up_avalon_video_chroma_resampler"
+   version="15.0"
+   name="Edge_Detection_Subsystem_Chroma_Upsampler">
+  <parameter name="output_bits" value="8" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="output_type" value="YCrCb 444" />
+  <parameter name="input_bits" value="8" />
+  <parameter name="output_planes" value="3" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="input_type" value="Y only" />
+  <parameter name="input_planes" value="1" />
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Chroma_Upsampler.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_chroma_resampler/altera_up_avalon_video_chroma_resampler_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Edge_Detection_Subsystem" as="Chroma_Upsampler" />
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 5 starting:altera_up_avalon_video_chroma_resampler "submodules/Edge_Detection_Subsystem_Chroma_Upsampler"</message>
+   <message level="Info" culprit="Chroma_Upsampler">Starting Generation of Chroma Resampler</message>
+   <message level="Info" culprit="Chroma_Upsampler"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_chroma_resampler</b> "<b>Chroma_Upsampler</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_video_edge_detection:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,intensity=1,width=720"
+   instancePathKey="Edge_Detection_Subsystem:.:Edge_Detection"
+   kind="altera_up_avalon_video_edge_detection"
+   version="15.0"
+   name="Edge_Detection_Subsystem_Edge_Detection">
+  <parameter name="intensity" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="width" value="720" />
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_gaussian_smoothing_filter.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_sobel_operator.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_nonmaximum_suppression.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_hysteresis.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_pixel_info_shift_register.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_up_edge_detection_data_shift_register.v"
+       type="VERILOG" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Edge_Detection.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/altera_up_avalon_video_edge_detection_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_gaussian_smoothing_filter.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_sobel_operator.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_nonmaximum_suppression.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_hysteresis.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_pixel_info_shift_register.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_edge_detection/hdl/altera_up_edge_detection_data_shift_register.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Edge_Detection_Subsystem" as="Edge_Detection" />
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 4 starting:altera_up_avalon_video_edge_detection "submodules/Edge_Detection_Subsystem_Edge_Detection"</message>
+   <message level="Info" culprit="Edge_Detection">Starting Generation of Video In Edge Detection</message>
+   <message level="Info" culprit="Edge_Detection"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_edge_detection</b> "<b>Edge_Detection</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_avalon_pio:15.0:bitClearingEdgeCapReg=false,bitModifyingOutReg=false,captureEdge=false,clockRate=0,derived_capture=false,derived_do_test_bench_wiring=false,derived_edge_type=NONE,derived_has_in=false,derived_has_irq=false,derived_has_out=true,derived_has_tri=false,derived_irq_type=NONE,direction=Output,edgeType=RISING,generateIRQ=false,irqType=LEVEL,resetValue=0,simDoTestBenchWiring=false,simDrivenValue=0,width=1"
+   instancePathKey="Edge_Detection_Subsystem:.:Edge_Detection_Router_Controller"
+   kind="altera_avalon_pio"
+   version="15.0"
+   name="Edge_Detection_Subsystem_Edge_Detection_Router_Controller">
+  <parameter name="derived_do_test_bench_wiring" value="false" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="derived_has_irq" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="0" />
+  <parameter name="derived_has_out" value="true" />
+  <parameter name="derived_has_in" value="false" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="derived_has_tri" value="false" />
+  <parameter name="derived_capture" value="false" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="derived_edge_type" value="NONE" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="derived_irq_type" value="NONE" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="width" value="1" />
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="direction" value="Output" />
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Edge_Detection_Router_Controller.v"
+       type="VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/sopc_builder_ip/altera_avalon_pio/altera_avalon_pio_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="Edge_Detection_Subsystem"
+     as="Edge_Detection_Router_Controller" />
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 3 starting:altera_avalon_pio "submodules/Edge_Detection_Subsystem_Edge_Detection_Router_Controller"</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller">Starting RTL generation for module 'Edge_Detection_Subsystem_Edge_Detection_Router_Controller'</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller">  Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Edge_Detection_Subsystem_Edge_Detection_Router_Controller --dir=C:/Users/JJ/AppData/Local/Temp/alt7624_4322713135303617336.dir/0004_Edge_Detection_Router_Controller_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7624_4322713135303617336.dir/0004_Edge_Detection_Router_Controller_gen//Edge_Detection_Subsystem_Edge_Detection_Router_Controller_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller">Done RTL generation for module 'Edge_Detection_Subsystem_Edge_Detection_Router_Controller'</message>
+   <message level="Info" culprit="Edge_Detection_Router_Controller"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_avalon_pio</b> "<b>Edge_Detection_Router_Controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_video_stream_router:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,color_bits=8,color_planes=3,router_type=Merge,sync=true"
+   instancePathKey="Edge_Detection_Subsystem:.:Video_Stream_Merger"
+   kind="altera_up_avalon_video_stream_router"
+   version="15.0"
+   name="Edge_Detection_Subsystem_Video_Stream_Merger">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="color_bits" value="8" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="color_planes" value="3" />
+  <parameter name="router_type" value="Merge" />
+  <parameter name="sync" value="true" />
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Video_Stream_Merger.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_stream_router/altera_up_avalon_video_stream_router_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Edge_Detection_Subsystem" as="Video_Stream_Merger" />
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 2 starting:altera_up_avalon_video_stream_router "submodules/Edge_Detection_Subsystem_Video_Stream_Merger"</message>
+   <message level="Info" culprit="Video_Stream_Merger">Starting Generation of Video In Stream Router</message>
+   <message level="Info" culprit="Video_Stream_Merger"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_stream_router</b> "<b>Video_Stream_Merger</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_video_stream_router:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,color_bits=8,color_planes=3,router_type=Split,sync=true"
+   instancePathKey="Edge_Detection_Subsystem:.:Video_Stream_Splitter"
+   kind="altera_up_avalon_video_stream_router"
+   version="15.0"
+   name="Edge_Detection_Subsystem_Video_Stream_Splitter">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="color_bits" value="8" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="color_planes" value="3" />
+  <parameter name="router_type" value="Split" />
+  <parameter name="sync" value="true" />
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/Edge_Detection_Subsystem_Video_Stream_Splitter.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/video/altera_up_avalon_video_stream_router/altera_up_avalon_video_stream_router_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Edge_Detection_Subsystem" as="Video_Stream_Splitter" />
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 1 starting:altera_up_avalon_video_stream_router "submodules/Edge_Detection_Subsystem_Video_Stream_Splitter"</message>
+   <message level="Info" culprit="Video_Stream_Splitter">Starting Generation of Video In Stream Router</message>
+   <message level="Info" culprit="Video_Stream_Splitter"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_up_avalon_video_stream_router</b> "<b>Video_Stream_Splitter</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_reset_controller:15.0:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
+   instancePathKey="Edge_Detection_Subsystem:.:rst_controller"
+   kind="altera_reset_controller"
+   version="15.0"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="C:/altera/15.0/University_Program/Computer_Systems/DE1-SoC/DE1-SoC_Computer/verilog/Edge_Detection_Subsystem/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Edge_Detection_Subsystem" as="rst_controller" />
+  <messages>
+   <message level="Debug" culprit="Edge_Detection_Subsystem">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>Edge_Detection_Subsystem</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

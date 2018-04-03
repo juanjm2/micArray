@@ -1,0 +1,189 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 624 352)
+	(text "Edge_Detection_Subsystem" (rect 229 -1 344 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 336 20 348)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "edge_detection_control_slave_address[1..0]" (rect 0 0 174 12)(font "Arial" (font_size 8)))
+		(text "edge_detection_control_slave_address[1..0]" (rect 4 61 256 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 240 72)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "edge_detection_control_slave_write_n" (rect 0 0 152 12)(font "Arial" (font_size 8)))
+		(text "edge_detection_control_slave_write_n" (rect 4 77 220 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 240 88)(line_width 1))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "edge_detection_control_slave_writedata[31..0]" (rect 0 0 181 12)(font "Arial" (font_size 8)))
+		(text "edge_detection_control_slave_writedata[31..0]" (rect 4 93 274 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 240 104)(line_width 3))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "edge_detection_control_slave_chipselect" (rect 0 0 161 12)(font "Arial" (font_size 8)))
+		(text "edge_detection_control_slave_chipselect" (rect 4 109 238 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 240 120)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "sys_clk_clk" (rect 0 0 48 12)(font "Arial" (font_size 8)))
+		(text "sys_clk_clk" (rect 4 165 70 176)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 240 176)(line_width 1))
+	)
+	(port
+		(pt 0 216)
+		(input)
+		(text "sys_reset_reset_n" (rect 0 0 77 12)(font "Arial" (font_size 8)))
+		(text "sys_reset_reset_n" (rect 4 205 106 216)(font "Arial" (font_size 8)))
+		(line (pt 0 216)(pt 240 216)(line_width 1))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "video_stream_sink_data[23..0]" (rect 0 0 123 12)(font "Arial" (font_size 8)))
+		(text "video_stream_sink_data[23..0]" (rect 4 245 178 256)(font "Arial" (font_size 8)))
+		(line (pt 0 256)(pt 240 256)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "video_stream_sink_startofpacket" (rect 0 0 134 12)(font "Arial" (font_size 8)))
+		(text "video_stream_sink_startofpacket" (rect 4 261 190 272)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 240 272)(line_width 1))
+	)
+	(port
+		(pt 0 288)
+		(input)
+		(text "video_stream_sink_endofpacket" (rect 0 0 130 12)(font "Arial" (font_size 8)))
+		(text "video_stream_sink_endofpacket" (rect 4 277 178 288)(font "Arial" (font_size 8)))
+		(line (pt 0 288)(pt 240 288)(line_width 1))
+	)
+	(port
+		(pt 0 304)
+		(input)
+		(text "video_stream_sink_valid" (rect 0 0 100 12)(font "Arial" (font_size 8)))
+		(text "video_stream_sink_valid" (rect 4 293 142 304)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 240 304)(line_width 1))
+	)
+	(port
+		(pt 624 72)
+		(input)
+		(text "video_stream_source_ready" (rect 0 0 118 12)(font "Arial" (font_size 8)))
+		(text "video_stream_source_ready" (rect 480 61 630 72)(font "Arial" (font_size 8)))
+		(line (pt 624 72)(pt 384 72)(line_width 1))
+	)
+	(port
+		(pt 0 136)
+		(output)
+		(text "edge_detection_control_slave_readdata[31..0]" (rect 0 0 181 12)(font "Arial" (font_size 8)))
+		(text "edge_detection_control_slave_readdata[31..0]" (rect 4 125 268 136)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 240 136)(line_width 3))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "video_stream_sink_ready" (rect 0 0 106 12)(font "Arial" (font_size 8)))
+		(text "video_stream_sink_ready" (rect 4 309 142 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 240 320)(line_width 1))
+	)
+	(port
+		(pt 624 88)
+		(output)
+		(text "video_stream_source_data[23..0]" (rect 0 0 135 12)(font "Arial" (font_size 8)))
+		(text "video_stream_source_data[23..0]" (rect 457 77 643 88)(font "Arial" (font_size 8)))
+		(line (pt 624 88)(pt 384 88)(line_width 3))
+	)
+	(port
+		(pt 624 104)
+		(output)
+		(text "video_stream_source_startofpacket" (rect 0 0 146 12)(font "Arial" (font_size 8)))
+		(text "video_stream_source_startofpacket" (rect 443 93 641 104)(font "Arial" (font_size 8)))
+		(line (pt 624 104)(pt 384 104)(line_width 1))
+	)
+	(port
+		(pt 624 120)
+		(output)
+		(text "video_stream_source_endofpacket" (rect 0 0 142 12)(font "Arial" (font_size 8)))
+		(text "video_stream_source_endofpacket" (rect 447 109 633 120)(font "Arial" (font_size 8)))
+		(line (pt 624 120)(pt 384 120)(line_width 1))
+	)
+	(port
+		(pt 624 136)
+		(output)
+		(text "video_stream_source_valid" (rect 0 0 112 12)(font "Arial" (font_size 8)))
+		(text "video_stream_source_valid" (rect 486 125 636 136)(font "Arial" (font_size 8)))
+		(line (pt 624 136)(pt 384 136)(line_width 1))
+	)
+	(drawing
+		(text "edge_detection_control_slave" (rect 68 43 304 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "address" (rect 245 67 532 144)(font "Arial" (color 0 0 0)))
+		(text "write_n" (rect 245 83 532 176)(font "Arial" (color 0 0 0)))
+		(text "writedata" (rect 245 99 544 208)(font "Arial" (color 0 0 0)))
+		(text "chipselect" (rect 245 115 550 240)(font "Arial" (color 0 0 0)))
+		(text "readdata" (rect 245 131 538 272)(font "Arial" (color 0 0 0)))
+		(text "sys_clk" (rect 197 147 436 307)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 245 171 508 352)(font "Arial" (color 0 0 0)))
+		(text "sys_reset" (rect 183 187 420 387)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 245 211 532 432)(font "Arial" (color 0 0 0)))
+		(text "video_stream_sink" (rect 130 227 362 467)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "data" (rect 245 251 514 512)(font "Arial" (color 0 0 0)))
+		(text "startofpacket" (rect 245 267 568 544)(font "Arial" (color 0 0 0)))
+		(text "endofpacket" (rect 245 283 556 576)(font "Arial" (color 0 0 0)))
+		(text "valid" (rect 245 299 520 608)(font "Arial" (color 0 0 0)))
+		(text "ready" (rect 245 315 520 640)(font "Arial" (color 0 0 0)))
+		(text "video_stream_source" (rect 385 43 884 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "ready" (rect 356 67 742 144)(font "Arial" (color 0 0 0)))
+		(text "data" (rect 363 83 750 176)(font "Arial" (color 0 0 0)))
+		(text "startofpacket" (rect 324 99 726 208)(font "Arial" (color 0 0 0)))
+		(text "endofpacket" (rect 329 115 724 240)(font "Arial" (color 0 0 0)))
+		(text "valid" (rect 361 131 752 272)(font "Arial" (color 0 0 0)))
+		(text " Edge_Detection_Subsystem " (rect 499 336 1154 682)(font "Arial" ))
+		(line (pt 240 32)(pt 384 32)(line_width 1))
+		(line (pt 384 32)(pt 384 336)(line_width 1))
+		(line (pt 240 336)(pt 384 336)(line_width 1))
+		(line (pt 240 32)(pt 240 336)(line_width 1))
+		(line (pt 241 52)(pt 241 140)(line_width 1))
+		(line (pt 242 52)(pt 242 140)(line_width 1))
+		(line (pt 241 156)(pt 241 180)(line_width 1))
+		(line (pt 242 156)(pt 242 180)(line_width 1))
+		(line (pt 241 196)(pt 241 220)(line_width 1))
+		(line (pt 242 196)(pt 242 220)(line_width 1))
+		(line (pt 241 236)(pt 241 324)(line_width 1))
+		(line (pt 242 236)(pt 242 324)(line_width 1))
+		(line (pt 383 52)(pt 383 140)(line_width 1))
+		(line (pt 382 52)(pt 382 140)(line_width 1))
+		(line (pt 0 0)(pt 624 0)(line_width 1))
+		(line (pt 624 0)(pt 624 352)(line_width 1))
+		(line (pt 0 352)(pt 624 352)(line_width 1))
+		(line (pt 0 0)(pt 0 352)(line_width 1))
+	)
+)

@@ -1,0 +1,109 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Video_In_Subsystem.qsys --block-symbol-file --output-directory=C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Video_In_Subsystem --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading verilog/Video_In_Subsystem.qsys
+Progress: Reading input file
+Progress: Adding Edge_Detection_Subsystem [Edge_Detection_Subsystem 1.0]
+Progress: Parameterizing module Edge_Detection_Subsystem
+Progress: Adding Sys_Clk [clock_source 15.0]
+Progress: Parameterizing module Sys_Clk
+Progress: Adding Video_In [altera_up_avalon_video_decoder 15.0]
+Progress: Parameterizing module Video_In
+Progress: Adding Video_In_CSC [altera_up_avalon_video_csc 15.0]
+Progress: Parameterizing module Video_In_CSC
+Progress: Adding Video_In_Chroma_Resampler [altera_up_avalon_video_chroma_resampler 15.0]
+Progress: Parameterizing module Video_In_Chroma_Resampler
+Progress: Adding Video_In_Clipper [altera_up_avalon_video_clipper 15.0]
+Progress: Parameterizing module Video_In_Clipper
+Progress: Adding Video_In_DMA [altera_up_avalon_video_dma_controller 15.0]
+Progress: Parameterizing module Video_In_DMA
+Progress: Adding Video_In_RGB_Resampler [altera_up_avalon_video_rgb_resampler 15.0]
+Progress: Parameterizing module Video_In_RGB_Resampler
+Progress: Adding Video_In_Scaler [altera_up_avalon_video_scaler 15.0]
+Progress: Parameterizing module Video_In_Scaler
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Video_In_Subsystem.Edge_Detection_Subsystem.Chroma_Filter: Chroma Resampling: 8 (bits) x 3 (planes) -> 8 (bits) x 1 (planes)
+Info: Video_In_Subsystem.Edge_Detection_Subsystem.Chroma_Upsampler: Chroma Resampling: 8 (bits) x 1 (planes) -> 8 (bits) x 3 (planes)
+Warning: Video_In_Subsystem.Edge_Detection_Subsystem.Sys_Clk: The input clock frequency must be known or set by the parent if this is a subsystem.
+Warning: Video_In_Subsystem.Sys_Clk: The input clock frequency must be known or set by the parent if this is a subsystem.
+Info: Video_In_Subsystem.Video_In: Video In Stream: Format: 720 x 244 (Odd Frames) or 720 x 243 (Even Frames) with Colour: 8 (bits) x 2 (planes) (YCrCb 4:2:2)
+Info: Video_In_Subsystem.Video_In_CSC: Colour Space Conversion: 8 (bits) x 3 (planes) (444 YCrCb) -> 8 (bits) x 3 (planes) (24-bit RGB)
+Info: Video_In_Subsystem.Video_In_Chroma_Resampler: Chroma Resampling: 8 (bits) x 2 (planes) -> 8 (bits) x 3 (planes)
+Info: Video_In_Subsystem.Video_In_Clipper: Change in Resolution: 720 x 244 -> 640 x 240
+Info: Video_In_Subsystem.Video_In_RGB_Resampler: RGB Resampling: 8 (bits) x 3 (planes) -> 16 (bits) x 1 (planes)
+Info: Video_In_Subsystem.Video_In_Scaler: Change in Resolution: 640 x 240 -> 320 x 240
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Video_In_Subsystem.qsys --synthesis=VERILOG --output-directory=C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Video_In_Subsystem\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading verilog/Video_In_Subsystem.qsys
+Progress: Reading input file
+Progress: Adding Edge_Detection_Subsystem [Edge_Detection_Subsystem 1.0]
+Progress: Parameterizing module Edge_Detection_Subsystem
+Progress: Adding Sys_Clk [clock_source 15.0]
+Progress: Parameterizing module Sys_Clk
+Progress: Adding Video_In [altera_up_avalon_video_decoder 15.0]
+Progress: Parameterizing module Video_In
+Progress: Adding Video_In_CSC [altera_up_avalon_video_csc 15.0]
+Progress: Parameterizing module Video_In_CSC
+Progress: Adding Video_In_Chroma_Resampler [altera_up_avalon_video_chroma_resampler 15.0]
+Progress: Parameterizing module Video_In_Chroma_Resampler
+Progress: Adding Video_In_Clipper [altera_up_avalon_video_clipper 15.0]
+Progress: Parameterizing module Video_In_Clipper
+Progress: Adding Video_In_DMA [altera_up_avalon_video_dma_controller 15.0]
+Progress: Parameterizing module Video_In_DMA
+Progress: Adding Video_In_RGB_Resampler [altera_up_avalon_video_rgb_resampler 15.0]
+Progress: Parameterizing module Video_In_RGB_Resampler
+Progress: Adding Video_In_Scaler [altera_up_avalon_video_scaler 15.0]
+Progress: Parameterizing module Video_In_Scaler
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Video_In_Subsystem.Edge_Detection_Subsystem.Chroma_Filter: Chroma Resampling: 8 (bits) x 3 (planes) -> 8 (bits) x 1 (planes)
+Info: Video_In_Subsystem.Edge_Detection_Subsystem.Chroma_Upsampler: Chroma Resampling: 8 (bits) x 1 (planes) -> 8 (bits) x 3 (planes)
+Warning: Video_In_Subsystem.Edge_Detection_Subsystem.Sys_Clk: The input clock frequency must be known or set by the parent if this is a subsystem.
+Warning: Video_In_Subsystem.Sys_Clk: The input clock frequency must be known or set by the parent if this is a subsystem.
+Info: Video_In_Subsystem.Video_In: Video In Stream: Format: 720 x 244 (Odd Frames) or 720 x 243 (Even Frames) with Colour: 8 (bits) x 2 (planes) (YCrCb 4:2:2)
+Info: Video_In_Subsystem.Video_In_CSC: Colour Space Conversion: 8 (bits) x 3 (planes) (444 YCrCb) -> 8 (bits) x 3 (planes) (24-bit RGB)
+Info: Video_In_Subsystem.Video_In_Chroma_Resampler: Chroma Resampling: 8 (bits) x 2 (planes) -> 8 (bits) x 3 (planes)
+Info: Video_In_Subsystem.Video_In_Clipper: Change in Resolution: 720 x 244 -> 640 x 240
+Info: Video_In_Subsystem.Video_In_RGB_Resampler: RGB Resampling: 8 (bits) x 3 (planes) -> 16 (bits) x 1 (planes)
+Info: Video_In_Subsystem.Video_In_Scaler: Change in Resolution: 640 x 240 -> 320 x 240
+Info: Video_In_Subsystem: Generating Video_In_Subsystem "Video_In_Subsystem" for QUARTUS_SYNTH
+Info: Edge_Detection_Subsystem: "Video_In_Subsystem" instantiated Edge_Detection_Subsystem "Edge_Detection_Subsystem"
+Info: Video_In: Starting Generation of Video In Decoder
+Info: Video_In: "Video_In_Subsystem" instantiated altera_up_avalon_video_decoder "Video_In"
+Info: Video_In_CSC: Starting Generation of Colour Space Converter
+Info: Video_In_CSC: "Video_In_Subsystem" instantiated altera_up_avalon_video_csc "Video_In_CSC"
+Info: Video_In_Chroma_Resampler: Starting Generation of Chroma Resampler
+Info: Video_In_Chroma_Resampler: "Video_In_Subsystem" instantiated altera_up_avalon_video_chroma_resampler "Video_In_Chroma_Resampler"
+Info: Video_In_Clipper: Starting generation of the video clipper
+Info: Video_In_Clipper: "Video_In_Subsystem" instantiated altera_up_avalon_video_clipper "Video_In_Clipper"
+Info: Video_In_DMA: Starting Generation of Video DMA Controller
+Info: Video_In_DMA: "Video_In_Subsystem" instantiated altera_up_avalon_video_dma_controller "Video_In_DMA"
+Info: Video_In_RGB_Resampler: Starting Generation of Video RGB Resampler
+Info: Video_In_RGB_Resampler: "Video_In_Subsystem" instantiated altera_up_avalon_video_rgb_resampler "Video_In_RGB_Resampler"
+Info: Video_In_Scaler: Starting Generation of Video Scaler
+Info: Video_In_Scaler: "Video_In_Subsystem" instantiated altera_up_avalon_video_scaler "Video_In_Scaler"
+Info: rst_controller: "Video_In_Subsystem" instantiated altera_reset_controller "rst_controller"
+Info: Chroma_Filter: Starting Generation of Chroma Resampler
+Info: Chroma_Filter: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_chroma_resampler "Chroma_Filter"
+Info: Chroma_Upsampler: Starting Generation of Chroma Resampler
+Info: Chroma_Upsampler: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_chroma_resampler "Chroma_Upsampler"
+Info: Edge_Detection: Starting Generation of Video In Edge Detection
+Info: Edge_Detection: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_edge_detection "Edge_Detection"
+Info: Edge_Detection_Router_Controller: Starting RTL generation for module 'Video_In_Subsystem_Edge_Detection_Subsystem_Edge_Detection_Router_Controller'
+Info: Edge_Detection_Router_Controller:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Video_In_Subsystem_Edge_Detection_Subsystem_Edge_Detection_Router_Controller --dir=C:/Users/JJ/AppData/Local/Temp/alt7624_5491310026314974516.dir/0012_Edge_Detection_Router_Controller_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7624_5491310026314974516.dir/0012_Edge_Detection_Router_Controller_gen//Video_In_Subsystem_Edge_Detection_Subsystem_Edge_Detection_Router_Controller_component_configuration.pl  --do_build_sim=0  ]
+Info: Edge_Detection_Router_Controller: Done RTL generation for module 'Video_In_Subsystem_Edge_Detection_Subsystem_Edge_Detection_Router_Controller'
+Info: Edge_Detection_Router_Controller: "Edge_Detection_Subsystem" instantiated altera_avalon_pio "Edge_Detection_Router_Controller"
+Info: Video_Stream_Merger: Starting Generation of Video In Stream Router
+Info: Video_Stream_Merger: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_stream_router "Video_Stream_Merger"
+Info: Video_Stream_Splitter: Starting Generation of Video In Stream Router
+Info: Video_Stream_Splitter: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_stream_router "Video_Stream_Splitter"
+Info: Video_In_Subsystem: Done "Video_In_Subsystem" with 16 modules, 39 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

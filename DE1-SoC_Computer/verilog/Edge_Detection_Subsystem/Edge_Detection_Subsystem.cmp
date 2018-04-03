@@ -1,0 +1,22 @@
+	component Edge_Detection_Subsystem is
+		port (
+			edge_detection_control_slave_address    : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
+			edge_detection_control_slave_write_n    : in  std_logic                     := 'X';             -- write_n
+			edge_detection_control_slave_writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			edge_detection_control_slave_chipselect : in  std_logic                     := 'X';             -- chipselect
+			edge_detection_control_slave_readdata   : out std_logic_vector(31 downto 0);                    -- readdata
+			sys_clk_clk                             : in  std_logic                     := 'X';             -- clk
+			sys_reset_reset_n                       : in  std_logic                     := 'X';             -- reset_n
+			video_stream_sink_data                  : in  std_logic_vector(23 downto 0) := (others => 'X'); -- data
+			video_stream_sink_startofpacket         : in  std_logic                     := 'X';             -- startofpacket
+			video_stream_sink_endofpacket           : in  std_logic                     := 'X';             -- endofpacket
+			video_stream_sink_valid                 : in  std_logic                     := 'X';             -- valid
+			video_stream_sink_ready                 : out std_logic;                                        -- ready
+			video_stream_source_ready               : in  std_logic                     := 'X';             -- ready
+			video_stream_source_data                : out std_logic_vector(23 downto 0);                    -- data
+			video_stream_source_startofpacket       : out std_logic;                                        -- startofpacket
+			video_stream_source_endofpacket         : out std_logic;                                        -- endofpacket
+			video_stream_source_valid               : out std_logic                                         -- valid
+		);
+	end component Edge_Detection_Subsystem;
+

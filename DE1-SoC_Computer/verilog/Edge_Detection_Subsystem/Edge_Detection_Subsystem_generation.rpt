@@ -1,0 +1,72 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Edge_Detection_Subsystem.qsys --block-symbol-file --output-directory=C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Edge_Detection_Subsystem --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading verilog/Edge_Detection_Subsystem.qsys
+Progress: Reading input file
+Progress: Adding Chroma_Filter [altera_up_avalon_video_chroma_resampler 15.0]
+Progress: Parameterizing module Chroma_Filter
+Progress: Adding Chroma_Upsampler [altera_up_avalon_video_chroma_resampler 15.0]
+Progress: Parameterizing module Chroma_Upsampler
+Progress: Adding Edge_Detection [altera_up_avalon_video_edge_detection 15.0]
+Progress: Parameterizing module Edge_Detection
+Progress: Adding Edge_Detection_Router_Controller [altera_avalon_pio 15.0]
+Progress: Parameterizing module Edge_Detection_Router_Controller
+Progress: Adding Sys_Clk [clock_source 15.0]
+Progress: Parameterizing module Sys_Clk
+Progress: Adding Video_Stream_Merger [altera_up_avalon_video_stream_router 15.0]
+Progress: Parameterizing module Video_Stream_Merger
+Progress: Adding Video_Stream_Splitter [altera_up_avalon_video_stream_router 15.0]
+Progress: Parameterizing module Video_Stream_Splitter
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Edge_Detection_Subsystem.Chroma_Filter: Chroma Resampling: 8 (bits) x 3 (planes) -> 8 (bits) x 1 (planes)
+Info: Edge_Detection_Subsystem.Chroma_Upsampler: Chroma Resampling: 8 (bits) x 1 (planes) -> 8 (bits) x 3 (planes)
+Warning: Edge_Detection_Subsystem.Sys_Clk: The input clock frequency must be known or set by the parent if this is a subsystem.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Edge_Detection_Subsystem.qsys --synthesis=VERILOG --output-directory=C:\altera\15.0\University_Program\Computer_Systems\DE1-SoC\DE1-SoC_Computer\verilog\Edge_Detection_Subsystem\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading verilog/Edge_Detection_Subsystem.qsys
+Progress: Reading input file
+Progress: Adding Chroma_Filter [altera_up_avalon_video_chroma_resampler 15.0]
+Progress: Parameterizing module Chroma_Filter
+Progress: Adding Chroma_Upsampler [altera_up_avalon_video_chroma_resampler 15.0]
+Progress: Parameterizing module Chroma_Upsampler
+Progress: Adding Edge_Detection [altera_up_avalon_video_edge_detection 15.0]
+Progress: Parameterizing module Edge_Detection
+Progress: Adding Edge_Detection_Router_Controller [altera_avalon_pio 15.0]
+Progress: Parameterizing module Edge_Detection_Router_Controller
+Progress: Adding Sys_Clk [clock_source 15.0]
+Progress: Parameterizing module Sys_Clk
+Progress: Adding Video_Stream_Merger [altera_up_avalon_video_stream_router 15.0]
+Progress: Parameterizing module Video_Stream_Merger
+Progress: Adding Video_Stream_Splitter [altera_up_avalon_video_stream_router 15.0]
+Progress: Parameterizing module Video_Stream_Splitter
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Edge_Detection_Subsystem.Chroma_Filter: Chroma Resampling: 8 (bits) x 3 (planes) -> 8 (bits) x 1 (planes)
+Info: Edge_Detection_Subsystem.Chroma_Upsampler: Chroma Resampling: 8 (bits) x 1 (planes) -> 8 (bits) x 3 (planes)
+Warning: Edge_Detection_Subsystem.Sys_Clk: The input clock frequency must be known or set by the parent if this is a subsystem.
+Info: Edge_Detection_Subsystem: Generating Edge_Detection_Subsystem "Edge_Detection_Subsystem" for QUARTUS_SYNTH
+Info: Chroma_Filter: Starting Generation of Chroma Resampler
+Info: Chroma_Filter: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_chroma_resampler "Chroma_Filter"
+Info: Chroma_Upsampler: Starting Generation of Chroma Resampler
+Info: Chroma_Upsampler: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_chroma_resampler "Chroma_Upsampler"
+Info: Edge_Detection: Starting Generation of Video In Edge Detection
+Info: Edge_Detection: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_edge_detection "Edge_Detection"
+Info: Edge_Detection_Router_Controller: Starting RTL generation for module 'Edge_Detection_Subsystem_Edge_Detection_Router_Controller'
+Info: Edge_Detection_Router_Controller:   Generation command is [exec C:/altera/15.0/quartus/bin64/perl/bin/perl.exe -I C:/altera/15.0/quartus/bin64/perl/lib -I C:/altera/15.0/quartus/sopc_builder/bin/europa -I C:/altera/15.0/quartus/sopc_builder/bin/perl_lib -I C:/altera/15.0/quartus/sopc_builder/bin -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=Edge_Detection_Subsystem_Edge_Detection_Router_Controller --dir=C:/Users/JJ/AppData/Local/Temp/alt7624_4322713135303617336.dir/0004_Edge_Detection_Router_Controller_gen/ --quartus_dir=C:/altera/15.0/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7624_4322713135303617336.dir/0004_Edge_Detection_Router_Controller_gen//Edge_Detection_Subsystem_Edge_Detection_Router_Controller_component_configuration.pl  --do_build_sim=0  ]
+Info: Edge_Detection_Router_Controller: Done RTL generation for module 'Edge_Detection_Subsystem_Edge_Detection_Router_Controller'
+Info: Edge_Detection_Router_Controller: "Edge_Detection_Subsystem" instantiated altera_avalon_pio "Edge_Detection_Router_Controller"
+Info: Video_Stream_Merger: Starting Generation of Video In Stream Router
+Info: Video_Stream_Merger: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_stream_router "Video_Stream_Merger"
+Info: Video_Stream_Splitter: Starting Generation of Video In Stream Router
+Info: Video_Stream_Splitter: "Edge_Detection_Subsystem" instantiated altera_up_avalon_video_stream_router "Video_Stream_Splitter"
+Info: rst_controller: "Edge_Detection_Subsystem" instantiated altera_reset_controller "rst_controller"
+Info: Edge_Detection_Subsystem: Done "Edge_Detection_Subsystem" with 8 modules, 16 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
