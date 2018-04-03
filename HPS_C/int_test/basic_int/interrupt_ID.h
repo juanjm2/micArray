@@ -1,26 +1,26 @@
 /* This file provides interrupt IDs */
 
 /* FPGA interrupts (there are 64 in total; only a few are defined below) */
-#define	INTERVAL_TIMER_IRQ				72
-#define	KEYS_IRQ		 						73
-#define	FPGA_IRQ2	 						74
-#define	FPGA_IRQ3	 						75
-#define	FPGA_IRQ4	 						76
-#define	FPGA_IRQ5	 						77
-#define	AUDIO_IRQ							78
-#define	PS2_IRQ		 						79
-#define	JTAG_IRQ		 						80
-#define	IrDA_IRQ		 						81
-#define	FPGA_IRQ10							82
-#define	JP1_IRQ								83
-#define	JP2_IRQ								84
-#define	FPGA_IRQ13							85
-#define	FPGA_IRQ14							86
-#define	FPGA_IRQ15							87
-#define	FPGA_IRQ16							88
-#define	PS2_DUAL_IRQ						89
-#define	FPGA_IRQ18							90
-#define	FPGA_IRQ19							91
+#define	INTERVAL_TIMER_IRQ				    72
+#define	KEYS_IRQ		 					73          // IRQ 1
+#define	FPGA_IRQ2	 						74          // IRQ 2
+#define	FPGA_IRQ3	 						75          // IRQ 3
+#define	FPGA_IRQ4	 						76          // IRQ 4
+#define	FPGA_IRQ5	 						77          // IRQ 5
+#define	AUDIO_IRQ							78          // IRQ 6
+#define	PS2_IRQ		 						79          // IRQ 7
+#define	JTAG_IRQ		 					80          // IRQ 8
+#define	IrDA_IRQ		 					81          // IRQ 9
+#define	FPGA_IRQ10							82          // IRQ 10
+#define	JP1_IRQ								83          // IRQ 11
+#define	JP2_IRQ								84          // IRQ 12
+#define	FPGA_IRQ13							85          // IRQ 13
+#define	FPGA_IRQ14							86          // IRQ 14
+#define	FPGA_IRQ15							87          // IRQ 15
+#define	FPGA_IRQ16							88          // IRQ 16
+#define	PS2_DUAL_IRQ						89          // IRQ 17
+#define	FPGA_IRQ18							90          // IRQ 18
+#define	FPGA_IRQ19							91          // IRQ 19
 
 /* ARM A9 MPCORE devices (there are many; only a few are defined below) */
 #define	MPCORE_GLOBAL_TIMER_IRQ			27
