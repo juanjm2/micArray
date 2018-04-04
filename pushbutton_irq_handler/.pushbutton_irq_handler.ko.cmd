@@ -1,0 +1,1 @@
+cmd_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.ko := ld -EL -r  -T /usr/src/3.13.0-00299-ga2e769f/scripts/module-common.lds --build-id  -o /media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.ko /media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o /media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.mod.o
