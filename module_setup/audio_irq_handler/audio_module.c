@@ -19,6 +19,7 @@ extern volatile int right_buffer[BUF_SIZE];
 
 irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 {
+	printk(KERN_ALERT "%d", buffer_index);
 	int fifospace;
 	if (*(AUDIO_ptr) & 0x100)
 	{
