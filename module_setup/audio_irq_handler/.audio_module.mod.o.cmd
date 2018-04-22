@@ -1,20 +1,41 @@
-cmd_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o := gcc -Wp,-MD,/media/fat_partition/pushbutton_irq_handler/.pushbutton_irq_handler.o.d  -nostdinc -isystem /usr/lib/gcc/arm-linux-gnueabihf/4.6/include -I./arch/arm/include -Iarch/arm/include/generated  -Iinclude -I./arch/arm/include/uapi -Iarch/arm/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -fno-delete-null-pointer-checks -O2 -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(pushbutton_irq_handler)"  -D"KBUILD_MODNAME=KBUILD_STR(pushbutton_irq_handler)" -c -o /media/fat_partition/pushbutton_irq_handler/.tmp_pushbutton_irq_handler.o /media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.c
+cmd_/media/fat_partition/audio_irq_handler/audio_module.mod.o := gcc -Wp,-MD,/media/fat_partition/audio_irq_handler/.audio_module.mod.o.d  -nostdinc -isystem /usr/lib/gcc/arm-linux-gnueabihf/4.6/include -I./arch/arm/include -Iarch/arm/include/generated  -Iinclude -I./arch/arm/include/uapi -Iarch/arm/include/generated/uapi -I./include/uapi -Iinclude/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -mfpu=vfp -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -fno-delete-null-pointer-checks -O2 -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(audio_module.mod)"  -D"KBUILD_MODNAME=KBUILD_STR(audio_module)" -DMODULE  -c -o /media/fat_partition/audio_irq_handler/audio_module.mod.o /media/fat_partition/audio_irq_handler/audio_module.mod.c
 
-source_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o := /media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.c
+source_/media/fat_partition/audio_irq_handler/audio_module.mod.o := /media/fat_partition/audio_irq_handler/audio_module.mod.c
 
-deps_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o := \
-  include/linux/kernel.h \
-    $(wildcard include/config/lbdaf.h) \
-    $(wildcard include/config/preempt/voluntary.h) \
-    $(wildcard include/config/debug/atomic/sleep.h) \
-    $(wildcard include/config/mmu.h) \
-    $(wildcard include/config/prove/locking.h) \
-    $(wildcard include/config/panic/timeout.h) \
-    $(wildcard include/config/ring/buffer.h) \
+deps_/media/fat_partition/audio_irq_handler/audio_module.mod.o := \
+    $(wildcard include/config/module/unload.h) \
+  include/linux/module.h \
+    $(wildcard include/config/sysfs.h) \
+    $(wildcard include/config/modules.h) \
+    $(wildcard include/config/unused/symbols.h) \
+    $(wildcard include/config/module/sig.h) \
+    $(wildcard include/config/generic/bug.h) \
+    $(wildcard include/config/kallsyms.h) \
+    $(wildcard include/config/smp.h) \
+    $(wildcard include/config/tracepoints.h) \
     $(wildcard include/config/tracing.h) \
+    $(wildcard include/config/event/tracing.h) \
     $(wildcard include/config/ftrace/mcount/record.h) \
-  /usr/lib/gcc/arm-linux-gnueabihf/4.6/include/stdarg.h \
-  include/linux/linkage.h \
+    $(wildcard include/config/constructors.h) \
+    $(wildcard include/config/debug/set/module/ronx.h) \
+  include/linux/list.h \
+    $(wildcard include/config/debug/list.h) \
+  include/linux/types.h \
+    $(wildcard include/config/uid16.h) \
+    $(wildcard include/config/lbdaf.h) \
+    $(wildcard include/config/arch/dma/addr/t/64bit.h) \
+    $(wildcard include/config/phys/addr/t/64bit.h) \
+    $(wildcard include/config/64bit.h) \
+  include/uapi/linux/types.h \
+  arch/arm/include/asm/types.h \
+  include/asm-generic/int-ll64.h \
+  include/uapi/asm-generic/int-ll64.h \
+  arch/arm/include/generated/asm/bitsperlong.h \
+  include/asm-generic/bitsperlong.h \
+  include/uapi/asm-generic/bitsperlong.h \
+  include/uapi/linux/posix_types.h \
+  include/linux/stddef.h \
+  include/uapi/linux/stddef.h \
   include/linux/compiler.h \
     $(wildcard include/config/sparse/rcu/pointer.h) \
     $(wildcard include/config/trace/branch/profiling.h) \
@@ -27,33 +48,27 @@ deps_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o := \
     $(wildcard include/config/optimize/inlining.h) \
   include/linux/compiler-gcc4.h \
     $(wildcard include/config/arch/use/builtin/bswap.h) \
+  arch/arm/include/uapi/asm/posix_types.h \
+  include/uapi/asm-generic/posix_types.h \
+  include/linux/poison.h \
+    $(wildcard include/config/illegal/pointer/value.h) \
+  include/uapi/linux/const.h \
+  include/linux/kernel.h \
+    $(wildcard include/config/preempt/voluntary.h) \
+    $(wildcard include/config/debug/atomic/sleep.h) \
+    $(wildcard include/config/mmu.h) \
+    $(wildcard include/config/prove/locking.h) \
+    $(wildcard include/config/panic/timeout.h) \
+    $(wildcard include/config/ring/buffer.h) \
+  /usr/lib/gcc/arm-linux-gnueabihf/4.6/include/stdarg.h \
+  include/linux/linkage.h \
   include/linux/stringify.h \
   include/linux/export.h \
     $(wildcard include/config/have/underscore/symbol/prefix.h) \
-    $(wildcard include/config/modules.h) \
     $(wildcard include/config/modversions.h) \
-    $(wildcard include/config/unused/symbols.h) \
   arch/arm/include/asm/linkage.h \
-  include/linux/stddef.h \
-  include/uapi/linux/stddef.h \
-  include/linux/types.h \
-    $(wildcard include/config/uid16.h) \
-    $(wildcard include/config/arch/dma/addr/t/64bit.h) \
-    $(wildcard include/config/phys/addr/t/64bit.h) \
-    $(wildcard include/config/64bit.h) \
-  include/uapi/linux/types.h \
-  arch/arm/include/asm/types.h \
-  include/asm-generic/int-ll64.h \
-  include/uapi/asm-generic/int-ll64.h \
-  arch/arm/include/generated/asm/bitsperlong.h \
-  include/asm-generic/bitsperlong.h \
-  include/uapi/asm-generic/bitsperlong.h \
-  include/uapi/linux/posix_types.h \
-  arch/arm/include/uapi/asm/posix_types.h \
-  include/uapi/asm-generic/posix_types.h \
   include/linux/bitops.h \
   arch/arm/include/asm/bitops.h \
-    $(wildcard include/config/smp.h) \
   include/linux/irqflags.h \
     $(wildcard include/config/trace/irqflags.h) \
     $(wildcard include/config/irqsoff/tracer.h) \
@@ -133,22 +148,7 @@ deps_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o := \
   arch/arm/include/asm/opcodes.h \
     $(wildcard include/config/cpu/endian/be32.h) \
   include/asm-generic/bug.h \
-    $(wildcard include/config/generic/bug.h) \
     $(wildcard include/config/generic/bug/relative/pointers.h) \
-  include/linux/module.h \
-    $(wildcard include/config/sysfs.h) \
-    $(wildcard include/config/module/sig.h) \
-    $(wildcard include/config/kallsyms.h) \
-    $(wildcard include/config/tracepoints.h) \
-    $(wildcard include/config/event/tracing.h) \
-    $(wildcard include/config/module/unload.h) \
-    $(wildcard include/config/constructors.h) \
-    $(wildcard include/config/debug/set/module/ronx.h) \
-  include/linux/list.h \
-    $(wildcard include/config/debug/list.h) \
-  include/linux/poison.h \
-    $(wildcard include/config/illegal/pointer/value.h) \
-  include/uapi/linux/const.h \
   include/linux/stat.h \
   arch/arm/include/uapi/asm/stat.h \
   include/uapi/linux/stat.h \
@@ -425,53 +425,9 @@ deps_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o := \
     $(wildcard include/config/have/mod/arch/specific.h) \
     $(wildcard include/config/modules/use/elf/rel.h) \
     $(wildcard include/config/modules/use/elf/rela.h) \
-  include/linux/interrupt.h \
-    $(wildcard include/config/irq/forced/threading.h) \
-    $(wildcard include/config/generic/irq/probe.h) \
-    $(wildcard include/config/proc/fs.h) \
-  include/linux/irqreturn.h \
-  include/linux/irqnr.h \
-  include/uapi/linux/irqnr.h \
-  include/linux/hardirq.h \
-  include/linux/ftrace_irq.h \
-    $(wildcard include/config/ftrace/nmi/enter.h) \
-  include/linux/vtime.h \
-    $(wildcard include/config/virt/cpu/accounting/native.h) \
-    $(wildcard include/config/virt/cpu/accounting/gen.h) \
-    $(wildcard include/config/virt/cpu/accounting.h) \
-    $(wildcard include/config/irq/time/accounting.h) \
-  include/linux/context_tracking_state.h \
-  include/linux/static_key.h \
-  arch/arm/include/asm/hardirq.h \
-  arch/arm/include/asm/irq.h \
-    $(wildcard include/config/sparse/irq.h) \
-    $(wildcard include/config/multi/irq/handler.h) \
-  include/linux/irq_cpustat.h \
-  include/linux/hrtimer.h \
-    $(wildcard include/config/high/res/timers.h) \
-    $(wildcard include/config/timerfd.h) \
-  include/linux/timerqueue.h \
-  arch/arm/include/asm/io.h \
-    $(wildcard include/config/pci.h) \
-    $(wildcard include/config/need/mach/io/h.h) \
-    $(wildcard include/config/pcmcia/soc/common.h) \
-    $(wildcard include/config/isa.h) \
-    $(wildcard include/config/pccard.h) \
-  include/linux/blk_types.h \
-    $(wildcard include/config/block.h) \
-    $(wildcard include/config/blk/cgroup.h) \
-    $(wildcard include/config/blk/dev/integrity.h) \
-  include/asm-generic/pci_iomap.h \
-    $(wildcard include/config/no/generic/pci/ioport/map.h) \
-    $(wildcard include/config/generic/pci/iomap.h) \
-  include/xen/xen.h \
-    $(wildcard include/config/xen.h) \
-    $(wildcard include/config/xen/dom0.h) \
-    $(wildcard include/config/xen/pvh.h) \
-  /media/fat_partition/pushbutton_irq_handler/../address_map_arm.h \
-    $(wildcard include/config/base.h) \
-  /media/fat_partition/pushbutton_irq_handler/../interrupt_ID.h \
+  include/linux/vermagic.h \
+  include/generated/utsrelease.h \
 
-/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o: $(deps_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o)
+/media/fat_partition/audio_irq_handler/audio_module.mod.o: $(deps_/media/fat_partition/audio_irq_handler/audio_module.mod.o)
 
-$(deps_/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o):
+$(deps_/media/fat_partition/audio_irq_handler/audio_module.mod.o):

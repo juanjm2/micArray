@@ -1,2 +1,2 @@
-/home/root/pushbutton_irq_handler/pushbutton_irq_handler.ko
-/home/root/pushbutton_irq_handler/pushbutton_irq_handler.o
+/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.ko
+/media/fat_partition/pushbutton_irq_handler/pushbutton_irq_handler.o

@@ -13,12 +13,15 @@ MODULE_DESCRIPTION("DE1SoC Pushbutton Interrupt Handler");
 void * LW_virtual;         // Lightweight bridge base address
 volatile int *LEDR_ptr;    // virtual address for the LEDR port
 volatile int *KEY_ptr;     // virtual address for the KEY port
-volatile int *AUDIO_ptr;
+volatile int *AUDIO_ptr;   // virtual address for the AUDIO port
+
+extern volatile int buffer_index;
 
 irq_handler_t irq_handler(int irq, void *dev_id, struct pt_regs *regs)
 {
   if (*(KEY_ptr + 3) == 0x1)
   {
+    buffer_index = 0;
     // clear audio-in FIFO  
     *(AUDIO_ptr) = 0x4;
     // turn off clear, and enable audio-in interrupts
@@ -26,6 +29,7 @@ irq_handler_t irq_handler(int irq, void *dev_id, struct pt_regs *regs)
   }
   else if (*(KEY_ptr + 3) == 0x2)
   {
+    buffer_index = 0;
     // clear audio-out FIFO
     *(AUDIO_ptr) = 0x8;
     // turn off clear, and enable audio-out interrupts
@@ -50,6 +54,8 @@ static int __init initialize_pushbutton_handler(void)
   *(KEY_ptr + 3) = 0xF; 
   // Enable IRQ generation for the 4 buttons
   *(KEY_ptr + 2) = 0xF; 
+
+  buffer_index = 0;
 
   // Register the interrupt handler.
   value = request_irq (KEYS_IRQ, (irq_handler_t) irq_handler, IRQF_SHARED, 

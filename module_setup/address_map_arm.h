@@ -35,3 +35,9 @@
 
 #define LW_BRIDGE_SPAN			0x00005000
 
+#define BUF_SIZE 500000			// about 10 seconds of buffer (@ 48K samples/sec)
+#define BUF_THRESHOLD 96		// 75% of 128 word buffer
+
+volatile int buffer_index;
+volatile int left_buffer[BUF_SIZE];
+volatile int right_buffer[BUF_SIZE];

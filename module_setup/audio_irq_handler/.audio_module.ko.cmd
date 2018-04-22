@@ -1,0 +1,1 @@
+cmd_/media/fat_partition/audio_irq_handler/audio_module.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /media/fat_partition/audio_irq_handler/audio_module.ko /media/fat_partition/audio_irq_handler/audio_module.o /media/fat_partition/audio_irq_handler/audio_module.mod.o
