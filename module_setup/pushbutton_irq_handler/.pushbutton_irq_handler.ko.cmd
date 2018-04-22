@@ -1,0 +1,1 @@
+cmd_/home/root/pushbutton_irq_handler/pushbutton_irq_handler.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/root/pushbutton_irq_handler/pushbutton_irq_handler.ko /home/root/pushbutton_irq_handler/pushbutton_irq_handler.o /home/root/pushbutton_irq_handler/pushbutton_irq_handler.mod.o
