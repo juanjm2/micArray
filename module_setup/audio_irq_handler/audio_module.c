@@ -19,13 +19,15 @@ extern volatile int right_buffer[500000];
 
 irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 {
-	printk(KERN_ALERT "%d", buffer_index);
+	int32_t FLAGS;
+	cli_and_save(FLAGS);
 	int fifospace;
 	if (*(AUDIO_ptr) & 0x100)
 	{
 		fifospace = *(AUDIO_ptr + 1);
 		while ((fifospace & 0x000000FF) && (buffer_index < 500000))
 		{
+			printk(KERN_ALERT "%d", buffer_index);
 			left_buffer[buffer_index] = *(AUDIO_ptr + 2);	
 			right_buffer[buffer_index] = *(AUDIO_ptr + 3);		
 			++buffer_index;
@@ -51,6 +53,8 @@ irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 			fifospace = *(AUDIO_ptr + 1);	// read the audio port fifospace register
 		}
 	}
+	restore_flags(FLAGS);
+	sti();	
 	return (irq_handler_t) IRQ_HANDLED;
 }
 
