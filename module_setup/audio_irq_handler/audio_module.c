@@ -14,8 +14,8 @@ volatile int *AUDIO_ptr;
 
 // Externs that share data between modules that include address_map_arm.h
 extern volatile int buffer_index;
-extern volatile int left_buffer[BUF_SIZE];
-extern volatile int right_buffer[BUF_SIZE];
+extern volatile int left_buffer[500000];
+extern volatile int right_buffer[500000];
 
 irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 {
@@ -24,12 +24,12 @@ irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 	if (*(AUDIO_ptr) & 0x100)
 	{
 		fifospace = *(AUDIO_ptr + 1);
-		while ((fifospace & 0x000000FF) && (buffer_index < BUF_SIZE))
+		while ((fifospace & 0x000000FF) && (buffer_index < 500000))
 		{
 			left_buffer[buffer_index] = *(AUDIO_ptr + 2);	
 			right_buffer[buffer_index] = *(AUDIO_ptr + 3);		
 			++buffer_index;
-			if (buffer_index == BUF_SIZE)
+			if (buffer_index == 500000)
 			{
 				*(AUDIO_ptr) = 0x0;
 			}
@@ -39,12 +39,12 @@ irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 	if (*(AUDIO_ptr) & 0x200)
 	{
 		fifospace = *(AUDIO_ptr + 1);
-		while ((fifospace & 0x000000FF) && (buffer_index < BUF_SIZE))
+		while ((fifospace & 0x000000FF) && (buffer_index < 500000))
 		{
 			*(AUDIO_ptr + 2) = left_buffer[buffer_index];
 			*(AUDIO_ptr + 3) = right_buffer[buffer_index];		
 			++buffer_index;
-			if (buffer_index == BUF_SIZE)
+			if (buffer_index == 500000)
 			{
 				*(AUDIO_ptr) = 0x0;
 			}
