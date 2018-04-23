@@ -1,0 +1,27 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio.qsys --block-symbol-file --output-directory=C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/Audio.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio.qsys --synthesis=VERILOG --output-directory=C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/Audio.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Audio: Generating Audio "Audio" for QUARTUS_SYNTH
+Info: Audio: Done "Audio" with 1 modules, 1 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

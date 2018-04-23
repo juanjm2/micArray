@@ -1,0 +1,10 @@
+PLL_Name	clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio|altpll_1uu1:auto_generated|generic_pll1~FRACTIONAL_PLL
+PLLJITTER	39
+PLLSPEmax	100
+PLLSPEmin	-100
+
+PLL_Name	clock_generator:my_clock_gen|altpll:DE_Clock_Generator_Audio|altpll_1uu1:auto_generated|generic_pll1~PLL_OUTPUT_COUNTER
+PLLJITTER	NA
+PLLSPEmax	NA
+PLLSPEmin	NA
+
