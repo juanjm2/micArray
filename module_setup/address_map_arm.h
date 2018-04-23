@@ -39,5 +39,5 @@
 #define BUF_THRESHOLD 96		// 75% of 128 word buffer
 
 volatile int buffer_index;
-volatile int left_buffer[500000];
-volatile int right_buffer[500000];
+volatile int left_buffer[BUF_SIZE];
+volatile int right_buffer[BUF_SIZE];
