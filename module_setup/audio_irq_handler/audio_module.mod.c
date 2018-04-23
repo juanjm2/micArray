@@ -23,6 +23,9 @@ __attribute__((section("__versions"))) = {
 	{ 0xd6b8e852, __VMLINUX_SYMBOL_STR(request_threaded_irq) },
 	{ 0xfb961d14, __VMLINUX_SYMBOL_STR(__arm_ioremap) },
 	{ 0x2e5810c6, __VMLINUX_SYMBOL_STR(__aeabi_unwind_cpp_pr1) },
+	{ 0x51d559d1, __VMLINUX_SYMBOL_STR(_raw_spin_unlock_irqrestore) },
+	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
+	{ 0x598542b2, __VMLINUX_SYMBOL_STR(_raw_spin_lock_irqsave) },
 	{ 0xb1ad28e0, __VMLINUX_SYMBOL_STR(__gnu_mcount_nc) },
 };
 

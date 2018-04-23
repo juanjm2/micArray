@@ -2,12 +2,16 @@
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/interrupt.h>
+#include <linux/spinlock.h>
 #include <asm/io.h>
 #include "../address_map_arm.h"
 #include "../interrupt_ID.h"
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("YAY_GOD");
 MODULE_DESCRIPTION("audio bish");
+
+static DEFINE_SPINLOCK(mLock);
+unsigned long flags;
 
 void * LW_virtual;
 volatile int *AUDIO_ptr;
@@ -19,18 +23,17 @@ extern volatile int right_buffer[500000];
 
 irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 {
-	int32_t FLAGS;
-	cli_and_save(FLAGS);
+	spin_lock_irqsave(&mLock, flags);
 	int fifospace;
 	if (*(AUDIO_ptr) & 0x100)
 	{
 		fifospace = *(AUDIO_ptr + 1);
-		while ((fifospace & 0x000000FF) && (buffer_index < 500000))
+		while (buffer_index < 500000)
 		{
 			printk(KERN_ALERT "%d", buffer_index);
 			left_buffer[buffer_index] = *(AUDIO_ptr + 2);	
 			right_buffer[buffer_index] = *(AUDIO_ptr + 3);		
-			++buffer_index;
+			buffer_index++;
 			if (buffer_index == 500000)
 			{
 				*(AUDIO_ptr) = 0x0;
@@ -53,8 +56,8 @@ irq_handler_t audio_handler(int irq, void *dev_id, struct pt_regs *regs)
 			fifospace = *(AUDIO_ptr + 1);	// read the audio port fifospace register
 		}
 	}
-	restore_flags(FLAGS);
-	sti();	
+	printk(KERN_ALERT "GOT HERE\n");
+	spin_unlock_irqrestore(&mLock, flags);
 	return (irq_handler_t) IRQ_HANDLED;
 }
 
@@ -64,7 +67,6 @@ static int __init initialize(void)
 
 	LW_virtual = ioremap_nocache (LW_BRIDGE_BASE, LW_BRIDGE_SPAN);
 	AUDIO_ptr = LW_virtual + AUDIO_BASE;
-
 	*(AUDIO_ptr) = 0;
 	buffer_index = 0;
 	value = request_irq(AUDIO_IRQ, (irq_handler_t)audio_handler,
