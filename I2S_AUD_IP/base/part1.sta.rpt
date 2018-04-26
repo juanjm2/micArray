@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for part1
-Tue Apr 03 23:15:28 2018
+Wed Apr 25 21:48:53 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 
 
@@ -100,14 +100,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.16        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   5.4%      ;
-;     Processor 3            ;   5.4%      ;
-;     Processor 4            ;   5.3%      ;
+;     Processor 2            ;   3.2%      ;
+;     Processor 3            ;   3.2%      ;
+;     Processor 4            ;   3.1%      ;
 +----------------------------+-------------+
 
 
@@ -116,8 +116,8 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                          ; Status ; Read at                  ;
 +--------------------------------------------------------+--------+--------------------------+
-; Audio/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Tue Apr 03 23:15:18 2018 ;
-; part1.sdc                                              ; OK     ; Tue Apr 03 23:15:18 2018 ;
+; Audio/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Wed Apr 25 21:48:42 2018 ;
+; part1.sdc                                              ; OK     ; Wed Apr 25 21:48:42 2018 ;
 +--------------------------------------------------------+--------+--------------------------+
 
 
@@ -138,7 +138,7 @@ refer to the applicable agreement for further details.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 225.12 MHz ; 225.12 MHz      ; Clock      ;      ;
+; 186.74 MHz ; 186.74 MHz      ; Clock      ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -154,7 +154,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; Clock ; 15.558 ; 0.000              ;
+; Clock ; 14.645 ; 0.000              ;
 +-------+--------+--------------------+
 
 
@@ -163,7 +163,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; Clock ; 0.346 ; 0.000              ;
+; Clock ; 0.314 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -185,7 +185,7 @@ No paths to report.
 ; Clock                                                                                ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------------+-------+---------------+
 ; clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; 0.689 ; 0.000         ;
-; Clock                                                                                ; 8.923 ; 0.000         ;
+; Clock                                                                                ; 8.918 ; 0.000         ;
 ; Clock2                                                                               ; 9.670 ; 0.000         ;
 +--------------------------------------------------------------------------------------+-------+---------------+
 
@@ -197,18 +197,18 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 1
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 54.856 ns
+Worst Case Available Settling Time: 54.660 ns
 
 
 
 
-+--------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 226.96 MHz ; 226.96 MHz      ; Clock      ;      ;
-+------------+-----------------+------------+------+
++-------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary               ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 191.2 MHz ; 191.2 MHz       ; Clock      ;      ;
++-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -217,7 +217,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; Clock ; 15.594 ; 0.000             ;
+; Clock ; 14.770 ; 0.000             ;
 +-------+--------+-------------------+
 
 
@@ -226,7 +226,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; Clock ; 0.325 ; 0.000             ;
+; Clock ; 0.260 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -248,7 +248,7 @@ No paths to report.
 ; Clock                                                                                ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------------+-------+---------------+
 ; clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; 0.689 ; 0.000         ;
-; Clock                                                                                ; 8.955 ; 0.000         ;
+; Clock                                                                                ; 8.950 ; 0.000         ;
 ; Clock2                                                                               ; 9.673 ; 0.000         ;
 +--------------------------------------------------------------------------------------+-------+---------------+
 
@@ -260,7 +260,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 1
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 54.964 ns
+Worst Case Available Settling Time: 54.757 ns
 
 
 
@@ -270,7 +270,7 @@ Worst Case Available Settling Time: 54.964 ns
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; Clock ; 17.202 ; 0.000              ;
+; Clock ; 16.571 ; 0.000              ;
 +-------+--------+--------------------+
 
 
@@ -279,7 +279,7 @@ Worst Case Available Settling Time: 54.964 ns
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; Clock ; 0.178 ; 0.000              ;
+; Clock ; 0.181 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -301,7 +301,7 @@ No paths to report.
 ; Clock                                                                                ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------------+-------+---------------+
 ; clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; 0.689 ; 0.000         ;
-; Clock                                                                                ; 8.506 ; 0.000         ;
+; Clock                                                                                ; 8.505 ; 0.000         ;
 ; Clock2                                                                               ; 9.336 ; 0.000         ;
 +--------------------------------------------------------------------------------------+-------+---------------+
 
@@ -313,7 +313,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 1
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 56.989 ns
+Worst Case Available Settling Time: 56.724 ns
 
 
 
@@ -323,7 +323,7 @@ Worst Case Available Settling Time: 56.989 ns
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; Clock ; 17.476 ; 0.000             ;
+; Clock ; 16.955 ; 0.000             ;
 +-------+--------+-------------------+
 
 
@@ -332,7 +332,7 @@ Worst Case Available Settling Time: 56.989 ns
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; Clock ; 0.167 ; 0.000             ;
+; Clock ; 0.157 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -366,7 +366,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 1
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 57.197 ns
+Worst Case Available Settling Time: 56.978 ns
 
 
 
@@ -376,8 +376,8 @@ Worst Case Available Settling Time: 57.197 ns
 +---------------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                                                                 ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +---------------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                                      ; 15.558 ; 0.167 ; N/A      ; N/A     ; 0.689               ;
-;  Clock                                                                                ; 15.558 ; 0.167 ; N/A      ; N/A     ; 8.457               ;
+; Worst-case Slack                                                                      ; 14.645 ; 0.157 ; N/A      ; N/A     ; 0.689               ;
+;  Clock                                                                                ; 14.645 ; 0.157 ; N/A      ; N/A     ; 8.457               ;
 ;  Clock2                                                                               ; N/A    ; N/A   ; N/A      ; N/A     ; 9.286               ;
 ;  clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; N/A    ; N/A   ; N/A      ; N/A     ; 0.689               ;
 ; Design-wide TNS                                                                       ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
@@ -411,9 +411,9 @@ Worst Case Available Settling Time: 57.197 ns
 ; FPGA_I2C_SDAT ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; AUD_BCLK      ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; AUD_ADCLRCK   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; CLOCK2_50     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[0]        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; CLOCK_50      ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; CLOCK2_50     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; AUD_DACLRCK   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; GPIO_DIN      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +---------------+--------------+-----------------+-----------------+
@@ -484,7 +484,7 @@ Worst Case Available Settling Time: 57.197 ns
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; Clock      ; Clock    ; 1862     ; 0        ; 0        ; 0        ;
+; Clock      ; Clock    ; 1284     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -494,7 +494,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; Clock      ; Clock    ; 1862     ; 0        ; 0        ; 0        ;
+; Clock      ; Clock    ; 1284     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -518,10 +518,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
-; Unconstrained Input Ports       ; 5     ; 5    ;
-; Unconstrained Input Port Paths  ; 86    ; 86   ;
-; Unconstrained Output Ports      ; 7     ; 7    ;
-; Unconstrained Output Port Paths ; 20    ; 20   ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 21    ; 21   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 5     ; 5    ;
 +---------------------------------+-------+------+
 
 
@@ -547,23 +547,20 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; AUD_BCLK    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; AUD_DACLRCK ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; GPIO_DIN    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; KEY[0]      ; Partially constrained                                                                ;
 +-------------+--------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                            ;
-+---------------+---------------------------------------------------------------------------------------+
-; Output Port   ; Comment                                                                               ;
-+---------------+---------------------------------------------------------------------------------------+
-; AUD_DACDAT    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; AUD_XCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; FPGA_I2C_SCLK ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; FPGA_I2C_SDAT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; GPIO_BCLK     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; GPIO_LRCLK    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; GPIO_XCK      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; AUD_DACDAT  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_XCK     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; GPIO_BCLK   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; GPIO_LRCLK  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; GPIO_XCK    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -575,23 +572,20 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; AUD_BCLK    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; AUD_DACLRCK ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; GPIO_DIN    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; KEY[0]      ; Partially constrained                                                                ;
 +-------------+--------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                            ;
-+---------------+---------------------------------------------------------------------------------------+
-; Output Port   ; Comment                                                                               ;
-+---------------+---------------------------------------------------------------------------------------+
-; AUD_DACDAT    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; AUD_XCK       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; FPGA_I2C_SCLK ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; FPGA_I2C_SDAT ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; GPIO_BCLK     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; GPIO_LRCLK    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; GPIO_XCK      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+---------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; AUD_DACDAT  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; AUD_XCK     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; GPIO_BCLK   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; GPIO_LRCLK  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; GPIO_XCK    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------+
@@ -600,7 +594,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
-    Info: Processing started: Tue Apr 03 23:15:14 2018
+    Info: Processing started: Wed Apr 25 21:48:38 2018
 Info: Command: quartus_sta part1 -c part1
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -614,7 +608,7 @@ Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 59 -duty_cycle 50.00 -name {clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk} {clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Warning (332060): Node: AUD_BCLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2s_receive:rx1|data_right[15] is being clocked by AUD_BCLK
+    Info (13166): Register i2s_receive:rx1|data_left[15] is being clocked by AUD_BCLK
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
@@ -622,21 +616,21 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
-Info (332146): Worst-case setup slack is 15.558
+Info (332146): Worst-case setup slack is 14.645
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.558               0.000 Clock 
-Info (332146): Worst-case hold slack is 0.346
+    Info (332119):    14.645               0.000 Clock 
+Info (332146): Worst-case hold slack is 0.314
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.346               0.000 Clock 
+    Info (332119):     0.314               0.000 Clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 0.689
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.689               0.000 clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.923               0.000 Clock 
+    Info (332119):     8.918               0.000 Clock 
     Info (332119):     9.670               0.000 Clock2 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Info (332114): Report Metastability: Found 1 synchronizer chains.
@@ -644,33 +638,33 @@ Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 1
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 54.856 ns
+    Info (332114): Worst Case Available Settling Time: 54.660 ns
     Info (332114): 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: AUD_BCLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2s_receive:rx1|data_right[15] is being clocked by AUD_BCLK
+    Info (13166): Register i2s_receive:rx1|data_left[15] is being clocked by AUD_BCLK
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 15.594
+Info (332146): Worst-case setup slack is 14.770
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.594               0.000 Clock 
-Info (332146): Worst-case hold slack is 0.325
+    Info (332119):    14.770               0.000 Clock 
+Info (332146): Worst-case hold slack is 0.260
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.325               0.000 Clock 
+    Info (332119):     0.260               0.000 Clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 0.689
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.689               0.000 clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.955               0.000 Clock 
+    Info (332119):     8.950               0.000 Clock 
     Info (332119):     9.673               0.000 Clock2 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Info (332114): Report Metastability: Found 1 synchronizer chains.
@@ -678,33 +672,33 @@ Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 1
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 54.964 ns
+    Info (332114): Worst Case Available Settling Time: 54.757 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: AUD_BCLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2s_receive:rx1|data_right[15] is being clocked by AUD_BCLK
+    Info (13166): Register i2s_receive:rx1|data_left[15] is being clocked by AUD_BCLK
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 17.202
+Info (332146): Worst-case setup slack is 16.571
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    17.202               0.000 Clock 
-Info (332146): Worst-case hold slack is 0.178
+    Info (332119):    16.571               0.000 Clock 
+Info (332146): Worst-case hold slack is 0.181
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.178               0.000 Clock 
+    Info (332119):     0.181               0.000 Clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 0.689
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.689               0.000 clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.506               0.000 Clock 
+    Info (332119):     8.505               0.000 Clock 
     Info (332119):     9.336               0.000 Clock2 
 Warning (18330): Ignoring Synchronizer Identification setting Off, and using Auto instead.
 Info (332114): Report Metastability: Found 1 synchronizer chains.
@@ -712,24 +706,24 @@ Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 1
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 56.989 ns
+    Info (332114): Worst Case Available Settling Time: 56.724 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 0C Model
 Warning (332060): Node: AUD_BCLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2s_receive:rx1|data_right[15] is being clocked by AUD_BCLK
+    Info (13166): Register i2s_receive:rx1|data_left[15] is being clocked by AUD_BCLK
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
     Info (332098): Cell: clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 17.476
+Info (332146): Worst-case setup slack is 16.955
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    17.476               0.000 Clock 
-Info (332146): Worst-case hold slack is 0.167
+    Info (332119):    16.955               0.000 Clock 
+Info (332146): Worst-case hold slack is 0.157
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.167               0.000 Clock 
+    Info (332119):     0.157               0.000 Clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 0.689
@@ -744,14 +738,14 @@ Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 1
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 57.197 ns
+    Info (332114): Worst Case Available Settling Time: 56.978 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 1124 megabytes
-    Info: Processing ended: Tue Apr 03 23:15:28 2018
+    Info: Peak virtual memory: 1128 megabytes
+    Info: Processing ended: Wed Apr 25 21:48:52 2018
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:12
 
 

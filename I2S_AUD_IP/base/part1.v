@@ -63,15 +63,15 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	);
 	
 
-	audio_and_video_config cfg(
-		// Inputs
-		CLOCK_50,
-		reset,
-
-		// Bidirectionals
-		FPGA_I2C_SDAT,
-		FPGA_I2C_SCLK
-	);
+//	audio_and_video_config cfg(
+//		// Inputs
+//		CLOCK_50,
+//		reset,
+//
+//		// Bidirectionals
+//		FPGA_I2C_SDAT,
+//		FPGA_I2C_SCLK
+//	);
 	
 
 	i2s_receive rx1(

@@ -3,11 +3,11 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'Clock'
-Slack : 15.558
+Slack : 14.645
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'Clock'
-Slack : 0.346
+Slack : 0.314
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -15,7 +15,7 @@ Slack : 0.689
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Clock'
-Slack : 8.923
+Slack : 8.918
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Clock2'
@@ -23,11 +23,11 @@ Slack : 9.670
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'Clock'
-Slack : 15.594
+Slack : 14.770
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'Clock'
-Slack : 0.325
+Slack : 0.260
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -35,7 +35,7 @@ Slack : 0.689
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Clock'
-Slack : 8.955
+Slack : 8.950
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Clock2'
@@ -43,11 +43,11 @@ Slack : 9.673
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'Clock'
-Slack : 17.202
+Slack : 16.571
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'Clock'
-Slack : 0.178
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -55,7 +55,7 @@ Slack : 0.689
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Clock'
-Slack : 8.506
+Slack : 8.505
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Clock2'
@@ -63,11 +63,11 @@ Slack : 9.336
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'Clock'
-Slack : 17.476
+Slack : 16.955
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'Clock'
-Slack : 0.167
+Slack : 0.157
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock_gen|audio_pll_0|audio_pll|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'

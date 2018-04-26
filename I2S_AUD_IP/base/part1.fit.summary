@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Apr 03 23:14:49 2018
+Fitter Status : Successful - Wed Apr 25 21:48:14 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 Revision Name : part1
 Top-level Entity Name : part1
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 159 / 32,070 ( < 1 % )
-Total registers : 219
+Logic utilization (in ALMs) : 90 / 32,070 ( < 1 % )
+Total registers : 157
 Total pins : 15 / 457 ( 3 % )
 Total virtual pins : 0
 Total block memory bits : 4,096 / 4,065,280 ( < 1 % )

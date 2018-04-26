@@ -1,5 +1,5 @@
 Assembler report for part1
-Tue Apr 03 23:15:12 2018
+Wed Apr 25 21:48:37 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/part1.sof
+  5. Assembler Device Options: C:/Users/juanjm2/Desktop/juanjm2_github/micArray/I2S_AUD_IP/base/part1.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Apr 03 23:15:12 2018 ;
+; Assembler Status      ; Successful - Wed Apr 25 21:48:37 2018 ;
 ; Revision Name         ; part1                                 ;
 ; Top-level Entity Name ; part1                                 ;
 ; Family                ; Cyclone V                             ;
@@ -52,23 +52,23 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 
 
-+---------------------------------------------------------------+
-; Assembler Generated Files                                     ;
-+---------------------------------------------------------------+
-; File Name                                                     ;
-+---------------------------------------------------------------+
-; C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/part1.sof ;
-+---------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Assembler Generated Files                                                  ;
++----------------------------------------------------------------------------+
+; File Name                                                                  ;
++----------------------------------------------------------------------------+
+; C:/Users/juanjm2/Desktop/juanjm2_github/micArray/I2S_AUD_IP/base/part1.sof ;
++----------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/part1.sof ;
-+----------------+------------------------------------------------------------------------+
-; Option         ; Setting                                                                ;
-+----------------+------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00BE9AB1                                                             ;
-; Checksum       ; 0x00BE9AB1                                                             ;
-+----------------+------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/juanjm2/Desktop/juanjm2_github/micArray/I2S_AUD_IP/base/part1.sof ;
++----------------+-------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                             ;
++----------------+-------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00BC6114                                                                          ;
+; Checksum       ; 0x00BC6114                                                                          ;
++----------------+-------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -77,14 +77,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
-    Info: Processing started: Tue Apr 03 23:14:53 2018
+    Info: Processing started: Wed Apr 25 21:48:19 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off part1 -c part1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 758 megabytes
-    Info: Processing ended: Tue Apr 03 23:15:12 2018
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 762 megabytes
+    Info: Processing ended: Wed Apr 25 21:48:37 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:13
 
 
