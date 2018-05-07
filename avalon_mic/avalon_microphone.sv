@@ -47,7 +47,6 @@ altera_up_clock_edge detect(
 logic [31:0] linux_data;
 logic [15:0] mic_l, mic_r;
 //hps to fpga
-logic control_read;
 
 always_comb
 	begin
@@ -79,10 +78,6 @@ begin
 		end
 	end
 end
-
-assign codec_control = control_read;
-assign lrout = lr_read;
-
 
 i2s_master m1(
 	.sck(sck),
