@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2018.04.27.01:16:05"
+ outputDirectory="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA5F31C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="audio_and_video_config_0_clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port
+       name="audio_and_video_config_0_clk_clk"
+       direction="input"
+       role="clk"
+       width="1" />
+  </interface>
+  <interface
+     name="audio_and_video_config_0_external_interface"
+     kind="conduit"
+     start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port
+       name="audio_and_video_config_0_external_interface_SDAT"
+       direction="bidir"
+       role="SDAT"
+       width="1" />
+   <port
+       name="audio_and_video_config_0_external_interface_SCLK"
+       direction="output"
+       role="SCLK"
+       width="1" />
+  </interface>
+  <interface name="audio_and_video_config_0_reset" kind="reset" start="0">
+   <property name="associatedClock" value="audio_and_video_config_0_clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port
+       name="audio_and_video_config_0_reset_reset"
+       direction="input"
+       role="reset"
+       width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="Audio_config:1.0:AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_CLOCK_DOMAIN=-1,AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_CLOCK_RATE=-1,AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1524809765,AUTO_UNIQUE_ID=(altera_up_avalon_audio_and_video_config:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Microphone to ADC,bit_length=16,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC)"
+   instancePathKey="Audio_config"
+   kind="Audio_config"
+   version="1.0"
+   name="Audio_config">
+  <parameter name="AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_AUDIO_AND_VIDEO_CONFIG_0_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1524809765" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/Audio_config.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_serial_bus_controller.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_slow_clock_generator.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_dc2.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_d5m.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_lcm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ltm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/Audio_config_audio_and_video_config_0.v"
+       type="VERILOG" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/altera_up_avalon_audio_and_video_config_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_serial_bus_controller.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_slow_clock_generator.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_dc2.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_d5m.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_lcm.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ltm.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de1_soc.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2_115.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_audio.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7180.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7181.v" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="Audio_config">queue size: 0 starting:Audio_config "Audio_config"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="Audio_config"><![CDATA["<b>Audio_config</b>" reuses <b>altera_up_avalon_audio_and_video_config</b> "<b>submodules/Audio_config_audio_and_video_config_0</b>"]]></message>
+   <message level="Debug" culprit="Audio_config">queue size: 0 starting:altera_up_avalon_audio_and_video_config "submodules/Audio_config_audio_and_video_config_0"</message>
+   <message level="Info" culprit="audio_and_video_config_0">Starting Generation of Audio and Video Config</message>
+   <message level="Info" culprit="audio_and_video_config_0"><![CDATA["<b>Audio_config</b>" instantiated <b>altera_up_avalon_audio_and_video_config</b> "<b>audio_and_video_config_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_audio_and_video_config:15.0:AUTO_CLK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Microphone to ADC,bit_length=16,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC"
+   instancePathKey="Audio_config:.:audio_and_video_config_0"
+   kind="altera_up_avalon_audio_and_video_config"
+   version="15.0"
+   name="Audio_config_audio_and_video_config_0">
+  <parameter name="data_format" value="Left Justified" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="bosr" value="250fs/256fs" />
+  <parameter name="audio_in" value="Microphone to ADC" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="d5m_resolution" value="2592 x 1944" />
+  <parameter name="video_format" value="NTSC" />
+  <parameter name="dac_enable" value="true" />
+  <parameter name="eai" value="true" />
+  <parameter name="line_in_bypass" value="false" />
+  <parameter name="bit_length" value="16" />
+  <parameter name="sampling_rate" value="48 kHz" />
+  <parameter name="sr_register" value="0" />
+  <parameter name="mic_bypass" value="false" />
+  <parameter name="exposure" value="false" />
+  <parameter name="mic_attenuation" value="-6dB" />
+  <parameter name="device" value="On-Board Peripherals" />
+  <parameter name="board" value="DE1-SoC" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_serial_bus_controller.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_slow_clock_generator.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_dc2.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_d5m.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_lcm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ltm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio_config/synthesis/submodules/Audio_config_audio_and_video_config_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/altera_up_avalon_audio_and_video_config_hw.tcl" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_serial_bus_controller.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_slow_clock_generator.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_dc2.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_d5m.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_lcm.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ltm.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de1_soc.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2_115.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_audio.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7180.v" />
+   <file
+       path="C:/altera/15.0/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7181.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Audio_config" as="audio_and_video_config_0" />
+  <messages>
+   <message level="Debug" culprit="Audio_config">queue size: 0 starting:altera_up_avalon_audio_and_video_config "submodules/Audio_config_audio_and_video_config_0"</message>
+   <message level="Info" culprit="audio_and_video_config_0">Starting Generation of Audio and Video Config</message>
+   <message level="Info" culprit="audio_and_video_config_0"><![CDATA["<b>Audio_config</b>" instantiated <b>altera_up_avalon_audio_and_video_config</b> "<b>audio_and_video_config_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

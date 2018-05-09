@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $${FILENAME}
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element audio_and_video_config_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CSEMA5F31C6" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="6" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="part1.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="audio_and_video_config_0_clk"
+   internal="audio_and_video_config_0.clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="audio_and_video_config_0_external_interface"
+   internal="audio_and_video_config_0.external_interface"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="audio_and_video_config_0_reset"
+   internal="audio_and_video_config_0.reset"
+   type="reset"
+   dir="end" />
+ <module
+   name="audio_and_video_config_0"
+   kind="altera_up_avalon_audio_and_video_config"
+   version="15.0"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="audio_in" value="Microphone to ADC" />
+  <parameter name="bit_length" value="16" />
+  <parameter name="board" value="DE1-SoC" />
+  <parameter name="d5m_resolution" value="2592 x 1944" />
+  <parameter name="dac_enable" value="true" />
+  <parameter name="data_format" value="Left Justified" />
+  <parameter name="device">On-Board Peripherals</parameter>
+  <parameter name="eai" value="true" />
+  <parameter name="exposure" value="false" />
+  <parameter name="line_in_bypass" value="false" />
+  <parameter name="mic_attenuation" value="-6dB" />
+  <parameter name="mic_bypass" value="false" />
+  <parameter name="sampling_rate" value="48 kHz" />
+  <parameter name="video_format" value="NTSC" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

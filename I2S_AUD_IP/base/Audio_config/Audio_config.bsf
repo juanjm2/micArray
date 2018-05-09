@@ -1,0 +1,79 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 624 200)
+	(text "Audio_config" (rect 274 -1 327 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 184 20 196)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "audio_and_video_config_0_clk_clk" (rect 0 0 140 12)(font "Arial" (font_size 8)))
+		(text "audio_and_video_config_0_clk_clk" (rect 4 61 196 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 288 72)(line_width 1))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "audio_and_video_config_0_reset_reset" (rect 0 0 159 12)(font "Arial" (font_size 8)))
+		(text "audio_and_video_config_0_reset_reset" (rect 4 157 220 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 288 168)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(output)
+		(text "audio_and_video_config_0_external_interface_SCLK" (rect 0 0 215 12)(font "Arial" (font_size 8)))
+		(text "audio_and_video_config_0_external_interface_SCLK" (rect 4 117 292 128)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 288 128)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(bidir)
+		(text "audio_and_video_config_0_external_interface_SDAT" (rect 0 0 217 12)(font "Arial" (font_size 8)))
+		(text "audio_and_video_config_0_external_interface_SDAT" (rect 4 101 292 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 288 112)(line_width 1))
+	)
+	(drawing
+		(text "audio_and_video_config_0_clk" (rect 109 43 386 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 293 67 604 144)(font "Arial" (color 0 0 0)))
+		(text "audio_and_video_config_0_external_interface" (rect 20 83 298 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "SDAT" (rect 293 107 610 224)(font "Arial" (color 0 0 0)))
+		(text "SCLK" (rect 293 123 610 256)(font "Arial" (color 0 0 0)))
+		(text "audio_and_video_config_0_reset" (rect 95 139 370 291)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset" (rect 293 163 616 336)(font "Arial" (color 0 0 0)))
+		(text " Audio_config " (rect 564 184 1212 378)(font "Arial" ))
+		(line (pt 288 32)(pt 336 32)(line_width 1))
+		(line (pt 336 32)(pt 336 184)(line_width 1))
+		(line (pt 288 184)(pt 336 184)(line_width 1))
+		(line (pt 288 32)(pt 288 184)(line_width 1))
+		(line (pt 289 52)(pt 289 76)(line_width 1))
+		(line (pt 290 52)(pt 290 76)(line_width 1))
+		(line (pt 289 92)(pt 289 132)(line_width 1))
+		(line (pt 290 92)(pt 290 132)(line_width 1))
+		(line (pt 289 148)(pt 289 172)(line_width 1))
+		(line (pt 290 148)(pt 290 172)(line_width 1))
+		(line (pt 0 0)(pt 624 0)(line_width 1))
+		(line (pt 624 0)(pt 624 200)(line_width 1))
+		(line (pt 0 200)(pt 624 200)(line_width 1))
+		(line (pt 0 0)(pt 0 200)(line_width 1))
+	)
+)

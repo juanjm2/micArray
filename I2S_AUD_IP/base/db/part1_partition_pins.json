@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "FPGA_I2C_SCLK",
+					"strict" : false
+				},
+				{
 					"name" : "AUD_DACDAT",
 					"strict" : false
 				},
@@ -16,11 +20,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "FPGA_I2C_SDAT",
+					"strict" : false
+				},
+				{
 					"name" : "AUD_BCLK",
 					"strict" : false
 				},
 				{
 					"name" : "AUD_ADCLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_DIN",
 					"strict" : false
 				},
 				{
@@ -33,10 +45,6 @@
 				},
 				{
 					"name" : "AUD_DACLRCK",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_DIN",
 					"strict" : false
 				}
 			]

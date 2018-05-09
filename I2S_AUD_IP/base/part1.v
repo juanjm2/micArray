@@ -62,25 +62,71 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 		.audio_pll_0_ref_reset_source_reset()
 	);
 	
-
-//	audio_and_video_config cfg(
-//		// Inputs
-//		CLOCK_50,
-//		reset,
+	
+//module avalon_microphone (
+//	// Avalon Clock Input
+//	input logic CLK,
+//	
+//	// Avalon Reset Input
+//	input logic RESET,
+//	
+//	// Avalon-MM Slave Signals
+//	input  logic AVL_READ,					// Avalon-MM Read
+//	input  logic AVL_WRITE,					// Avalon-MM Write
+//	input  logic AVL_CS,						// Avalon-MM Chip Select
+//	input  logic AVL_ADDR,					// Avalon-MM Address
+//	input  logic [31:0] AVL_WRITEDATA,	// Avalon-MM Write Data
+//	output logic [31:0] AVL_READDATA,	// Avalon-MM Read Data
+//	
+//	// Clock signals
+//	input logic AUD_BCLK,
+//	input logic AUD_ADCLRCK,
 //
-//		// Bidirectionals
-//		FPGA_I2C_SDAT,
-//		FPGA_I2C_SCLK
-//	);
+//	// Data lines from mics
+//	input logic GPIO_DIN1,
+//
+//	// Output to codec
+//	output logic [31:0] codec_stream,
+//	output logic interrupt
+//);
+
+
+avalon_microphone inter(
+	.CLK(CLOCK_50),
+	.RESET(1'b0),
+	.AVL_READ(),
+	.AVL_WRITE(),
+	.AVL_CS(),
+	.AVL_ADDR(),
+	.AVL_WRITEDATA(),
+	.AVL_READDATA(),
+	.AUD_BCLK(AUD_BCLK),
+	.AUD_ADCLRCK(AUD_ADCLRCK),
+	.GPIO_DIN1(GPIO_DIN),
+	.codec_stream(inter_data),
+	.interrupt()
+);
+	
+wire [31:0] inter_data;
+	
+	audio_and_video_config cfg(
+		// Inputs
+		CLOCK_50,
+		reset,
+
+		// Bidirectionals
+		FPGA_I2C_SDAT,
+		FPGA_I2C_SCLK
+	);
 	
 
-	i2s_receive rx1(
-		.sck(AUD_BCLK),
-		.ws(AUD_ADCLRCK),
-		.sd(GPIO_DIN),
-		.data_left(mic_L),
-		.data_right(mic_R)
-	);
+//	i2s_receive rx1(
+//		.sck(AUD_BCLK),
+//		.ws(AUD_ADCLRCK),
+//		.sd(GPIO_DIN),
+//		.data_left(mic_L),
+//		.data_right(mic_R)
+//	);
 	
 //	module Audio (
 //		input  wire  audio_0_external_interface_ADCDAT,  // audio_0_external_interface.ADCDAT
@@ -100,8 +146,8 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 		.audio_0_external_interface_DACLRCK(AUD_DACLRCK),
 		.clk_clk(CLOCK_50),
 		.reset_reset_n(~reset),
-		.left_data(mic_L),
-		.right_data(mic_R)
+		.left_data(inter_data[31:16]),
+		.right_data(inter_data[15:0])
 	);
 	
 //	audio_codec codec(

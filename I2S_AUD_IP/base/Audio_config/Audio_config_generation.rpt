@@ -1,0 +1,31 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio_config.qsys --block-symbol-file --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio_config --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/Audio_config.qsys
+Progress: Reading input file
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 15.0]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: Audio_config.audio_and_video_config_0: audio_and_video_config_0.avalon_av_config_slave must be connected to an Avalon-MM master
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio_config.qsys --synthesis=VERILOG --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio_config\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/Audio_config.qsys
+Progress: Reading input file
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 15.0]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: Audio_config.audio_and_video_config_0: audio_and_video_config_0.avalon_av_config_slave must be connected to an Avalon-MM master
+Info: Audio_config: Generating Audio_config "Audio_config" for QUARTUS_SYNTH
+Info: audio_and_video_config_0: Starting Generation of Audio and Video Config
+Info: audio_and_video_config_0: "Audio_config" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config_0"
+Info: Audio_config: Done "Audio_config" with 2 modules, 14 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

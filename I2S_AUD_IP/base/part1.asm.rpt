@@ -1,6 +1,6 @@
 Assembler report for part1
-Wed Apr 25 21:48:37 2018
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
+Wed May 09 07:38:57 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -9,9 +9,10 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/juanjm2/Desktop/juanjm2_github/micArray/I2S_AUD_IP/base/part1.sof
-  6. Assembler Messages
+  4. Assembler Encrypted IP Cores Summary
+  5. Assembler Generated Files
+  6. Assembler Device Options: H:/juanjm2_git/micArray/I2S_AUD_IP/base/part1.sof
+  7. Assembler Messages
 
 
 
@@ -37,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Apr 25 21:48:37 2018 ;
+; Assembler Status      ; Successful - Wed May 09 07:38:57 2018 ;
 ; Revision Name         ; part1                                 ;
 ; Top-level Entity Name ; part1                                 ;
 ; Family                ; Cyclone V                             ;
@@ -52,23 +53,33 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 
 
-+----------------------------------------------------------------------------+
-; Assembler Generated Files                                                  ;
-+----------------------------------------------------------------------------+
-; File Name                                                                  ;
-+----------------------------------------------------------------------------+
-; C:/Users/juanjm2/Desktop/juanjm2_github/micArray/I2S_AUD_IP/base/part1.sof ;
-+----------------------------------------------------------------------------+
++------------------------------------------------+
+; Assembler Encrypted IP Cores Summary           ;
++--------+------------------------+--------------+
+; Vendor ; IP Core Name           ; License Type ;
++--------+------------------------+--------------+
+; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
+; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
++--------+------------------------+--------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/juanjm2/Desktop/juanjm2_github/micArray/I2S_AUD_IP/base/part1.sof ;
-+----------------+-------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                             ;
-+----------------+-------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00BC6114                                                                          ;
-; Checksum       ; 0x00BC6114                                                                          ;
-+----------------+-------------------------------------------------------------------------------------+
++---------------------------------------------------+
+; Assembler Generated Files                         ;
++---------------------------------------------------+
+; File Name                                         ;
++---------------------------------------------------+
+; H:/juanjm2_git/micArray/I2S_AUD_IP/base/part1.sof ;
++---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Assembler Device Options: H:/juanjm2_git/micArray/I2S_AUD_IP/base/part1.sof ;
++----------------+------------------------------------------------------------+
+; Option         ; Setting                                                    ;
++----------------+------------------------------------------------------------+
+; JTAG usercode  ; 0x069B8E77                                                 ;
+; Checksum       ; 0x069B8E77                                                 ;
++----------------+------------------------------------------------------------+
 
 
 +--------------------+
@@ -76,15 +87,15 @@ refer to the applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Standard Edition
-    Info: Processing started: Wed Apr 25 21:48:19 2018
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Wed May 09 07:38:44 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off part1 -c part1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 762 megabytes
-    Info: Processing ended: Wed Apr 25 21:48:37 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 814 megabytes
+    Info: Processing ended: Wed May 09 07:38:57 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:11
 
 

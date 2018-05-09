@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at avalon_microphone.sv(62): always construct contains both blocking and non-blocking assignments File: H:/juanjm2_git/micArray/I2S_AUD_IP/base/avalon_microphone.sv Line: 62
