@@ -1,0 +1,1 @@
+set_instance_assignment -name PLL_COMPENSATION_MODE NORMAL -to "*soc_system_Primary_PLL*|altera_pll:altera_pll_i*|*"

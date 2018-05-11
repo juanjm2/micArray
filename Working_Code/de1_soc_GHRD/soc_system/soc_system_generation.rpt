@@ -1,0 +1,104 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Terasic\Demonstrations\SOC_FPGA\de1_soc_GHRD\soc_system.qsys --synthesis=VERILOG --output-directory=C:\Terasic\Demonstrations\SOC_FPGA\de1_soc_GHRD\soc_system\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading de1_soc_GHRD/soc_system.qsys
+Progress: Reading input file
+Progress: Adding Primary_PLL [altera_pll 17.1]
+Progress: Parameterizing module Primary_PLL
+Progress: Adding Pushbuttons [altera_avalon_pio 17.1]
+Progress: Parameterizing module Pushbuttons
+Progress: Adding Secondary_PLL [altera_pll 17.1]
+Progress: Parameterizing module Secondary_PLL
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 17.1]
+Progress: Parameterizing module hps_0
+Progress: Adding mic_system_0 [mic_system 1.0]
+Progress: Parameterizing module mic_system_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.Primary_PLL: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: soc_system.Primary_PLL: Able to implement PLL with user settings
+Info: soc_system.Secondary_PLL: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: soc_system.Secondary_PLL: Able to implement PLL with user settings
+Warning: soc_system.hps_0: Setting the slave port width of interface f2h_sdram0 to 32 results in bandwidth under-utilization.  Altera recommends you set the interface data width to 64-bit or greater.
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: soc_system.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Warning: soc_system.Secondary_PLL.outclk0/mic_system_0.CLK: mic_system_0.CLK requires 50000000Hz, but source has frequency of 48000000Hz
+Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
+Info: Interconnect is inserted between master mic_system_0.mic_master and slave hps_0.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 30 bit wide.
+Info: Interconnect is inserted between master mic_system_0.mic_master and slave hps_0.f2h_sdram0_data because the master has burstcount signal 3 bit wide, but the slave is 8 bit wide.
+Info: Interconnect is inserted between master mic_system_0.mic_master and slave hps_0.f2h_sdram0_data because they have different clock source.
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
+Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
+Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
+Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
+Info: Primary_PLL: "soc_system" instantiated altera_pll "Primary_PLL"
+Info: Pushbuttons: Starting RTL generation for module 'soc_system_Pushbuttons'
+Info: Pushbuttons:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_Pushbuttons --dir=C:/Users/JJ/AppData/Local/Temp/alt7662_5703101193818088582.dir/0003_Pushbuttons_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7662_5703101193818088582.dir/0003_Pushbuttons_gen//soc_system_Pushbuttons_component_configuration.pl  --do_build_sim=0  ]
+Info: Pushbuttons: Done RTL generation for module 'soc_system_Pushbuttons'
+Info: Pushbuttons: "soc_system" instantiated altera_avalon_pio "Pushbuttons"
+Info: Secondary_PLL: "soc_system" instantiated altera_pll "Secondary_PLL"
+Info: hps_0: "Running  for module: hps_0"
+Warning: hps_0: Setting the slave port width of interface f2h_sdram0 to 32 results in bandwidth under-utilization.  Altera recommends you set the interface data width to 64-bit or greater.
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
+Info: mic_system_0: "soc_system" instantiated mic_system "mic_system_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_mapper_001: "soc_system" instantiated altera_irq_mapper "irq_mapper_001"
+Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: mic_system_0_mic_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "mic_system_0_mic_slave_translator"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: mic_system_0_mic_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "mic_system_0_mic_slave_agent"
+Info: mic_system_0_mic_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "mic_system_0_mic_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: mic_system_0_mic_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "mic_system_0_mic_slave_burst_adapter"
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: mic_system_0_mic_master_translator: "mm_interconnect_1" instantiated altera_merlin_master_translator "mic_system_0_mic_master_translator"
+Info: mic_system_0_mic_master_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "mic_system_0_mic_master_agent"
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: soc_system: Done "soc_system" with 37 modules, 103 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

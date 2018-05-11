@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2018.05.09.10:15:24"
+ outputDirectory="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA5F31C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="audio_0_external_interface" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port
+       name="audio_0_external_interface_ADCDAT"
+       direction="input"
+       role="ADCDAT"
+       width="1" />
+   <port
+       name="audio_0_external_interface_ADCLRCK"
+       direction="input"
+       role="ADCLRCK"
+       width="1" />
+   <port
+       name="audio_0_external_interface_BCLK"
+       direction="input"
+       role="BCLK"
+       width="1" />
+   <port
+       name="audio_0_external_interface_DACDAT"
+       direction="output"
+       role="DACDAT"
+       width="1" />
+   <port
+       name="audio_0_external_interface_DACLRCK"
+       direction="input"
+       role="DACLRCK"
+       width="1" />
+  </interface>
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="Audio:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1525878924,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Memory Mapped,dw=16)(clock_source:17.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(clock:17.1:)(reset:17.1:)"
+   instancePathKey="Audio"
+   kind="Audio"
+   version="1.0"
+   name="Audio">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1525878924" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/Audio.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_audio_bit_counter.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_audio_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_clock_edge.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/Audio_audio_0.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="Audio">queue size: 0 starting:Audio "Audio"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>2</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>3</b> modules, <b>4</b> connections]]></message>
+   <message level="Debug" culprit="Audio"><![CDATA["<b>Audio</b>" reuses <b>altera_up_avalon_audio</b> "<b>submodules/Audio_audio_0</b>"]]></message>
+   <message level="Debug" culprit="Audio"><![CDATA["<b>Audio</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="Audio">queue size: 1 starting:altera_up_avalon_audio "submodules/Audio_audio_0"</message>
+   <message level="Info" culprit="audio_0">Starting Generation of Audio Controller</message>
+   <message level="Info" culprit="audio_0"><![CDATA["<b>Audio</b>" instantiated <b>altera_up_avalon_audio</b> "<b>audio_0</b>"]]></message>
+   <message level="Debug" culprit="Audio">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>Audio</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Memory Mapped,dw=16"
+   instancePathKey="Audio:.:audio_0"
+   kind="altera_up_avalon_audio"
+   version="17.1"
+   name="Audio_audio_0">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="dw" value="16" />
+  <parameter name="avalon_bus_type" value="Memory Mapped" />
+  <parameter name="audio_in" value="true" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="audio_out" value="true" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_audio_bit_counter.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_audio_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_clock_edge.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/Audio_audio_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Audio" as="audio_0" />
+  <messages>
+   <message level="Debug" culprit="Audio">queue size: 1 starting:altera_up_avalon_audio "submodules/Audio_audio_0"</message>
+   <message level="Info" culprit="audio_0">Starting Generation of Audio Controller</message>
+   <message level="Info" culprit="audio_0"><![CDATA["<b>Audio</b>" instantiated <b>altera_up_avalon_audio</b> "<b>audio_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_reset_controller:17.1:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
+   instancePathKey="Audio:.:rst_controller"
+   kind="altera_reset_controller"
+   version="17.1"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/DE1-SoC_Computer/verilog/Audio/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="Audio" as="rst_controller" />
+  <messages>
+   <message level="Debug" culprit="Audio">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>Audio</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

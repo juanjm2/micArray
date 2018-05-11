@@ -1,0 +1,64 @@
+
+State Machine - |ghrd_top|audio_and_video_config:cfg|Altera_UP_I2C:I2C_Controller|s_i2c_transceiver
+Name s_i2c_transceiver.I2C_STATE_6_COMPLETE s_i2c_transceiver.I2C_STATE_5_STOP_BIT s_i2c_transceiver.I2C_STATE_4_TRANSFER_ACK s_i2c_transceiver.I2C_STATE_3_TRANSFER_BYTE s_i2c_transceiver.I2C_STATE_2_START_BIT s_i2c_transceiver.I2C_STATE_1_PRE_START s_i2c_transceiver.I2C_STATE_0_IDLE 
+s_i2c_transceiver.I2C_STATE_0_IDLE 0 0 0 0 0 0 0 
+s_i2c_transceiver.I2C_STATE_1_PRE_START 0 0 0 0 0 1 1 
+s_i2c_transceiver.I2C_STATE_2_START_BIT 0 0 0 0 1 0 1 
+s_i2c_transceiver.I2C_STATE_3_TRANSFER_BYTE 0 0 0 1 0 0 1 
+s_i2c_transceiver.I2C_STATE_4_TRANSFER_ACK 0 0 1 0 0 0 1 
+s_i2c_transceiver.I2C_STATE_5_STOP_BIT 0 1 0 0 0 0 1 
+s_i2c_transceiver.I2C_STATE_6_COMPLETE 1 0 0 0 0 0 1 
+
+State Machine - |ghrd_top|audio_and_video_config:cfg|Altera_UP_I2C_AV_Auto_Initialize:Auto_Initialize|s_i2c_auto_init
+Name s_i2c_auto_init.AUTO_STATE_7_DONE s_i2c_auto_init.AUTO_STATE_6_INCREASE_COUNTER s_i2c_auto_init.AUTO_STATE_5_SEND_STOP_BIT s_i2c_auto_init.AUTO_STATE_4_WAIT s_i2c_auto_init.AUTO_STATE_3_TRANSFER_BYTE_2 s_i2c_auto_init.AUTO_STATE_2_TRANSFER_BYTE_1 s_i2c_auto_init.AUTO_STATE_1_SEND_START_BIT s_i2c_auto_init.AUTO_STATE_0_CHECK_STATUS 
+s_i2c_auto_init.AUTO_STATE_0_CHECK_STATUS 0 0 0 0 0 0 0 0 
+s_i2c_auto_init.AUTO_STATE_1_SEND_START_BIT 0 0 0 0 0 0 1 1 
+s_i2c_auto_init.AUTO_STATE_2_TRANSFER_BYTE_1 0 0 0 0 0 1 0 1 
+s_i2c_auto_init.AUTO_STATE_3_TRANSFER_BYTE_2 0 0 0 0 1 0 0 1 
+s_i2c_auto_init.AUTO_STATE_4_WAIT 0 0 0 1 0 0 0 1 
+s_i2c_auto_init.AUTO_STATE_5_SEND_STOP_BIT 0 0 1 0 0 0 0 1 
+s_i2c_auto_init.AUTO_STATE_6_INCREASE_COUNTER 0 1 0 0 0 0 0 1 
+s_i2c_auto_init.AUTO_STATE_7_DONE 1 0 0 0 0 0 0 1 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pushbuttons_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:mic_system_0_mic_slave_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ghrd_top|soc_system:u0|avalon_microphone_system:mic_system_0|mic_dma:dma_yo|state
+Name state.FIN state.WAITDATA4 state.WAITDATA3 state.WAITDATA2 state.LOADDATA state.WRITEDATA state.WAITDATA state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 
+state.WAITDATA 0 0 0 0 0 0 1 1 
+state.WRITEDATA 0 0 0 0 0 1 0 1 
+state.LOADDATA 0 0 0 0 1 0 0 1 
+state.WAITDATA2 0 0 0 1 0 0 0 1 
+state.WAITDATA3 0 0 1 0 0 0 0 1 
+state.WAITDATA4 0 1 0 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 0 1 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_Secondary_PLL:secondary_pll|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
+Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 
+dps_current_state.PHASE_DONE_HIGH 0 0 0 0 0 0 
+dps_current_state.PHASE_DONE_LOW_1 0 0 0 0 1 1 
+dps_current_state.PHASE_DONE_LOW_2 0 0 0 1 0 1 
+dps_current_state.PHASE_DONE_LOW_3 0 0 1 0 0 1 
+dps_current_state.PHASE_DONE_LOW_4 0 1 0 0 0 1 
+dps_current_state.PHASE_DONE_LOW_0 1 0 0 0 0 1 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_Primary_PLL:primary_pll|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
+Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 
+dps_current_state.PHASE_DONE_HIGH 0 0 0 0 0 0 
+dps_current_state.PHASE_DONE_LOW_1 0 0 0 0 1 1 
+dps_current_state.PHASE_DONE_LOW_2 0 0 0 1 0 1 
+dps_current_state.PHASE_DONE_LOW_3 0 0 1 0 0 1 
+dps_current_state.PHASE_DONE_LOW_4 0 1 0 0 0 1 
+dps_current_state.PHASE_DONE_LOW_0 1 0 0 0 0 1 
