@@ -28,12 +28,7 @@ Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
 Warning: soc_system.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
 Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
-Warning: soc_system.Secondary_PLL.outclk0/mic_system_0.CLK: mic_system_0.CLK requires 50000000Hz, but source has frequency of 48000000Hz
 Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
-Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
-Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
-Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
-Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
 Info: Interconnect is inserted between master mic_system_0.mic_master and slave hps_0.f2h_sdram0_data because the master has address signal 32 bit wide, but the slave is 30 bit wide.
 Info: Interconnect is inserted between master mic_system_0.mic_master and slave hps_0.f2h_sdram0_data because the master has burstcount signal 3 bit wide, but the slave is 8 bit wide.
 Info: Interconnect is inserted between master mic_system_0.mic_master and slave hps_0.f2h_sdram0_data because they have different clock source.
@@ -45,7 +40,7 @@ Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: Primary_PLL: "soc_system" instantiated altera_pll "Primary_PLL"
 Info: Pushbuttons: Starting RTL generation for module 'soc_system_Pushbuttons'
-Info: Pushbuttons:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_Pushbuttons --dir=C:/Users/JJ/AppData/Local/Temp/alt7662_5703101193818088582.dir/0003_Pushbuttons_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7662_5703101193818088582.dir/0003_Pushbuttons_gen//soc_system_Pushbuttons_component_configuration.pl  --do_build_sim=0  ]
+Info: Pushbuttons:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_Pushbuttons --dir=C:/Users/JJ/AppData/Local/Temp/alt7665_975972096325974292.dir/0006_Pushbuttons_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7665_975972096325974292.dir/0006_Pushbuttons_gen//soc_system_Pushbuttons_component_configuration.pl  --do_build_sim=0  ]
 Info: Pushbuttons: Done RTL generation for module 'soc_system_Pushbuttons'
 Info: Pushbuttons: "soc_system" instantiated altera_avalon_pio "Pushbuttons"
 Info: Secondary_PLL: "soc_system" instantiated altera_pll "Secondary_PLL"
@@ -84,8 +79,6 @@ Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_m
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: mic_system_0_mic_master_translator: "mm_interconnect_1" instantiated altera_merlin_master_translator "mic_system_0_mic_master_translator"
 Info: mic_system_0_mic_master_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "mic_system_0_mic_master_agent"
@@ -97,6 +90,8 @@ Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/sy
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: crosser: "mm_interconnect_1" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: soc_system: Done "soc_system" with 37 modules, 103 files

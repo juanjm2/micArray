@@ -72,12 +72,15 @@ module soc_system (
 	hps_io_hps_io_gpio_inst_GPIO53,
 	hps_io_hps_io_gpio_inst_GPIO54,
 	hps_io_hps_io_gpio_inst_GPIO61,
-	mic_system_0_aud_adclrck_new_signal,
-	mic_system_0_aud_bclk_new_signal,
-	mic_system_0_codec_stream_new_signal,
-	mic_system_0_gpio_din1_new_signal,
 	pushbuttons_external_connection_export,
-	reset_reset_n);	
+	reset_reset_n,
+	mic_system_0_aud_bclk_new_signal,
+	mic_system_0_aud_adclrck_new_signal,
+	mic_system_0_gpio_din1_new_signal,
+	mic_system_0_gpio_din2_new_signal,
+	mic_system_0_gpio_din3_new_signal,
+	mic_system_0_gpio_din4_new_signal,
+	mic_system_0_codec_stream_new_signal);	
 
 	input		clk_clk;
 	output	[14:0]	hps_0_addr_mem_a;
@@ -151,10 +154,13 @@ module soc_system (
 	inout		hps_io_hps_io_gpio_inst_GPIO53;
 	inout		hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_io_hps_io_gpio_inst_GPIO61;
-	input		mic_system_0_aud_adclrck_new_signal;
-	input		mic_system_0_aud_bclk_new_signal;
-	output	[31:0]	mic_system_0_codec_stream_new_signal;
-	input		mic_system_0_gpio_din1_new_signal;
 	input	[3:0]	pushbuttons_external_connection_export;
 	input		reset_reset_n;
+	input		mic_system_0_aud_bclk_new_signal;
+	input		mic_system_0_aud_adclrck_new_signal;
+	input		mic_system_0_gpio_din1_new_signal;
+	input		mic_system_0_gpio_din2_new_signal;
+	input		mic_system_0_gpio_din3_new_signal;
+	input		mic_system_0_gpio_din4_new_signal;
+	output	[31:0]	mic_system_0_codec_stream_new_signal;
 endmodule

@@ -52,6 +52,9 @@ module ghrd_top(
 		
 		///////// Mic Signals /////////
 		input						GPIO_DIN,
+		input						GPIO_DIN2,
+		input						GPIO_DIN3,
+		input						GPIO_DIN4,
 		output					GPIO_BCLK,
 		output					GPIO_LRCLK,
 
@@ -309,17 +312,24 @@ soc_system u0 (
         .hps_io_hps_io_gpio_inst_GPIO54  ( HPS_KEY),                  //                               .hps_io_gpio_inst_GPIO54
         .hps_io_hps_io_gpio_inst_GPIO61  ( HPS_GSENSOR_INT),          //                               .hps_io_gpio_inst_GPIO61
 		  
-//		input  wire        mic_system_0_aud_adclrck_new_signal,    //        mic_system_0_aud_adclrck.new_signal  
+//		input  wire        mic_system_0_aud_adclrck_new_signal,    //        mic_system_0_aud_adclrck.new_signal
 //		input  wire        mic_system_0_aud_bclk_new_signal,       //           mic_system_0_aud_bclk.new_signal
 //		output wire [31:0] mic_system_0_codec_stream_new_signal,   //       mic_system_0_codec_stream.new_signal
 //		input  wire        mic_system_0_gpio_din1_new_signal,      //          mic_system_0_gpio_din1.new_signal
-//		input  wire [3:0]  pushbuttons_external_connection_export, // pushbuttons_external_connection.export
+//		input  wire        mic_system_0_gpio_din2_new_signal,      //          mic_system_0_gpio_din2.new_signal
+//		input  wire        mic_system_0_gpio_din3_new_signal,      //          mic_system_0_gpio_din3.new_signal
+//		input  wire        mic_system_0_gpio_din4_new_signal,      //          mic_system_0_gpio_din4.new_signal
 
 			// Audio signals
 			.mic_system_0_aud_adclrck_new_signal(AUD_ADCLRCK),
 			.mic_system_0_aud_bclk_new_signal(AUD_BCLK),
 		   .mic_system_0_codec_stream_new_signal(inter_data),
 			.mic_system_0_gpio_din1_new_signal(GPIO_DIN),
+			.mic_system_0_gpio_din2_new_signal(GPIO_DIN2),
+			.mic_system_0_gpio_din3_new_signal(GPIO_DIN3),
+			.mic_system_0_gpio_din4_new_signal(GPIO_DIN4),
+			
+			
 			.pushbuttons_external_connection_export(~KEY[3:0])
 		  
 				//HPS reset output 

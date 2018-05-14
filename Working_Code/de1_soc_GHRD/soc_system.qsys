@@ -21,12 +21,17 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "4";
          type = "int";
       }
    }
    element Pushbuttons.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "0";
@@ -69,7 +74,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "5";
          type = "int";
       }
    }
@@ -78,6 +83,30 @@
       datum baseAddress
       {
          value = "16";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
          type = "String";
       }
    }
@@ -123,6 +152,21 @@
  <interface
    name="mic_system_0_gpio_din1"
    internal="mic_system_0.GPIO_DIN1"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mic_system_0_gpio_din2"
+   internal="mic_system_0.GPIO_DIN2"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mic_system_0_gpio_din3"
+   internal="mic_system_0.GPIO_DIN3"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mic_system_0_gpio_din4"
+   internal="mic_system_0.GPIO_DIN4"
    type="conduit"
    dir="end" />
  <interface
@@ -1127,7 +1171,7 @@
  <connection
    kind="clock"
    version="17.1"
-   start="Secondary_PLL.outclk0"
+   start="Primary_PLL.outclk0"
    end="mic_system_0.CLK" />
  <connection
    kind="clock"

@@ -58,6 +58,18 @@
 				{
 					"name" : "GPIO_DIN",
 					"strict" : false
+				},
+				{
+					"name" : "GPIO_DIN3",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_DIN4",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_DIN2",
+					"strict" : false
 				}
 			]
 		}

@@ -1,5 +1,5 @@
 Assembler report for soc_system
-Fri May 11 05:02:35 2018
+Mon May 14 06:03:16 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri May 11 05:02:35 2018 ;
+; Assembler Status      ; Successful - Mon May 14 06:03:16 2018 ;
 ; Revision Name         ; soc_system                            ;
 ; Top-level Entity Name ; ghrd_top                              ;
 ; Family                ; Cyclone V                             ;
@@ -77,8 +77,8 @@ refer to the applicable agreement for further details.
 +----------------+-------------------------------------------------------------------------+
 ; Option         ; Setting                                                                 ;
 +----------------+-------------------------------------------------------------------------+
-; JTAG usercode  ; 0x04373007                                                              ;
-; Checksum       ; 0x04373007                                                              ;
+; JTAG usercode  ; 0x05C46446                                                              ;
+; Checksum       ; 0x05C46446                                                              ;
 +----------------+-------------------------------------------------------------------------+
 
 
@@ -88,16 +88,16 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 11 05:02:22 2018
+    Info: Processing started: Mon May 14 06:03:00 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off soc_system -c soc_system
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Warning (12914): The file, C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/audio_pll.sopcinfo, is not embedded into sof file as expected.  Some tools, such as System Console, may not function fully.
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
 Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 851 megabytes
-    Info: Processing ended: Fri May 11 05:02:35 2018
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 865 megabytes
+    Info: Processing ended: Mon May 14 06:03:16 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:16
 
 

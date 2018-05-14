@@ -7,7 +7,7 @@
 
 `timescale 1 ps / 1 ps
 module soc_system_mm_interconnect_1 (
-		input  wire        Secondary_PLL_outclk0_clk,                                          //                                        Secondary_PLL_outclk0.clk
+		input  wire        Primary_PLL_outclk0_clk,                                            //                                          Primary_PLL_outclk0.clk
 		input  wire        Secondary_PLL_outclk1_clk,                                          //                                        Secondary_PLL_outclk1.clk
 		input  wire        hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset, // hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset.reset
 		input  wire        mic_system_0_RESET_reset_bridge_in_reset_reset,                     //                     mic_system_0_RESET_reset_bridge_in_reset.reset
@@ -154,7 +154,7 @@ module soc_system_mm_interconnect_1 (
 		.AV_LINEWRAPBURSTS           (0),
 		.AV_REGISTERINCOMINGSIGNALS  (0)
 	) mic_system_0_mic_master_translator (
-		.clk                    (Secondary_PLL_outclk0_clk),                                                  //                       clk.clk
+		.clk                    (Primary_PLL_outclk0_clk),                                                    //                       clk.clk
 		.reset                  (mic_system_0_RESET_reset_bridge_in_reset_reset),                             //                     reset.reset
 		.uav_address            (mic_system_0_mic_master_translator_avalon_universal_master_0_address),       // avalon_universal_master_0.address
 		.uav_burstcount         (mic_system_0_mic_master_translator_avalon_universal_master_0_burstcount),    //                          .burstcount
@@ -306,7 +306,7 @@ module soc_system_mm_interconnect_1 (
 		.USE_READRESPONSE          (0),
 		.USE_WRITERESPONSE         (0)
 	) mic_system_0_mic_master_agent (
-		.clk                   (Secondary_PLL_outclk0_clk),                                                  //       clk.clk
+		.clk                   (Primary_PLL_outclk0_clk),                                                    //       clk.clk
 		.reset                 (mic_system_0_RESET_reset_bridge_in_reset_reset),                             // clk_reset.reset
 		.av_address            (mic_system_0_mic_master_translator_avalon_universal_master_0_address),       //        av.address
 		.av_write              (mic_system_0_mic_master_translator_avalon_universal_master_0_write),         //          .write
@@ -506,7 +506,7 @@ module soc_system_mm_interconnect_1 (
 		.sink_data          (mic_system_0_mic_master_agent_cp_data),          //          .data
 		.sink_startofpacket (mic_system_0_mic_master_agent_cp_startofpacket), //          .startofpacket
 		.sink_endofpacket   (mic_system_0_mic_master_agent_cp_endofpacket),   //          .endofpacket
-		.clk                (Secondary_PLL_outclk0_clk),                      //       clk.clk
+		.clk                (Primary_PLL_outclk0_clk),                        //       clk.clk
 		.reset              (mic_system_0_RESET_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready          (router_src_ready),                               //       src.ready
 		.src_valid          (router_src_valid),                               //          .valid
@@ -533,7 +533,7 @@ module soc_system_mm_interconnect_1 (
 	);
 
 	soc_system_mm_interconnect_1_cmd_demux cmd_demux (
-		.clk                (Secondary_PLL_outclk0_clk),                      //       clk.clk
+		.clk                (Primary_PLL_outclk0_clk),                        //       clk.clk
 		.reset              (mic_system_0_RESET_reset_bridge_in_reset_reset), // clk_reset.reset
 		.sink_ready         (router_src_ready),                               //      sink.ready
 		.sink_channel       (router_src_channel),                             //          .channel
@@ -584,7 +584,7 @@ module soc_system_mm_interconnect_1 (
 	);
 
 	soc_system_mm_interconnect_1_rsp_mux rsp_mux (
-		.clk                 (Secondary_PLL_outclk0_clk),                      //       clk.clk
+		.clk                 (Primary_PLL_outclk0_clk),                        //       clk.clk
 		.reset               (mic_system_0_RESET_reset_bridge_in_reset_reset), // clk_reset.reset
 		.src_ready           (rsp_mux_src_ready),                              //       src.ready
 		.src_valid           (rsp_mux_src_valid),                              //          .valid
@@ -612,7 +612,7 @@ module soc_system_mm_interconnect_1 (
 		.READY_SYNC_DEPTH    (2),
 		.USE_OUTPUT_PIPELINE (0)
 	) crosser (
-		.in_clk            (Secondary_PLL_outclk0_clk),                                          //        in_clk.clk
+		.in_clk            (Primary_PLL_outclk0_clk),                                            //        in_clk.clk
 		.in_reset          (mic_system_0_RESET_reset_bridge_in_reset_reset),                     //  in_clk_reset.reset
 		.out_clk           (Secondary_PLL_outclk1_clk),                                          //       out_clk.clk
 		.out_reset         (hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset), // out_clk_reset.reset
@@ -648,7 +648,7 @@ module soc_system_mm_interconnect_1 (
 	) crosser_001 (
 		.in_clk            (Secondary_PLL_outclk1_clk),                                          //        in_clk.clk
 		.in_reset          (hps_0_f2h_sdram0_data_translator_reset_reset_bridge_in_reset_reset), //  in_clk_reset.reset
-		.out_clk           (Secondary_PLL_outclk0_clk),                                          //       out_clk.clk
+		.out_clk           (Primary_PLL_outclk0_clk),                                            //       out_clk.clk
 		.out_reset         (mic_system_0_RESET_reset_bridge_in_reset_reset),                     // out_clk_reset.reset
 		.in_ready          (rsp_demux_src0_ready),                                               //            in.ready
 		.in_valid          (rsp_demux_src0_valid),                                               //              .valid

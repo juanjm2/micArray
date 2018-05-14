@@ -35,15 +35,19 @@ state.ST_UNCOMP_TRANS 1 0 1 0
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
 
 State Machine - |ghrd_top|soc_system:u0|avalon_microphone_system:mic_system_0|mic_dma:dma_yo|state
-Name state.FIN state.WAITDATA4 state.WAITDATA3 state.WAITDATA2 state.LOADDATA state.WRITEDATA state.WAITDATA state.IDLE 
-state.IDLE 0 0 0 0 0 0 0 0 
-state.WAITDATA 0 0 0 0 0 0 1 1 
-state.WRITEDATA 0 0 0 0 0 1 0 1 
-state.LOADDATA 0 0 0 0 1 0 0 1 
-state.WAITDATA2 0 0 0 1 0 0 0 1 
-state.WAITDATA3 0 0 1 0 0 0 0 1 
-state.WAITDATA4 0 1 0 0 0 0 0 1 
-state.FIN 1 0 0 0 0 0 0 1 
+Name state.FIN state.WRITEDATA4 state.LOADDATA4 state.WRITEDATA3 state.LOADDATA3 state.WRITEDATA2 state.LOADDATA2 state.WRITEDATA state.LOADDATA state.WAITDATA2 state.WAITDATA state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+state.WAITDATA 0 0 0 0 0 0 0 0 0 0 1 1 
+state.WAITDATA2 0 0 0 0 0 0 0 0 0 1 0 1 
+state.LOADDATA 0 0 0 0 0 0 0 0 1 0 0 1 
+state.WRITEDATA 0 0 0 0 0 0 0 1 0 0 0 1 
+state.LOADDATA2 0 0 0 0 0 0 1 0 0 0 0 1 
+state.WRITEDATA2 0 0 0 0 0 1 0 0 0 0 0 1 
+state.LOADDATA3 0 0 0 0 1 0 0 0 0 0 0 1 
+state.WRITEDATA3 0 0 0 1 0 0 0 0 0 0 0 1 
+state.LOADDATA4 0 0 1 0 0 0 0 0 0 0 0 1 
+state.WRITEDATA4 0 1 0 0 0 0 0 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |ghrd_top|soc_system:u0|soc_system_Secondary_PLL:secondary_pll|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
 Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 

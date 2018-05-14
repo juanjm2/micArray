@@ -55,5 +55,4 @@
 #define MIC_SYSTEM_0_SPAN 16
 #define MIC_SYSTEM_0_END 0x1f
 
-
 #endif /* _ALTERA_HPS_0_H_ */
