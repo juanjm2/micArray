@@ -76,6 +76,7 @@ module soc_system (
 		inout  wire        hps_io_hps_io_gpio_inst_GPIO53,         //                                .hps_io_gpio_inst_GPIO53
 		inout  wire        hps_io_hps_io_gpio_inst_GPIO54,         //                                .hps_io_gpio_inst_GPIO54
 		inout  wire        hps_io_hps_io_gpio_inst_GPIO61,         //                                .hps_io_gpio_inst_GPIO61
+		input  wire [31:0] mic_system_0_adc_data_new_signal,       //           mic_system_0_adc_data.new_signal
 		input  wire        mic_system_0_aud_adclrck_new_signal,    //        mic_system_0_aud_adclrck.new_signal
 		input  wire        mic_system_0_aud_bclk_new_signal,       //           mic_system_0_aud_bclk.new_signal
 		output wire [31:0] mic_system_0_codec_stream_new_signal,   //       mic_system_0_codec_stream.new_signal
@@ -338,7 +339,8 @@ module soc_system (
 		.GPIO_DIN2      (mic_system_0_gpio_din2_new_signal),                   //    GPIO_DIN2.new_signal
 		.GPIO_DIN3      (mic_system_0_gpio_din3_new_signal),                   //    GPIO_DIN3.new_signal
 		.GPIO_DIN4      (mic_system_0_gpio_din4_new_signal),                   //    GPIO_DIN4.new_signal
-		.codec_stream   (mic_system_0_codec_stream_new_signal)                 // codec_stream.new_signal
+		.codec_stream   (mic_system_0_codec_stream_new_signal),                // codec_stream.new_signal
+		.adc_data       (mic_system_0_adc_data_new_signal)                     //     adc_data.new_signal
 	);
 
 	soc_system_mm_interconnect_0 mm_interconnect_0 (

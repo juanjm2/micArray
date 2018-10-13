@@ -56,11 +56,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "GPIO_DIN",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_DIN3",
+					"name" : "AUD_ADCDAT",
 					"strict" : false
 				},
 				{
@@ -68,7 +64,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO_DIN3",
+					"strict" : false
+				},
+				{
 					"name" : "GPIO_DIN2",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO_DIN",
 					"strict" : false
 				}
 			]

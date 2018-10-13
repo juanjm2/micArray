@@ -72,6 +72,7 @@
 			hps_io_hps_io_gpio_inst_GPIO53         : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO53
 			hps_io_hps_io_gpio_inst_GPIO54         : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO54
 			hps_io_hps_io_gpio_inst_GPIO61         : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO61
+			mic_system_0_adc_data_new_signal       : in    std_logic_vector(31 downto 0) := (others => 'X'); -- new_signal
 			mic_system_0_aud_adclrck_new_signal    : in    std_logic                     := 'X';             -- new_signal
 			mic_system_0_aud_bclk_new_signal       : in    std_logic                     := 'X';             -- new_signal
 			mic_system_0_codec_stream_new_signal   : out   std_logic_vector(31 downto 0);                    -- new_signal

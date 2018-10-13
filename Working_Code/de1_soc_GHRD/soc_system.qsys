@@ -110,6 +110,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -134,6 +142,11 @@
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="hps_0_addr" internal="hps_0.memory" type="conduit" dir="end" />
  <interface name="hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
+ <interface
+   name="mic_system_0_adc_data"
+   internal="mic_system_0.adc_data"
+   type="conduit"
+   dir="end" />
  <interface
    name="mic_system_0_aud_adclrck"
    internal="mic_system_0.AUD_ADCLRCK"

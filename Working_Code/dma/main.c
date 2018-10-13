@@ -16,13 +16,17 @@
 #define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
 #define DDR_BASE ( 0x00000000 )
 #define DDR_SPAN ( 0x3FFFFFFF )
-#define BUF_SIZE 0x00075300
+#define BUF_SIZE 0x00124F80
+#define SAMPLING_RATE 48000
+#define START_ADDRESS 0x02000000
 //48000 sampling rate
 int main() {
 	void *virtual_base;
 	void *mem_base;
 	int fd;
 	int choice = -1;
+	float rec_length = 0;
+	int d2 = 0;
 	alt_u32 *h2p_lw_audio_addr;
 
 	if( ( fd = open( "/dev/mem", ( O_RDWR | O_SYNC ) ) ) == -1 ) {
@@ -48,36 +52,42 @@ int main() {
 
 	h2p_lw_audio_addr = ((alt_u32) virtual_base) + ( ( alt_u32  )( ALT_LWFPGASLVS_OFST + MIC_SYSTEM_0_BASE ) & ( alt_u32)( HW_REGS_MASK ) );
 	
-	alt_write_word(h2p_lw_audio_addr, 0x00000000);
-	alt_write_word(h2p_lw_audio_addr + 1, 0x02000000);
-	alt_write_word(h2p_lw_audio_addr + 2, 0x00075300);
+	TOP: alt_write_word(h2p_lw_audio_addr + 1, START_ADDRESS);
+	alt_write_word(h2p_lw_audio_addr + 2, BUF_SIZE);
+	alt_write_word(h2p_lw_audio_addr, 0x0);
 
-	printf("Audio set up to record for 10.0s\n");
+	rec_length = BUF_SIZE / SAMPLING_RATE;
 
-	alt_u32* ddr3 = (alt_u32) mem_base + 0x02000000;
-	alt_u32* ddr3_2 = (alt_u32) mem_base + 0x021D4C00;
-	alt_u32* ddr3_3 = (alt_u32) mem_base + 0x023A9800;
-	alt_u32* ddr3_4 = (alt_u32) mem_base + 0x0257E400;
+	printf("Audio set to record for %f seconds\n\n", rec_length);
 
-	printf("DDR3 TEST: %lX\n", alt_read_word(ddr3));
+	alt_u32* ddr3 = (alt_u32) mem_base + START_ADDRESS;
+	alt_u32* ddr3_2 = (alt_u32) mem_base + START_ADDRESS + (BUF_SIZE * 4);
+	alt_u32* ddr3_3 = (alt_u32) mem_base + START_ADDRESS + ((BUF_SIZE * 4) * 2);
+	alt_u32* ddr3_4 = (alt_u32) mem_base + START_ADDRESS + ((BUF_SIZE * 4) * 3);
+	alt_u32* ddr3_5 = (alt_u32) mem_base + START_ADDRESS + ((BUF_SIZE * 4) * 4);
 
-	alt_write_word(h2p_lw_audio_addr, 0x00000001);
+	//printf("DDR3 TEST: %lX\n", alt_read_word(ddr3));
+	printf("ENTER 1 TO START RECORDING: ");
+	scanf("%d", &d2);
+	alt_write_word(h2p_lw_audio_addr, 0x1);
+	// int d2;
+	// scanf("Press enter to continue: %d", &d2);
 
 	while (alt_read_word(h2p_lw_audio_addr + 2) == 0x0){}
+	alt_write_word(h2p_lw_audio_addr, 0x0);
+	// printf("After DMA write: %lX\n", alt_read_word(ddr3));
+	// printf("After DMA write: %lX\n", alt_read_word(ddr3 + 0x0001));
+	// printf("After DMA write: %lX\n", alt_read_word(ddr3 + 0x0002));
+	// printf("After DMA write: %lX\n", alt_read_word(ddr3 + 0x0003));
 
-	printf("After DMA write: %lX\n", alt_read_word(ddr3));
-	printf("After DMA write: %lX\n", alt_read_word(ddr3 + 0x0001));
-	printf("After DMA write: %lX\n", alt_read_word(ddr3 + 0x0002));
-	printf("After DMA write: %lX\n", alt_read_word(ddr3 + 0x0003));
-
-	alt_write_word(h2p_lw_audio_addr, 0x00000000);
+	// alt_write_word(h2p_lw_audio_addr, 0x00000000);
 
 	while (1)
 	{
-		printf("Enter 1 to save data\nEnter 0 to exit without saving data\n");
+		printf("Enter 2 to save data\nEnter 1 to Re-record (Overwrites data)\nEnter 0 to exit without saving data\n");
 		printf("INPUT: ");
 		scanf("%d", &choice);
-		if (choice == 1)
+		if (choice == 2)
 		{
 			FILE * f;
 			unsigned int i;
@@ -90,7 +100,7 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00075300; i = i + 0x00000001)
+			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
 			{
 				left = (alt_read_word(ddr3 + i) >> 16) & 0x0000FFFF;
 				right = alt_read_word(ddr3 + i) & 0x0000FFFF;
@@ -109,7 +119,7 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00075300; i = i + 0x00000001)
+			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
 			{
 				left = (alt_read_word(ddr3_2 + i) >> 16) & 0x0000FFFF;
 				right = alt_read_word(ddr3_2 + i) & 0x0000FFFF;
@@ -128,7 +138,7 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00075300; i = i + 0x00000001)
+			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
 			{
 				left = (alt_read_word(ddr3_3 + i) >> 16) & 0x0000FFFF;
 				right = alt_read_word(ddr3_3 + i) & 0x0000FFFF;
@@ -147,7 +157,7 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00075300; i = i + 0x00000001)
+			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
 			{
 				left = (alt_read_word(ddr3_4 + i) >> 16) & 0x0000FFFF;
 				right = alt_read_word(ddr3_4 + i) & 0x0000FFFF;
@@ -156,7 +166,34 @@ int main() {
 
 			fclose(f4);	// Closing file
 
+			FILE * f5;
+
+			f5 = fopen("OUT5.dat", "w");
+			if (f5 == NULL)
+			{
+				printf("ERROR: OUT.dat not found.\n");
+			}
+
+			// Writing to the file
+
+			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
+			{
+				left = (alt_read_word(ddr3_5 + i) >> 16) & 0x0000FFFF;
+				right = alt_read_word(ddr3_5 + i) & 0x0000FFFF;
+				fprintf(f5, "%hX %hX\n", left, right);
+			}
+
+			fclose(f5);	// Closing file
+
 			printf("Wrote to files successfully\n");
+			alt_write_word(h2p_lw_audio_addr + 3, 0x1);
+			alt_write_word(h2p_lw_audio_addr + 3, 0x0);
+			break;
+		}
+		else if (choice == 1){
+			alt_write_word(h2p_lw_audio_addr + 3, 0x1);
+			alt_write_word(h2p_lw_audio_addr + 3, 0x0);
+			goto TOP;
 			break;
 		}
 		else{

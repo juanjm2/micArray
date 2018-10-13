@@ -71,14 +71,15 @@
 		.hps_io_hps_io_gpio_inst_GPIO53         (<connected-to-hps_io_hps_io_gpio_inst_GPIO53>),         //                                .hps_io_gpio_inst_GPIO53
 		.hps_io_hps_io_gpio_inst_GPIO54         (<connected-to-hps_io_hps_io_gpio_inst_GPIO54>),         //                                .hps_io_gpio_inst_GPIO54
 		.hps_io_hps_io_gpio_inst_GPIO61         (<connected-to-hps_io_hps_io_gpio_inst_GPIO61>),         //                                .hps_io_gpio_inst_GPIO61
-		.pushbuttons_external_connection_export (<connected-to-pushbuttons_external_connection_export>), // pushbuttons_external_connection.export
-		.reset_reset_n                          (<connected-to-reset_reset_n>),                          //                           reset.reset_n
-		.mic_system_0_aud_bclk_new_signal       (<connected-to-mic_system_0_aud_bclk_new_signal>),       //           mic_system_0_aud_bclk.new_signal
 		.mic_system_0_aud_adclrck_new_signal    (<connected-to-mic_system_0_aud_adclrck_new_signal>),    //        mic_system_0_aud_adclrck.new_signal
+		.mic_system_0_aud_bclk_new_signal       (<connected-to-mic_system_0_aud_bclk_new_signal>),       //           mic_system_0_aud_bclk.new_signal
+		.mic_system_0_codec_stream_new_signal   (<connected-to-mic_system_0_codec_stream_new_signal>),   //       mic_system_0_codec_stream.new_signal
 		.mic_system_0_gpio_din1_new_signal      (<connected-to-mic_system_0_gpio_din1_new_signal>),      //          mic_system_0_gpio_din1.new_signal
 		.mic_system_0_gpio_din2_new_signal      (<connected-to-mic_system_0_gpio_din2_new_signal>),      //          mic_system_0_gpio_din2.new_signal
 		.mic_system_0_gpio_din3_new_signal      (<connected-to-mic_system_0_gpio_din3_new_signal>),      //          mic_system_0_gpio_din3.new_signal
 		.mic_system_0_gpio_din4_new_signal      (<connected-to-mic_system_0_gpio_din4_new_signal>),      //          mic_system_0_gpio_din4.new_signal
-		.mic_system_0_codec_stream_new_signal   (<connected-to-mic_system_0_codec_stream_new_signal>)    //       mic_system_0_codec_stream.new_signal
+		.pushbuttons_external_connection_export (<connected-to-pushbuttons_external_connection_export>), // pushbuttons_external_connection.export
+		.reset_reset_n                          (<connected-to-reset_reset_n>),                          //                           reset.reset_n
+		.mic_system_0_adc_data_new_signal       (<connected-to-mic_system_0_adc_data_new_signal>)        //           mic_system_0_adc_data.new_signal
 	);
 

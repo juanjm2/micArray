@@ -321,27 +321,15 @@ soc_system u0 (
 //		input  wire        mic_system_0_gpio_din4_new_signal,      //          mic_system_0_gpio_din4.new_signal
 
 			// Audio signals
+			.mic_system_0_adc_data_new_signal(adc_mic_data),
 			.mic_system_0_aud_adclrck_new_signal(AUD_ADCLRCK),
 			.mic_system_0_aud_bclk_new_signal(AUD_BCLK),
 		   .mic_system_0_codec_stream_new_signal(inter_data),
 			.mic_system_0_gpio_din1_new_signal(GPIO_DIN),
 			.mic_system_0_gpio_din2_new_signal(GPIO_DIN2),
 			.mic_system_0_gpio_din3_new_signal(GPIO_DIN3),
-			.mic_system_0_gpio_din4_new_signal(GPIO_DIN4),
-			
-			
+			.mic_system_0_gpio_din4_new_signal(GPIO_DIN4),			
 			.pushbuttons_external_connection_export(~KEY[3:0])
-		  
-				//HPS reset output 
-//	  .led_pio_external_connection_export    ( fpga_led_internal 	),    //    led_pio_external_connection.export
-//	  .dipsw_pio_external_connection_export  ( SW	),  //  dipsw_pio_external_connection.export
-//	  .button_pio_external_connection_export ( fpga_debounced_buttons	), // button_pio_external_connection.export
-//	  .hps_0_h2f_reset_reset_n               ( hps_fpga_reset_n ),                //                hps_0_h2f_reset.reset_n
-//	  .hps_0_f2h_cold_reset_req_reset_n      (~hps_cold_reset ),      //       hps_0_f2h_cold_reset_req.reset_n
-//     .hps_0_f2h_debug_reset_req_reset_n     (~hps_debug_reset ),     //      hps_0_f2h_debug_reset_req.reset_n
-//     .hps_0_f2h_stm_hw_events_stm_hwevents  (stm_hw_events ),  //        hps_0_f2h_stm_hw_events.stm_hwevents
-//     .hps_0_f2h_warm_reset_req_reset_n      (~hps_warm_reset ),      //       hps_0_f2h_warm_reset_req.reset_n
-
     );
 	 
 wire [31:0] inter_data;
@@ -362,8 +350,11 @@ Audio aud_interface(
 	.clk_clk(CLOCK_50),
 	.reset_reset_n(1'b1),
 	.left_data(inter_data[31:16]),
-	.right_data(inter_data[15:0])
+	.right_data(inter_data[15:0]),
+	.adcdata(adc_mic_data)
 );
+
+wire [31:0] adc_mic_data;
 
 assign GPIO_LRCLK = AUD_ADCLRCK;
 assign GPIO_BCLK = AUD_BCLK;
@@ -377,76 +368,6 @@ audio_and_video_config cfg(
 	.I2C_SDAT(FPGA_I2C_SDAT),
 	.I2C_SCLK(FPGA_I2C_SCLK)
 );
-	 
-  
-// Debounce logic to clean out glitches within 1ms
-//debounce debounce_inst (
-//  .clk                                  (fpga_clk_50),
-//  .reset_n                              (hps_fpga_reset_n),  
-//  .data_in                              (KEY),
-//  .data_out                             (fpga_debounced_buttons)
-//);
-//  defparam debounce_inst.WIDTH = 4;
-//  defparam debounce_inst.POLARITY = "LOW";
-//  defparam debounce_inst.TIMEOUT = 50000;               // at 50Mhz this is a debounce time of 1ms
-//  defparam debounce_inst.TIMEOUT_WIDTH = 16;            // ceil(log2(TIMEOUT))
-//  
-// Source/Probe megawizard instance
-//hps_reset hps_reset_inst (
-//  .source_clk (fpga_clk_50),
-//  .source     (hps_reset_req)
-//);
-//
-//altera_edge_detector pulse_cold_reset (
-//  .clk       (fpga_clk_50),
-//  .rst_n     (hps_fpga_reset_n),
-//  .signal_in (hps_reset_req[0]),
-//  .pulse_out (hps_cold_reset)
-//);
-//  defparam pulse_cold_reset.PULSE_EXT = 6;
-//  defparam pulse_cold_reset.EDGE_TYPE = 1;
-//  defparam pulse_cold_reset.IGNORE_RST_WHILE_BUSY = 1;
-//
-//altera_edge_detector pulse_warm_reset (
-//  .clk       (fpga_clk_50),
-//  .rst_n     (hps_fpga_reset_n),
-//  .signal_in (hps_reset_req[1]),
-//  .pulse_out (hps_warm_reset)
-//);
-//  defparam pulse_warm_reset.PULSE_EXT = 2;
-//  defparam pulse_warm_reset.EDGE_TYPE = 1;
-//  defparam pulse_warm_reset.IGNORE_RST_WHILE_BUSY = 1;
-//  
-//altera_edge_detector pulse_debug_reset (
-//  .clk       (fpga_clk_50),
-//  .rst_n     (hps_fpga_reset_n),
-//  .signal_in (hps_reset_req[2]),
-//  .pulse_out (hps_debug_reset)
-//);
-//  defparam pulse_debug_reset.PULSE_EXT = 32;
-//  defparam pulse_debug_reset.EDGE_TYPE = 1;
-//  defparam pulse_debug_reset.IGNORE_RST_WHILE_BUSY = 1;
-//  
-//reg [25:0] counter; 
-//reg  led_level;
-//always @(posedge fpga_clk_50 or negedge hps_fpga_reset_n)
-//begin
-//if(~hps_fpga_reset_n)
-//begin
-//                counter<=0;
-//                led_level<=0;
-//end
-//
-//else if(counter==24999999)
-//        begin
-//                counter<=0;
-//                led_level<=~led_level;
-//        end
-//else
-//                counter<=counter+1'b1;
-//end
-//
-//assign LEDR[0]=led_level;
 
 endmodule
 

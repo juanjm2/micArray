@@ -48,6 +48,7 @@ module Audio_audio_0 (
 	// Outputs
 	irq,
 	readdata,
+	adcdata,
 
 	AUD_DACDAT
 );
@@ -80,7 +81,7 @@ input						AUD_DACLRCK;
 // Outputs
 output reg				irq;
 output reg	[31: 0]	readdata;
-
+output wire [31: 0]  adcdata;
 output					AUD_DACDAT;
 
 /*****************************************************************************
@@ -316,8 +317,8 @@ altera_up_audio_in_deserializer Audio_In_Deserializer (
 
 	.serial_audio_in_data			(AUD_ADCDAT),
 
-	.read_left_audio_data_en		((address == 2'h2) & chipselect & read),
-	.read_right_audio_data_en		((address == 2'h3) & chipselect & read),
+	.read_left_audio_data_en		(1'b1),
+	.read_right_audio_data_en		(1'b1),
 
 	// Bidirectionals
 
@@ -328,6 +329,9 @@ altera_up_audio_in_deserializer Audio_In_Deserializer (
 	.left_channel_data				(new_left_channel_audio),
 	.right_channel_data				(new_right_channel_audio)
 );
+
+assign adcdata = {new_left_channel_audio, new_right_channel_audio};
+
 defparam
 	Audio_In_Deserializer.DW 					= DW,
 	Audio_In_Deserializer.BIT_COUNTER_INIT = BIT_COUNTER_INIT;

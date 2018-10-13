@@ -28,11 +28,11 @@ module mic_dma(
 );
 
 logic done;
-int unsigned starting_address, starting_address_2, starting_address_3, starting_address_4, num_samples;
+int unsigned starting_address, starting_address_2, starting_address_3, starting_address_4, starting_address_5, num_samples;
 logic finish_signal;
 logic [2:0] mic_count, prev_mic_count;
 
-int unsigned prev_starting_address, prev_starting_address_2, prev_starting_address_3, prev_starting_address_4, prev_num_samples;
+int unsigned prev_starting_address, prev_starting_address_2, prev_starting_address_3, prev_starting_address_4, prev_starting_address_5, prev_num_samples;
 logic [31:0] prev_AM_ADDR;
 logic prev_AM_WRITE, prev_done;
 logic prev_finish_signal;
@@ -54,7 +54,9 @@ enum logic [3:0]{
 	 WRITEDATA3 = 4'd8,
 	 LOADDATA4 = 4'd9,
 	 WRITEDATA4 = 4'd10,
-    FIN       = 4'd11
+	 LOADDATA5 = 4'd11,
+	 WRITEDATA5 = 4'd12,
+    FIN       = 4'd13
 } state, next_state;
 
 always_ff @(posedge CLK)
@@ -78,6 +80,7 @@ begin
 		prev_starting_address_2 <= 0;
 		prev_starting_address_3 <= 0;
 		prev_starting_address_4 <= 0;
+		prev_starting_address_5 <= 0;
 		prev_num_samples <= 0;
 		prev_AM_ADDR <= 0;
 		prev_AM_WRITE <= 0;
@@ -91,6 +94,7 @@ begin
 		prev_starting_address_2 <= starting_address_2;
 		prev_starting_address_3 <= starting_address_3;
 		prev_starting_address_4 <= starting_address_4;
+		prev_starting_address_5 <= starting_address_5;
 		prev_num_samples <= num_samples;
 		prev_AM_ADDR <= AM_ADDR;
 		prev_AM_WRITE <= AM_WRITE;
@@ -189,7 +193,25 @@ begin
 					next_state = LOADDATA4;
 				end
 			WRITEDATA4:
+				if (!AM_WAITREQUEST)
 				begin
+					next_state = LOADDATA5;
+				end
+				else
+				begin
+					next_state = WRITEDATA4;
+				end
+			LOADDATA5:
+				if (!AM_WAITREQUEST)
+				begin
+					next_state = WRITEDATA5;
+				end
+				else
+				begin
+					next_state = LOADDATA5;
+				end
+			WRITEDATA5:
+					begin
 					if (!AM_WAITREQUEST)
 					begin
 						 if (done)
@@ -203,7 +225,7 @@ begin
 					end
 					else
 					begin
-						 next_state = WRITEDATA4;
+						 next_state = WRITEDATA5;
 					end
 				end
 			FIN:
@@ -224,6 +246,7 @@ begin
 	 starting_address_2 = prev_starting_address_2;
 	 starting_address_3 = prev_starting_address_3;
 	 starting_address_4 = prev_starting_address_4;
+	 starting_address_5 = prev_starting_address_5;
 	 num_samples = prev_num_samples;
 	 done = prev_done;
 	 finish_signal = prev_finish_signal;
@@ -241,6 +264,7 @@ begin
 					 starting_address_2 = starting_address + (number_samples * 4);
 					 starting_address_3 = starting_address_2 + (number_samples * 4);
 					 starting_address_4 = starting_address_3 + (number_samples * 4);
+					 starting_address_5 = starting_address_4 + (number_samples * 4);
 					 mic_count <= 2'b10;
 				end
 				else
@@ -263,6 +287,7 @@ begin
 				 starting_address_2 <= start_address + (number_samples * 4);
 				 starting_address_3 <= start_address + ((number_samples * 4) * 2);
 				 starting_address_4 <= start_address + ((number_samples * 4) * 3);
+				 starting_address_5 <= start_address + ((number_samples * 4) * 4);
 		  end
 		  LOADDATA:
 		  begin
@@ -377,7 +402,7 @@ begin
 		  end
 		  LOADDATA4:
 		  begin
-		  		mic_count <= 3'b100;
+				mic_count <= 3'b100;
 				if (!AM_WAITREQUEST)
 				begin
 					AM_WRITE <= 1'b1;
@@ -395,12 +420,48 @@ begin
 		  end
 		  WRITEDATA4:
 		  begin
-		  		mic_count <= 3'b100;
+				mic_count <= 3'b100;
 				if (!AM_WAITREQUEST)
 				begin
 					if (num_samples > 0)
 					begin
 						starting_address_4 <= starting_address_4 + 4;
+						AM_BYTEENABLE <= 4'hF;
+					end
+					else
+					begin
+					end
+				end
+				else
+				begin
+				end
+		  end
+		  LOADDATA5:
+		  begin
+		  		mic_count <= 3'b101;
+				if (!AM_WAITREQUEST)
+				begin
+					AM_WRITE <= 1'b1;
+					AM_ADDR <= starting_address_5;
+					AM_BYTEENABLE <= 4'hF;
+					AM_BURSTCOUNT <= 3'b001;
+				end
+				else
+				begin
+					AM_WRITE <= 1'b0;
+					AM_ADDR <= 32'b0;
+					AM_BYTEENABLE <= 4'hF;
+					AM_BURSTCOUNT <= 3'd0;
+				end
+		  end
+		  WRITEDATA5:
+		  begin
+		  		mic_count <= 3'b101;
+				if (!AM_WAITREQUEST)
+				begin
+					if (num_samples > 0)
+					begin
+						starting_address_5 <= starting_address_5 + 4;
 						num_samples <= num_samples - 1;
 						AM_BYTEENABLE <= 4'hF;
 					end

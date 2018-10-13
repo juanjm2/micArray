@@ -33,6 +33,7 @@ module avalon_microphone_system (
 
 	// Start button signal
 	//	input logic KEY,
+	input logic [31:0] adc_data,
 
 	// Output to codec
 	output logic [31:0] codec_stream
@@ -41,7 +42,6 @@ module avalon_microphone_system (
 logic saw_rise, saw_fall;
 logic start;
 logic ready_read_now;
-//assign ready_read_now = (saw_rise) | (saw_fall);
 
 logic [2:0] counter;
 //////////////////////////////////////////////////
@@ -74,6 +74,7 @@ end
 logic fin_signal;
 logic [2:0] mic_sel;
 logic stream_control;
+logic restart_sig;
 
 logic [31:0] start_addr, num_samps;
 
@@ -84,12 +85,16 @@ initial begin
 end
 
 initial begin
+	restart_sig = 0;
+end
+
+initial begin
 	AVL_READDATA = 0;
 end
 
 mic_dma dma_yo(
 	.CLK(CLK),
-	.RESET(RESET),
+	.RESET((RESET | restart_sig)),
 	.AM_ADDR(AM_ADDR),
 	.AM_BURSTCOUNT(AM_BURSTCOUNT),
 	.AM_WRITE(AM_WRITE),
@@ -134,6 +139,10 @@ begin
 	begin
 		ready_data_choice <= ready_data_4;
 	end
+	else if (mic_sel == 3'b101)
+	begin
+		ready_data_choice <= adc_data;
+	end
 	else
 	begin
 		ready_data_choice <= 32'd0;
@@ -165,7 +174,7 @@ always_comb
 	begin
 	if(stream_control)
 		begin
-		codec_stream = ready_data_1 + ready_data_2 + ready_data_3 + ready_data_4;
+		codec_stream = ready_data_1 + ready_data_2 + ready_data_3 + ready_data_4 + adc_data;
 		end
 	else
 		begin
@@ -178,8 +187,9 @@ begin
     if(RESET) 
 	begin
 		start <= 1'b0;
-		start_addr <= 1'b0;
-		num_samps <= 1'b0;
+		start_addr <= 32'd0;
+		num_samps <= 32'd0;
+		restart_sig <= 1'b0;
 	end 
 	else if (AVL_CS && AVL_WRITE)
 	begin
@@ -194,6 +204,10 @@ begin
 		else if (AVL_ADDR == 2'd2)
 		begin
 			num_samps = AVL_WRITEDATA;
+		end
+		else if (AVL_ADDR == 2'b11)
+		begin 
+			restart_sig = AVL_WRITEDATA;
 		end
 	end
 end

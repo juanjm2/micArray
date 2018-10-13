@@ -12,7 +12,8 @@ module Audio (
 		input  wire  clk_clk,                            //                        clk.clk
 		input  wire  reset_reset_n,                      //                      reset.reset_n
 		input	[15:0]	left_data,								 //		Left channel from I2S	
-		input [15:0]	right_data								 // 		Right channel from I2S  
+		input [15:0]	right_data,								 // 		Right channel from I2S
+		output [31:0]	adcdata
 );
 
 	wire    rst_controller_reset_out_reset; // rst_controller:reset_out -> audio_0:reset
@@ -27,6 +28,7 @@ module Audio (
 		.writedata   ({left_data, right_data}),                                   //                   .writedata
 		.readdata    (),                                   //                   .readdata
 		.irq         (),                                   //          interrupt.irq
+		.adcdata		 (adcdata),
 		.AUD_ADCDAT  (audio_0_external_interface_ADCDAT),  // external_interface.export
 		.AUD_ADCLRCK (audio_0_external_interface_ADCLRCK), //                   .export
 		.AUD_BCLK    (audio_0_external_interface_BCLK),    //                   .export
