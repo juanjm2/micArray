@@ -10,6 +10,16 @@
         <assignment_value text="QSYS_NAME audio_pll HAS_SOPCINFO 1 GENERATION_ID 1525879033"/>
       </assignment_values>
     </sld_info>
+    <sld_info hpath="fir_test:fir_L" name="fir_L">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME fir_test HAS_SOPCINFO 1 GENERATION_ID 1539701045"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="fir_test:fir_R" name="fir_R">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME fir_test HAS_SOPCINFO 1 GENERATION_ID 1539701045"/>
+      </assignment_values>
+    </sld_info>
     <sld_info hpath="soc_system:u0" name="u0">
       <assignment_values>
         <assignment_value text="QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1539469065"/>

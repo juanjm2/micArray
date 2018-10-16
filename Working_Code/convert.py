@@ -1,6 +1,8 @@
 from scipy.io.wavfile import write
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import signal
+from scipy.io import wavfile
 
 # https://stackoverflow.com/questions/11798800/reading-a-binary-dat-file-as-an-array
 # https://www.geeksforgeeks.org/reverse-bits-positive-integer-number-python/

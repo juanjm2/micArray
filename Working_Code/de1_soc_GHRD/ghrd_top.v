@@ -328,7 +328,8 @@ soc_system u0 (
 			.mic_system_0_gpio_din1_new_signal(GPIO_DIN),
 			.mic_system_0_gpio_din2_new_signal(GPIO_DIN2),
 			.mic_system_0_gpio_din3_new_signal(GPIO_DIN3),
-			.mic_system_0_gpio_din4_new_signal(GPIO_DIN4),			
+			.mic_system_0_gpio_din4_new_signal(GPIO_DIN4),
+			.mic_system_0_fir_data_new_signal({fir_left, fir_right}),
 			.pushbuttons_external_connection_export(~KEY[3:0])
     );
 	 
@@ -339,6 +340,41 @@ audio_pll clock_gen(
 	.audio_pll_0_ref_clk_clk(CLOCK2_50),
 	.audio_pll_0_ref_reset_reset(1'b0),
 	.audio_pll_0_ref_reset_source_reset()
+);
+
+//module fir_test (
+//		input  wire        clk_clk,       //    clk.clk
+//		input  wire [15:0] input_data,    //  input.data
+//		input  wire        input_valid,   //       .valid
+//		input  wire [1:0]  input_error,   //       .error
+//		output wire [16:0] output_data,   // output.data
+//		output wire        output_valid,  //       .valid
+//		output wire [1:0]  output_error,  //       .error
+//		input  wire        reset_reset_n  //  reset.reset_n
+//	);
+
+wire [15:0] fir_left, fir_right;
+
+fir_test fir_L(
+	.clk_clk(CLOCK_50),
+	.input_data(adc_mic_data[31:16]),
+	.input_valid(1'b1),
+	.input_error(),
+	.output_data(fir_left),
+	.output_valid(1'b1),
+	.output_error(),
+	.reset_reset_n(1'b1)
+);
+
+fir_test fir_R(
+	.clk_clk(CLOCK_50),
+	.input_data(adc_mic_data[15:0]),
+	.input_valid(1'b1),
+	.input_error(),
+	.output_data(fir_right),
+	.output_valid(1'b1),
+	.output_error(),
+	.reset_reset_n(1'b1)
 );
 
 Audio aud_interface(

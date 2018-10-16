@@ -1,0 +1,497 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>datasheet for fir_test</title>
+  <style type="text/css">
+body { font-family:arial ;}
+a { text-decoration:underline ; color:#003000 ;}
+a:hover { text-decoration:underline ; color:0030f0 ;}
+td { padding : 5px ;}
+table.topTitle { width:100% ;}
+table.topTitle td.l { text-align:left ; font-weight: bold ; font-size:30px ;}
+table.topTitle td.r { text-align:right ; font-weight: bold ; font-size:16px ;}
+table.blueBar { width : 100% ; border-spacing : 0px ;}
+table.blueBar td { background:#0036ff ; font-size:12px ; color : white ; text-align : left ; font-weight : bold ;}
+table.blueBar td.l { text-align : left ;}
+table.blueBar td.r { text-align : right ;}
+table.items { width:100% ; border-collapse:collapse ;}
+table.items td.label { font-weight:bold ; font-size:16px ; vertical-align:top ;}
+table.items td.mono { font-family:courier ; font-size:12px ; white-space:pre ;}
+div.label { font-weight:bold ; font-size:16px ; vertical-align:top ; text-align:center ;}
+table.grid { border-collapse:collapse ;}
+table.grid td { border:1px solid #bbb ; font-size:12px ;}
+body { font-family:arial ;}
+table.x { font-family:courier ; border-collapse:collapse ; padding:2px ;}
+table.x td { border:1px solid #bbb ;}
+td.tableTitle { font-weight:bold ; text-align:center ;}
+table.grid { border-collapse:collapse ;}
+table.grid td { border:1px solid #bbb ;}
+table.grid td.tableTitle { font-weight:bold ; text-align:center ;}
+table.mmap { border-collapse:collapse ; text-size:11px ; border:1px solid #d8d8d8 ;}
+table.mmap td { border-color:#d8d8d8 ; border-width:1px ; border-style:solid ;}
+table.mmap td.empty { border-style:none ; background-color:#f0f0f0 ;}
+table.mmap td.slavemodule { text-align:left ; font-size:11px ; border-style:solid solid none solid ;}
+table.mmap td.slavem { text-align:right ; font-size:9px ; font-style:italic ; border-style:none solid none solid ;}
+table.mmap td.slaveb { text-align:right ; font-size:9px ; font-style:italic ; border-style:none solid solid solid ;}
+table.mmap td.mastermodule { text-align:center ; font-size:11px ; border-style:solid solid none solid ;}
+table.mmap td.masterlr { text-align:center ; font-size:9px ; font-style:italic ; border-style:none solid solid solid ;}
+table.mmap td.masterl { text-align:center ; font-size:9px ; font-style:italic ; border-style:none none solid solid ;}
+table.mmap td.masterm { text-align:center ; font-size:9px ; font-style:italic ; border-style:none none solid none ;}
+table.mmap td.masterr { text-align:center ; font-size:9px ; font-style:italic ; border-style:none solid solid none ;}
+table.mmap td.addr { font-family:courier ; font-size:9px ; text-align:right ;}
+table.connectionboxes { border-collapse:separate ; border-spacing:0px ; font-family:arial ;}
+table.connectionboxes td.from { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.to { font-size:9px ; font-style:italic ; vertical-align:top ; text-align:right ;}
+table.connectionboxes td.lefthandwire { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:right ;}
+table.connectionboxes td.righthandwire { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.righthandlabel { font-size:11px ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.neighbor { padding:3px ; border:1px solid black ; font-size: 11px ; background:#e8e8e8 ; vertical-align:center ; text-align:center ;}
+table.connectionboxes td.main { padding:8px ; border:1px solid black ; font-size: 14px ; font-weight:bold ; background:#ffffff ; vertical-align:center ; text-align:center ;}
+.parametersbox { border:1px solid #d0d0d0 ; display:inline-block ; max-height:160px ; overflow:auto ; width:360px ; font-size:10px ;}
+.flowbox { display:inline-block ;}
+.parametersbox table { font-size:10px ;}
+td.parametername { font-style:italic ;}
+td.parametervalue { font-weight:bold ;}
+div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; border-top:1px solid #707070 ; border-bottom:1px solid #707070 ; padding:20px ; margin:20px ; width:auto ;}</style>
+ </head>
+ <body>
+  <table class="topTitle">
+   <tr>
+    <td class="l">fir_test</td>
+    <td class="r">
+     <br/>
+     <br/>
+    </td>
+   </tr>
+  </table>
+  <table class="blueBar">
+   <tr>
+    <td class="l">2018.10.16.09:44:05</td>
+    <td class="r">Datasheet</td>
+   </tr>
+  </table>
+  <div style="width:100% ;  height:10px"> </div>
+  <div class="label">Overview</div>
+  <div class="greydiv">
+   <div style="display:inline-block ; text-align:left">
+    <table class="connectionboxes">
+     <tr>
+      <td class="lefthandwire">&#160;&#160;clk_0&#160;</td>
+      <td class="main" rowspan="2">fir_test</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+    </table>
+   </div><span style="display:inline-block ; width:28px"> </span>
+   <div style="display:inline-block ; text-align:left"><span>
+     <br/></span>
+   </div>
+  </div>
+  <div style="width:100% ;  height:10px"> </div>
+  <div class="label">Memory Map</div>
+  <table class="mmap">
+   <tr>
+    <td class="empty" rowspan="2"></td>
+   </tr>
+  </table>
+  <a name="module_clk_0"> </a>
+  <div>
+   <hr/>
+   <h2>clk_0</h2>clock_source v17.1
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">clockFrequency</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockFrequencyKnown</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputClockFrequency</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetSynchronousEdges</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_fir_compiler_ii_0"> </a>
+  <div>
+   <hr/>
+   <h2>fir_compiler_ii_0</h2>altera_fir_compiler_ii v17.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="4">fir_compiler_ii_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;rst</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">filterType</td>
+        <td class="parametervalue">single</td>
+       </tr>
+       <tr>
+        <td class="parametername">interpFactor</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">decimFactor</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">symmetryMode</td>
+        <td class="parametervalue">nsym</td>
+       </tr>
+       <tr>
+        <td class="parametername">L_bandsFilter</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputChannelNum</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockSlack</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputRate</td>
+        <td class="parametervalue">0.048</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffReload</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">baseAddress</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">readWriteMode</td>
+        <td class="parametervalue">read_write</td>
+       </tr>
+       <tr>
+        <td class="parametername">coefficientReadback</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">coefficientWriteable</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">busDataWidth</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">backPressure</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">CYCLONEV</td>
+       </tr>
+       <tr>
+        <td class="parametername">speedGrade</td>
+        <td class="parametervalue">medium</td>
+       </tr>
+       <tr>
+        <td class="parametername">delayRAMBlockThreshold</td>
+        <td class="parametervalue">20</td>
+       </tr>
+       <tr>
+        <td class="parametername">dualMemDistRAMThreshold</td>
+        <td class="parametervalue">1280</td>
+       </tr>
+       <tr>
+        <td class="parametername">mRAMThreshold</td>
+        <td class="parametervalue">1000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">hardMultiplierThreshold</td>
+        <td class="parametervalue">-1</td>
+       </tr>
+       <tr>
+        <td class="parametername">reconfigurable</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">num_modes</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">ModeWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">reconfigurable_list</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">MODE_STRING</td>
+        <td class="parametervalue">None Set</td>
+       </tr>
+       <tr>
+        <td class="parametername">modeFormatted</td>
+        <td class="parametervalue">--</td>
+       </tr>
+       <tr>
+        <td class="parametername">channelModes</td>
+        <td class="parametervalue">0,1,2,3</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputType</td>
+        <td class="parametervalue">int</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputBitWidth</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputFracBitWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffSetRealValue</td>
+        <td class="parametervalue">-0.005782864359858162,-0.0025648221521494628,-0.0029933840893287557,-0.0033536114523214306,-0.0036082306416442994,-0.003719717209165507,-0.0036496160193587143,-0.0033561401871556587,-0.002798486565175044,-0.001944894509967708,-7.711758857304644E-4,7.508401493567783E-4,0.0026440493276360067,0.004893822796576416,0.007514453943765508,0.010478421568833277,0.01376087702832994,0.017321343491199938,0.021111957253287177,0.025072917882094214,0.029134724942678294,0.03322349833905958,0.03726104229595373,0.04116209924326623,0.044843442058007964,0.048227493707721426,0.05123448325548204,0.053797017293795844,0.05585527613071549,0.05736209690136674,0.05828003167670566,0.05858808421584094,0.05828003167670566,0.05736209690136674,0.05585527613071549,0.053797017293795844,0.05123448325548204,0.048227493707721426,0.044843442058007964,0.04116209924326623,0.03726104229595373,0.03322349833905958,0.029134724942678294,0.025072917882094214,0.021111957253287177,0.017321343491199938,0.01376087702832994,0.010478421568833277,0.007514453943765508,0.004893822796576416,0.0026440493276360067,7.508401493567783E-4,-7.711758857304644E-4,-0.001944894509967708,-0.002798486565175044,-0.0033561401871556587,-0.0036496160193587143,-0.003719717209165507,-0.0036082306416442994,-0.0033536114523214306,-0.0029933840893287557,-0.0025648221521494628,-0.005782864359858162</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffNum</td>
+        <td class="parametervalue">63</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffSetRealValueImag</td>
+        <td class="parametervalue">0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffSetScaleValue</td>
+        <td class="parametervalue">-0.005535881973150325,-0.0023066174888126353,-0.0027679409865751627,-0.0032292644843376897,-0.0032292644843376897,-0.0036905879821002166,-0.0032292644843376897,-0.0032292644843376897,-0.0027679409865751627,-0.0018452939910501083,-0.0004613234977625271,0.0004613234977625271,0.0023066174888126353,0.004613234977625271,0.007381175964200433,0.010149116950775595,0.013378381435113286,0.017068969417213503,0.02075955739931372,0.024911468879176463,0.029063380359039208,0.03321529183890195,0.036905879821002165,0.04105779130086491,0.04474837928296513,0.04797764376730282,0.05120690825164051,0.05351352574045314,0.055820143229265776,0.05720411372255336,0.058126760718078416,0.05858808421584094,0.058126760718078416,0.05720411372255336,0.055820143229265776,0.05351352574045314,0.05120690825164051,0.04797764376730282,0.04474837928296513,0.04105779130086491,0.036905879821002165,0.03321529183890195,0.029063380359039208,0.024911468879176463,0.02075955739931372,0.017068969417213503,0.013378381435113286,0.010149116950775595,0.007381175964200433,0.004613234977625271,0.0023066174888126353,0.0004613234977625271,-0.0004613234977625271,-0.0018452939910501083,-0.0027679409865751627,-0.0032292644843376897,-0.0032292644843376897,-0.0036905879821002166,-0.0032292644843376897,-0.0032292644843376897,-0.0027679409865751627,-0.0023066174888126353,-0.005535881973150325</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffSetScaleValueImag</td>
+        <td class="parametervalue">0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffSetFixedValue</td>
+        <td class="parametervalue">-12,-5,-6,-7,-7,-8,-7,-7,-6,-4,-1,1,5,10,16,22,29,37,45,54,63,72,80,89,97,104,111,116,121,124,126,127,126,124,121,116,111,104,97,89,80,72,63,54,45,37,29,22,16,10,5,1,-1,-4,-6,-7,-7,-8,-7,-7,-6,-5,-12</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffSetFixedValueImag</td>
+        <td class="parametervalue">0,0,0,0,0,0,0,0</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffScaling</td>
+        <td class="parametervalue">auto</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffType</td>
+        <td class="parametervalue">int</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffBitWidth</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffFracBitWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffComplex</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">karatsuba</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">coeffBitWidth_derived</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">outType</td>
+        <td class="parametervalue">int</td>
+       </tr>
+       <tr>
+        <td class="parametername">outBitWidth</td>
+        <td class="parametervalue">17</td>
+       </tr>
+       <tr>
+        <td class="parametername">outFracBitWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">outMSBRound</td>
+        <td class="parametervalue">trunc</td>
+       </tr>
+       <tr>
+        <td class="parametername">outMsbBitRem</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">outLSBRound</td>
+        <td class="parametervalue">round</td>
+       </tr>
+       <tr>
+        <td class="parametername">outLsbBitRem</td>
+        <td class="parametervalue">13</td>
+       </tr>
+       <tr>
+        <td class="parametername">outWidth</td>
+        <td class="parametervalue">30</td>
+       </tr>
+       <tr>
+        <td class="parametername">outWidth_realOnly</td>
+        <td class="parametervalue">30</td>
+       </tr>
+       <tr>
+        <td class="parametername">outFullFracBitWidth_realOnly</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">latency_realOnly</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">outputfifodepth_realOnly</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">outFullFracBitWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputInterfaceNum</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">outputInterfaceNum</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">chanPerInputInterface</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">chanPerOutputInterface</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">latency</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">outputfifodepth</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">funcResult</td>
+        <td class="parametervalue">-interp=1 -decim=1 -incycles=1041 -len=63 -bankcount=1 -nsym -nband=1 -chans=1 -family="Cyclone V" 
+|{}|1|1|1|1|30|0|16|3|noCode|LUTS: 197 DSPs: 1 RAM Bits: 1024|</td>
+       </tr>
+       <tr>
+        <td class="parametername">busAddressWidth</td>
+        <td class="parametervalue">6</td>
+       </tr>
+       <tr>
+        <td class="parametername">bankCount</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">bankInWidth</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">bankDisplay</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">lutCount</td>
+        <td class="parametervalue">197</td>
+       </tr>
+       <tr>
+        <td class="parametername">dspCount</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">memBitCount</td>
+        <td class="parametervalue">1024</td>
+       </tr>
+       <tr>
+        <td class="parametername">errorList</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <table class="blueBar">
+   <tr>
+    <td class="l">generation took 0.00 seconds</td>
+    <td class="r">rendering took 0.01 seconds</td>
+   </tr>
+  </table>
+ </body>
+</html>

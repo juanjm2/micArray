@@ -30,6 +30,7 @@ module avalon_microphone_system (
 	input logic GPIO_DIN2,
 	input logic GPIO_DIN3,
 	input logic GPIO_DIN4,
+	input logic [31:0] fir_data,
 
 	// Start button signal
 	//	input logic KEY,
@@ -137,7 +138,8 @@ begin
 	end
 	else if (mic_sel == 3'b100)
 	begin
-		ready_data_choice <= ready_data_4;
+//		ready_data_choice <= ready_data_4;
+		ready_data_choice <= fir_data;
 	end
 	else if (mic_sel == 3'b101)
 	begin

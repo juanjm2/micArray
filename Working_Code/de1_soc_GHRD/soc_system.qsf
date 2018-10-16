@@ -1245,15 +1245,14 @@ set_location_assignment PIN_AK16 -to GPIO_DIN3
 set_location_assignment PIN_AK18 -to GPIO_DIN4
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_DIN3
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_DIN4
-set_global_assignment -name SYSTEMVERILOG_FILE mic_dma.sv
-set_global_assignment -name SYSTEMVERILOG_FILE avalon_microphone_system.sv
+set_global_assignment -name QIP_FILE fir_test/synthesis/fir_test.qip
+set_global_assignment -name QIP_FILE Audio/synthesis/Audio.qip
 set_global_assignment -name VERILOG_FILE audio_and_video_config.v
 set_global_assignment -name VERILOG_FILE Altera_UP_Slow_Clock_Generator.v
 set_global_assignment -name VERILOG_FILE Altera_UP_I2C_AV_Auto_Initialize.v
 set_global_assignment -name VERILOG_FILE Altera_UP_I2C.v
 set_global_assignment -name VERILOG_FILE altera_up_clock_edge.v
 set_global_assignment -name QIP_FILE audio_pll/synthesis/audio_pll.qip
-set_global_assignment -name QIP_FILE Audio/synthesis/Audio.qip
 set_global_assignment -name QIP_FILE ip/altsource_probe/hps_reset.qip
 set_global_assignment -name VERILOG_FILE ip/altsource_probe/hps_reset.v
 set_global_assignment -name VERILOG_FILE ip/debounce/debounce.v

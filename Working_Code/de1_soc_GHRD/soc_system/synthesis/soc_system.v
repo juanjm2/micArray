@@ -84,6 +84,7 @@ module soc_system (
 		input  wire        mic_system_0_gpio_din2_new_signal,      //          mic_system_0_gpio_din2.new_signal
 		input  wire        mic_system_0_gpio_din3_new_signal,      //          mic_system_0_gpio_din3.new_signal
 		input  wire        mic_system_0_gpio_din4_new_signal,      //          mic_system_0_gpio_din4.new_signal
+		input  wire [31:0] mic_system_0_fir_data_new_signal,		  //			  Fir data from adc {left, right} 32 bits total
 		input  wire [3:0]  pushbuttons_external_connection_export, // pushbuttons_external_connection.export
 		input  wire        reset_reset_n                           //                           reset.reset_n
 	);
@@ -339,6 +340,7 @@ module soc_system (
 		.GPIO_DIN2      (mic_system_0_gpio_din2_new_signal),                   //    GPIO_DIN2.new_signal
 		.GPIO_DIN3      (mic_system_0_gpio_din3_new_signal),                   //    GPIO_DIN3.new_signal
 		.GPIO_DIN4      (mic_system_0_gpio_din4_new_signal),                   //    GPIO_DIN4.new_signal
+		.fir_data		 (mic_system_0_fir_data_new_signal),
 		.codec_stream   (mic_system_0_codec_stream_new_signal),                // codec_stream.new_signal
 		.adc_data       (mic_system_0_adc_data_new_signal)                     //     adc_data.new_signal
 	);

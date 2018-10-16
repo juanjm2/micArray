@@ -16,7 +16,7 @@
 #define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
 #define DDR_BASE ( 0x00000000 )
 #define DDR_SPAN ( 0x3FFFFFFF )
-#define BUF_SIZE 0x00124F80
+#define BUF_SIZE 0x00130B00
 #define SAMPLING_RATE 48000
 #define START_ADDRESS 0x02000000
 //48000 sampling rate
