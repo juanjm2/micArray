@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2018.04.03.19:56:20"
- outputDirectory="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/">
+ date="2018.10.17.22:02:41"
+ outputDirectory="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -51,56 +51,104 @@
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
-  <interface name="audio_0_external_interface" kind="conduit" start="0">
-   <property name="associatedClock" value="" />
-   <property name="associatedReset" value="" />
-   <port
-       name="audio_0_external_interface_ADCDAT"
-       direction="input"
-       role="ADCDAT"
-       width="1" />
-   <port
-       name="audio_0_external_interface_ADCLRCK"
-       direction="input"
-       role="ADCLRCK"
-       width="1" />
-   <port
-       name="audio_0_external_interface_BCLK"
-       direction="input"
-       role="BCLK"
-       width="1" />
-   <port
-       name="audio_0_external_interface_DACDAT"
-       direction="output"
-       role="DACDAT"
-       width="1" />
-   <port
-       name="audio_0_external_interface_DACLRCK"
-       direction="input"
-       role="DACLRCK"
-       width="1" />
-  </interface>
   <interface name="clk" kind="clock" start="0">
    <property name="clockRate" value="50000000" />
    <property name="externallyDriven" value="false" />
    <property name="ptfSchematicName" value="" />
    <port name="clk_clk" direction="input" role="clk" width="1" />
   </interface>
+  <interface name="external" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="external_ADCDAT" direction="input" role="ADCDAT" width="1" />
+   <port name="external_ADCLRCK" direction="input" role="ADCLRCK" width="1" />
+   <port name="external_BCLK" direction="input" role="BCLK" width="1" />
+   <port name="external_DACDAT" direction="output" role="DACDAT" width="1" />
+   <port name="external_DACLRCK" direction="input" role="DACLRCK" width="1" />
+  </interface>
+  <interface name="left_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="left_input_data" direction="input" role="data" width="16" />
+   <port name="left_input_valid" direction="input" role="valid" width="1" />
+   <port name="left_input_ready" direction="output" role="ready" width="1" />
+  </interface>
+  <interface name="left_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="left_output_ready" direction="input" role="ready" width="1" />
+   <port name="left_output_data" direction="output" role="data" width="16" />
+   <port name="left_output_valid" direction="output" role="valid" width="1" />
+  </interface>
   <interface name="reset" kind="reset" start="0">
    <property name="associatedClock" value="" />
    <property name="synchronousEdges" value="NONE" />
    <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
   </interface>
+  <interface name="right_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="right_input_data" direction="input" role="data" width="16" />
+   <port name="right_input_valid" direction="input" role="valid" width="1" />
+   <port name="right_input_ready" direction="output" role="ready" width="1" />
+  </interface>
+  <interface name="right_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="right_output_ready" direction="input" role="ready" width="1" />
+   <port name="right_output_data" direction="output" role="data" width="16" />
+   <port name="right_output_valid" direction="output" role="valid" width="1" />
+  </interface>
  </perimeter>
  <entity
    path=""
-   parameterizationKey="Audio:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1522803379,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Memory Mapped,dw=16)(clock_source:17.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(clock:17.1:)(reset:17.1:)"
+   parameterizationKey="Audio:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1539831760,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16)(clock_source:17.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(clock:17.1:)(reset:17.1:)"
    instancePathKey="Audio"
    kind="Audio"
    version="1.0"
    name="Audio">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1522803379" />
+  <parameter name="AUTO_GENERATION_ID" value="1539831760" />
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
@@ -109,59 +157,59 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
   <generatedFiles>
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/Audio.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/Audio.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_audio_bit_counter.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_audio_bit_counter.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_audio_in_deserializer.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_audio_out_serializer.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_audio_out_serializer.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_clock_edge.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_clock_edge.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_sync_fifo.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_sync_fifo.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/Audio_audio_0.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/Audio_audio_0.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_reset_controller.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_reset_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_reset_synchronizer.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_reset_synchronizer.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_reset_controller.sdc"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_reset_controller.sdc"
        type="SDC"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio.qsys" />
+   <file path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Debug" culprit="Audio">queue size: 0 starting:Audio "Audio"</message>
@@ -192,51 +240,51 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Memory Mapped,dw=16"
+   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16"
    instancePathKey="Audio:.:audio_0"
    kind="altera_up_avalon_audio"
    version="17.1"
    name="Audio_audio_0">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="dw" value="16" />
-  <parameter name="avalon_bus_type" value="Memory Mapped" />
+  <parameter name="avalon_bus_type" value="Streaming" />
   <parameter name="audio_in" value="true" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="audio_out" value="true" />
   <generatedFiles>
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_audio_bit_counter.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_audio_bit_counter.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_audio_in_deserializer.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_audio_out_serializer.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_audio_out_serializer.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_clock_edge.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_clock_edge.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_up_sync_fifo.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_up_sync_fifo.v"
        type="VERILOG" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/Audio_audio_0.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/Audio_audio_0.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
    <file
-       path="C:/intelfpga/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="Audio" as="audio_0" />
@@ -255,22 +303,22 @@
    name="altera_reset_controller">
   <generatedFiles>
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_reset_controller.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_reset_controller.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_reset_synchronizer.v"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_reset_synchronizer.v"
        type="VERILOG"
        attributes="" />
    <file
-       path="C:/Users/juanjm2/Desktop/RTL_2_Mics/RTL_2_Mics/base/Audio/synthesis/submodules/altera_reset_controller.sdc"
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/Audio/synthesis/submodules/altera_reset_controller.sdc"
        type="SDC"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="C:/intelfpga/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="Audio" as="rst_controller" />

@@ -1,0 +1,9 @@
+module volumeControl(
+	input logic CLK,
+	input logic key_up,
+	input logic key_down,
+	input logic [31:0] line_in_data,
+	output logic [31:0] controlled_data
+);
+
+endmodule

@@ -1,0 +1,176 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dH:/juanjm2_git/micArray/I2S_AUD_IP/base/simulation/modelsim
+vAltera_UP_I2C
+Z1 !s110 1526008953
+!i10b 1
+!s100 JU94J3RToJ0DChmlIi^B43
+IiIzL2Y0MOT7LH>Aa^K2G[3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1524500490
+8H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c.v
+FH:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c.v
+Z4 L0 48
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1526008953.000000
+!s107 H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base|H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c.v|
+!i113 1
+Z7 o-vlog01compat -work work
+Z8 !s92 -vlog01compat -work work +incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base
+Z9 tCvgOpt 0
+n@altera_@u@p_@i2@c
+vAltera_UP_I2C_AV_Auto_Initialize
+R1
+!i10b 1
+!s100 TbIA;9787GSRoV9be_N2^2
+IlOlG:2aoDV3WecHA4UzDF0
+R2
+R0
+R3
+8H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c_av_auto_initialize.v
+FH:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c_av_auto_initialize.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c_av_auto_initialize.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base|H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_i2c_av_auto_initialize.v|
+!i113 1
+R7
+R8
+R9
+n@altera_@u@p_@i2@c_@a@v_@auto_@initialize
+vAltera_UP_Slow_Clock_Generator
+R1
+!i10b 1
+!s100 U@B3NehPQRXcdeI<e=@I53
+IQVS]OXHXVMcbbM181WI>k3
+R2
+R0
+R3
+8H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_slow_clock_generator.v
+FH:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_slow_clock_generator.v
+L0 53
+R5
+r1
+!s85 0
+31
+R6
+!s107 H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_slow_clock_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base|H:/juanjm2_git/micArray/I2S_AUD_IP/base/altera_up_slow_clock_generator.v|
+!i113 1
+R7
+R8
+R9
+n@altera_@u@p_@slow_@clock_@generator
+vaudio_and_video_config
+R1
+!i10b 1
+!s100 z3>_mDg4hMjn4VjXHn00U3
+I7mcbeS5kNckaA5nn;55bg0
+R2
+R0
+R3
+8H:/juanjm2_git/micArray/I2S_AUD_IP/base/audio_and_video_config.v
+FH:/juanjm2_git/micArray/I2S_AUD_IP/base/audio_and_video_config.v
+L0 49
+R5
+r1
+!s85 0
+31
+R6
+!s107 H:/juanjm2_git/micArray/I2S_AUD_IP/base/audio_and_video_config.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base|H:/juanjm2_git/micArray/I2S_AUD_IP/base/audio_and_video_config.v|
+!i113 1
+R7
+R8
+R9
+vmic_dma
+Z10 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R1
+!i10b 1
+!s100 P2M4W]=f_Rg6_2k@HLCOl1
+IW;N>>X07E68elJnP4lLSh2
+R2
+!s105 mic_dma_sv_unit
+S1
+R0
+w1526008734
+8H:/juanjm2_git/micArray/I2S_AUD_IP/base/mic_dma.sv
+FH:/juanjm2_git/micArray/I2S_AUD_IP/base/mic_dma.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 H:/juanjm2_git/micArray/I2S_AUD_IP/base/mic_dma.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base|H:/juanjm2_git/micArray/I2S_AUD_IP/base/mic_dma.sv|
+!i113 1
+Z11 o-sv -work work
+Z12 !s92 -sv -work work +incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base
+R9
+vtemp_top
+R10
+R1
+!i10b 1
+!s100 [Jb>U==:`hmYbYo=bGCFe1
+InPS8O@Jh7InJm<a3`MZ]k3
+R2
+!s105 temp_top_sv_unit
+S1
+R0
+w1526005036
+8H:/juanjm2_git/micArray/I2S_AUD_IP/base/temp_top.sv
+FH:/juanjm2_git/micArray/I2S_AUD_IP/base/temp_top.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 H:/juanjm2_git/micArray/I2S_AUD_IP/base/temp_top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base|H:/juanjm2_git/micArray/I2S_AUD_IP/base/temp_top.sv|
+!i113 1
+R11
+R12
+R9
+vtestbench
+R10
+R1
+!i10b 1
+!s100 <obLeF[S[d2D^XoET^0C_2
+I[88WUfJ^]038<?0OW84FF0
+R2
+!s105 testbench_sv_unit
+S1
+R0
+w1526005048
+8H:/juanjm2_git/micArray/I2S_AUD_IP/base/testbench.sv
+FH:/juanjm2_git/micArray/I2S_AUD_IP/base/testbench.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 H:/juanjm2_git/micArray/I2S_AUD_IP/base/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+H:/juanjm2_git/micArray/I2S_AUD_IP/base|H:/juanjm2_git/micArray/I2S_AUD_IP/base/testbench.sv|
+!i113 1
+R11
+R12
+R9

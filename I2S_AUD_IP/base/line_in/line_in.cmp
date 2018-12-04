@@ -1,0 +1,26 @@
+	component line_in is
+		port (
+			audio_0_avalon_left_channel_sink_data            : in    std_logic_vector(23 downto 0) := (others => 'X'); -- data
+			audio_0_avalon_left_channel_sink_valid           : in    std_logic                     := 'X';             -- valid
+			audio_0_avalon_left_channel_sink_ready           : out   std_logic;                                        -- ready
+			audio_0_avalon_left_channel_source_ready         : in    std_logic                     := 'X';             -- ready
+			audio_0_avalon_left_channel_source_data          : out   std_logic_vector(23 downto 0);                    -- data
+			audio_0_avalon_left_channel_source_valid         : out   std_logic;                                        -- valid
+			audio_0_avalon_right_channel_sink_data           : in    std_logic_vector(23 downto 0) := (others => 'X'); -- data
+			audio_0_avalon_right_channel_sink_valid          : in    std_logic                     := 'X';             -- valid
+			audio_0_avalon_right_channel_sink_ready          : out   std_logic;                                        -- ready
+			audio_0_avalon_right_channel_source_ready        : in    std_logic                     := 'X';             -- ready
+			audio_0_avalon_right_channel_source_data         : out   std_logic_vector(23 downto 0);                    -- data
+			audio_0_avalon_right_channel_source_valid        : out   std_logic;                                        -- valid
+			audio_0_external_interface_ADCDAT                : in    std_logic                     := 'X';             -- ADCDAT
+			audio_0_external_interface_ADCLRCK               : in    std_logic                     := 'X';             -- ADCLRCK
+			audio_0_external_interface_BCLK                  : in    std_logic                     := 'X';             -- BCLK
+			audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
+			audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';             -- DACLRCK
+			audio_and_video_config_0_external_interface_SDAT : inout std_logic                     := 'X';             -- SDAT
+			audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
+			clk_clk                                          : in    std_logic                     := 'X';             -- clk
+			reset_reset_n                                    : in    std_logic                     := 'X'              -- reset_n
+		);
+	end component line_in;
+

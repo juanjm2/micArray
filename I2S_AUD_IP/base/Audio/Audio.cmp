@@ -1,12 +1,24 @@
 	component Audio is
 		port (
-			audio_0_external_interface_ADCDAT  : in  std_logic := 'X'; -- ADCDAT
-			audio_0_external_interface_ADCLRCK : in  std_logic := 'X'; -- ADCLRCK
-			audio_0_external_interface_BCLK    : in  std_logic := 'X'; -- BCLK
-			audio_0_external_interface_DACDAT  : out std_logic;        -- DACDAT
-			audio_0_external_interface_DACLRCK : in  std_logic := 'X'; -- DACLRCK
-			clk_clk                            : in  std_logic := 'X'; -- clk
-			reset_reset_n                      : in  std_logic := 'X'  -- reset_n
+			clk_clk            : in  std_logic                     := 'X';             -- clk
+			external_ADCDAT    : in  std_logic                     := 'X';             -- ADCDAT
+			external_ADCLRCK   : in  std_logic                     := 'X';             -- ADCLRCK
+			external_BCLK      : in  std_logic                     := 'X';             -- BCLK
+			external_DACDAT    : out std_logic;                                        -- DACDAT
+			external_DACLRCK   : in  std_logic                     := 'X';             -- DACLRCK
+			left_input_data    : in  std_logic_vector(15 downto 0) := (others => 'X'); -- data
+			left_input_valid   : in  std_logic                     := 'X';             -- valid
+			left_input_ready   : out std_logic;                                        -- ready
+			left_output_ready  : in  std_logic                     := 'X';             -- ready
+			left_output_data   : out std_logic_vector(15 downto 0);                    -- data
+			left_output_valid  : out std_logic;                                        -- valid
+			reset_reset_n      : in  std_logic                     := 'X';             -- reset_n
+			right_input_data   : in  std_logic_vector(15 downto 0) := (others => 'X'); -- data
+			right_input_valid  : in  std_logic                     := 'X';             -- valid
+			right_input_ready  : out std_logic;                                        -- ready
+			right_output_ready : in  std_logic                     := 'X';             -- ready
+			right_output_data  : out std_logic_vector(15 downto 0);                    -- data
+			right_output_valid : out std_logic                                         -- valid
 		);
 	end component Audio;
 

@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2018.10.23.21:20:57"
+ outputDirectory="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA5F31C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="ext" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="ext_ADCDAT" direction="input" role="ADCDAT" width="1" />
+   <port name="ext_ADCLRCK" direction="input" role="ADCLRCK" width="1" />
+   <port name="ext_BCLK" direction="input" role="BCLK" width="1" />
+   <port name="ext_DACDAT" direction="output" role="DACDAT" width="1" />
+   <port name="ext_DACLRCK" direction="input" role="DACLRCK" width="1" />
+  </interface>
+  <interface name="ext_1" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="ext_1_SDAT" direction="bidir" role="SDAT" width="1" />
+   <port name="ext_1_SCLK" direction="output" role="SCLK" width="1" />
+  </interface>
+  <interface name="fir_left_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="16" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="fir_left_input_data" direction="input" role="data" width="16" />
+   <port name="fir_left_input_valid" direction="input" role="valid" width="1" />
+   <port name="fir_left_input_error" direction="input" role="error" width="2" />
+  </interface>
+  <interface name="fir_left_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="16" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="fir_left_output_data" direction="output" role="data" width="16" />
+   <port
+       name="fir_left_output_valid"
+       direction="output"
+       role="valid"
+       width="1" />
+   <port
+       name="fir_left_output_error"
+       direction="output"
+       role="error"
+       width="2" />
+  </interface>
+  <interface name="fir_right_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="16" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="fir_right_input_data" direction="input" role="data" width="16" />
+   <port name="fir_right_input_valid" direction="input" role="valid" width="1" />
+   <port name="fir_right_input_error" direction="input" role="error" width="2" />
+  </interface>
+  <interface name="fir_right_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="16" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port
+       name="fir_right_output_data"
+       direction="output"
+       role="data"
+       width="16" />
+   <port
+       name="fir_right_output_valid"
+       direction="output"
+       role="valid"
+       width="1" />
+   <port
+       name="fir_right_output_error"
+       direction="output"
+       role="error"
+       width="2" />
+  </interface>
+  <interface name="left_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="left_input_data" direction="input" role="data" width="16" />
+   <port name="left_input_valid" direction="input" role="valid" width="1" />
+   <port name="left_input_ready" direction="output" role="ready" width="1" />
+  </interface>
+  <interface name="left_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="left_output_ready" direction="input" role="ready" width="1" />
+   <port name="left_output_data" direction="output" role="data" width="16" />
+   <port name="left_output_valid" direction="output" role="valid" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="right_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="right_input_data" direction="input" role="data" width="16" />
+   <port name="right_input_valid" direction="input" role="valid" width="1" />
+   <port name="right_input_ready" direction="output" role="ready" width="1" />
+  </interface>
+  <interface name="right_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="right_output_ready" direction="input" role="ready" width="1" />
+   <port name="right_output_data" direction="output" role="data" width="16" />
+   <port name="right_output_valid" direction="output" role="valid" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="fir_16:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1540347655,AUTO_UNIQUE_ID=(altera_fir_compiler_ii:17.1:L_bandsFilter=1,MODE_STRING=None Set,ModeWidth=0,backPressure=false,bankCount=1,bankDisplay=0,bankInWidth=0,baseAddress=0,busAddressWidth=6,busDataWidth=16,chanPerInputInterface=1,chanPerOutputInterface=1,channelModes=0,1,2,3,clockRate=50,clockSlack=0,coeffBitWidth=3,coeffBitWidth_derived=3,coeffComplex=false,coeffFracBitWidth=0,coeffNum=63,coeffReload=false,coeffScaling=auto,coeffSetFixedValue=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,coeffSetFixedValueImag=0,0,0,0,0,0,0,0,coeffSetRealValue=-0.005782864359858162,-0.0025648221521494628,-0.0029933840893287557,-0.0033536114523214306,-0.0036082306416442994,-0.003719717209165507,-0.0036496160193587143,-0.0033561401871556587,-0.002798486565175044,-0.001944894509967708,-7.711758857304644E-4,7.508401493567783E-4,0.0026440493276360067,0.004893822796576416,0.007514453943765508,0.010478421568833277,0.01376087702832994,0.017321343491199938,0.021111957253287177,0.025072917882094214,0.029134724942678294,0.03322349833905958,0.03726104229595373,0.04116209924326623,0.044843442058007964,0.048227493707721426,0.05123448325548204,0.053797017293795844,0.05585527613071549,0.05736209690136674,0.05828003167670566,0.05858808421584094,0.05828003167670566,0.05736209690136674,0.05585527613071549,0.053797017293795844,0.05123448325548204,0.048227493707721426,0.044843442058007964,0.04116209924326623,0.03726104229595373,0.03322349833905958,0.029134724942678294,0.025072917882094214,0.021111957253287177,0.017321343491199938,0.01376087702832994,0.010478421568833277,0.007514453943765508,0.004893822796576416,0.0026440493276360067,7.508401493567783E-4,-7.711758857304644E-4,-0.001944894509967708,-0.002798486565175044,-0.0033561401871556587,-0.0036496160193587143,-0.003719717209165507,-0.0036082306416442994,-0.0033536114523214306,-0.0029933840893287557,-0.0025648221521494628,-0.005782864359858162,coeffSetRealValueImag=0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,coeffSetScaleValue=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.05858808421584094,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffSetScaleValueImag=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffType=int,coefficientReadback=false,coefficientWriteable=false,decimFactor=1,delayRAMBlockThreshold=20,deviceFamily=Cyclone V,dspCount=1,dualMemDistRAMThreshold=1280,errorList=0,filterType=single,funcResult=-interp=1 -decim=1 -incycles=1041 -len=63 -bankcount=1 -nsym -nband=1 -chans=1 -family=&quot;Cyclone V&quot; 
+|{}|1|1|1|1|25|0|16|3|noCode|LUTS: 168 DSPs: 1 RAM Bits: 1024|,hardMultiplierThreshold=-1,inputBitWidth=16,inputChannelNum=1,inputFracBitWidth=0,inputInterfaceNum=1,inputRate=0.048,inputType=int,interpFactor=1,karatsuba=false,latency=16,latency_realOnly=16,lutCount=168,mRAMThreshold=1000000,memBitCount=1024,modeFormatted=--,num_modes=2,outBitWidth=16,outFracBitWidth=0,outFullFracBitWidth=0,outFullFracBitWidth_realOnly=0,outLSBRound=trunc,outLsbBitRem=9,outMSBRound=trunc,outMsbBitRem=0,outType=int,outWidth=25,outWidth_realOnly=25,outputInterfaceNum=1,outputfifodepth=4,outputfifodepth_realOnly=3,readWriteMode=read_write,reconfigurable=false,reconfigurable_list=0,speedGrade=medium,symmetryMode=nsym)(altera_fir_compiler_ii:17.1:L_bandsFilter=1,MODE_STRING=None Set,ModeWidth=0,backPressure=false,bankCount=1,bankDisplay=0,bankInWidth=0,baseAddress=0,busAddressWidth=6,busDataWidth=16,chanPerInputInterface=1,chanPerOutputInterface=1,channelModes=0,1,2,3,clockRate=50,clockSlack=0,coeffBitWidth=3,coeffBitWidth_derived=3,coeffComplex=false,coeffFracBitWidth=0,coeffNum=63,coeffReload=false,coeffScaling=auto,coeffSetFixedValue=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,coeffSetFixedValueImag=0,0,0,0,0,0,0,0,coeffSetRealValue=-0.005782864359858162,-0.0025648221521494628,-0.0029933840893287557,-0.0033536114523214306,-0.0036082306416442994,-0.003719717209165507,-0.0036496160193587143,-0.0033561401871556587,-0.002798486565175044,-0.001944894509967708,-7.711758857304644E-4,7.508401493567783E-4,0.0026440493276360067,0.004893822796576416,0.007514453943765508,0.010478421568833277,0.01376087702832994,0.017321343491199938,0.021111957253287177,0.025072917882094214,0.029134724942678294,0.03322349833905958,0.03726104229595373,0.04116209924326623,0.044843442058007964,0.048227493707721426,0.05123448325548204,0.053797017293795844,0.05585527613071549,0.05736209690136674,0.05828003167670566,0.05858808421584094,0.05828003167670566,0.05736209690136674,0.05585527613071549,0.053797017293795844,0.05123448325548204,0.048227493707721426,0.044843442058007964,0.04116209924326623,0.03726104229595373,0.03322349833905958,0.029134724942678294,0.025072917882094214,0.021111957253287177,0.017321343491199938,0.01376087702832994,0.010478421568833277,0.007514453943765508,0.004893822796576416,0.0026440493276360067,7.508401493567783E-4,-7.711758857304644E-4,-0.001944894509967708,-0.002798486565175044,-0.0033561401871556587,-0.0036496160193587143,-0.003719717209165507,-0.0036082306416442994,-0.0033536114523214306,-0.0029933840893287557,-0.0025648221521494628,-0.005782864359858162,coeffSetRealValueImag=0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,coeffSetScaleValue=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.05858808421584094,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffSetScaleValueImag=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffType=int,coefficientReadback=false,coefficientWriteable=false,decimFactor=1,delayRAMBlockThreshold=20,deviceFamily=Cyclone V,dspCount=1,dualMemDistRAMThreshold=1280,errorList=0,filterType=single,funcResult=-interp=1 -decim=1 -incycles=1041 -len=63 -bankcount=1 -nsym -nband=1 -chans=1 -family=&quot;Cyclone V&quot; 
+|{}|1|1|1|1|25|0|16|3|noCode|LUTS: 168 DSPs: 1 RAM Bits: 1024|,hardMultiplierThreshold=-1,inputBitWidth=16,inputChannelNum=1,inputFracBitWidth=0,inputInterfaceNum=1,inputRate=0.048,inputType=int,interpFactor=1,karatsuba=false,latency=16,latency_realOnly=16,lutCount=168,mRAMThreshold=1000000,memBitCount=1024,modeFormatted=--,num_modes=2,outBitWidth=16,outFracBitWidth=0,outFullFracBitWidth=0,outFullFracBitWidth_realOnly=0,outLSBRound=trunc,outLsbBitRem=9,outMSBRound=trunc,outMsbBitRem=0,outType=int,outWidth=25,outWidth_realOnly=25,outputInterfaceNum=1,outputfifodepth=4,outputfifodepth_realOnly=3,readWriteMode=read_write,reconfigurable=false,reconfigurable_list=0,speedGrade=medium,symmetryMode=nsym)(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16)(altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=16,board=DE10-Standard,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC)(clock_source:17.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(clock:17.1:)(clock:17.1:)(clock:17.1:)(clock:17.1:)(reset:17.1:)(reset:17.1:)(reset:17.1:)(reset:17.1:)"
+   instancePathKey="fir_16"
+   kind="fir_16"
+   version="1.0"
+   name="fir_16">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1540347655" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/fir_16.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/dspba_library_package.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/dspba_library.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_math_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_lib_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_avalon_streaming_controller_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_avalon_streaming_sink_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_avalon_streaming_source_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_roundsat_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_avalon_sc_fifo.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_FIR_LEFT_rtl_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_FIR_LEFT_ast.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_FIR_LEFT.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_audio_bit_counter.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_audio_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_clock_edge.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_audio_0.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_serial_bus_controller.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_slow_clock_generator.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_dc2.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_d5m.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_lcm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ltm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_audio_and_video_config_0.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/dsp/altera_fir_compiler_ii/src/HP_FIR_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/altera_up_avalon_audio_and_video_config_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_serial_bus_controller.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_slow_clock_generator.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_dc2.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_d5m.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_lcm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ltm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de1_soc.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2_115.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2i_150.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de10_standard.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_audio.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7180.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7181.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="fir_16">queue size: 0 starting:fir_16 "fir_16"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>5</b> modules, <b>8</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>6</b> modules, <b>10</b> connections]]></message>
+   <message level="Debug" culprit="fir_16"><![CDATA["<b>fir_16</b>" reuses <b>altera_fir_compiler_ii</b> "<b>submodules/fir_16_FIR_LEFT</b>"]]></message>
+   <message level="Debug" culprit="fir_16"><![CDATA["<b>fir_16</b>" reuses <b>altera_fir_compiler_ii</b> "<b>submodules/fir_16_FIR_LEFT</b>"]]></message>
+   <message level="Debug" culprit="fir_16"><![CDATA["<b>fir_16</b>" reuses <b>altera_up_avalon_audio</b> "<b>submodules/fir_16_audio_0</b>"]]></message>
+   <message level="Debug" culprit="fir_16"><![CDATA["<b>fir_16</b>" reuses <b>altera_up_avalon_audio_and_video_config</b> "<b>submodules/fir_16_audio_and_video_config_0</b>"]]></message>
+   <message level="Debug" culprit="fir_16"><![CDATA["<b>fir_16</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="fir_16">queue size: 4 starting:altera_fir_compiler_ii "submodules/fir_16_FIR_LEFT"</message>
+   <message level="Debug" culprit="FIR_LEFT"><![CDATA[C:/intelfpga_lite/17.1/quartus/dspba/backend/windows64/fir_ip_api_interface fir_16_FIR_LEFT_rtl_core . CYCLONEV medium 0 50 1 0.048 63 1 1 1 nsym 1 16 0 3 0 0 false false -- 16 6 20 1280 1000000 -1 true false 1 -- <<< 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ]]></message>
+   <message level="Debug" culprit="FIR_LEFT"><![CDATA[OUTPARAMS -interp=1 -decim=1 -incycles=1041 -len=63 -bankcount=1 -nsym -nband=1 -chans=1 -family="Cyclone V" 
+|{}|1|1|1|1|25|0|16|3|true|LUTS: 168 DSPs: 1 RAM Bits: 1024|fir_16_FIR_LEFT_rtl_core.vhd|]]></message>
+   <message level="Info" culprit="FIR_LEFT">PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 25, Bankcount 1, Latency 16, CoefBitWidth 3</message>
+   <message level="Info" culprit="FIR_LEFT"><![CDATA["<b>fir_16</b>" instantiated <b>altera_fir_compiler_ii</b> "<b>FIR_LEFT</b>"]]></message>
+   <message level="Debug" culprit="fir_16">queue size: 2 starting:altera_up_avalon_audio "submodules/fir_16_audio_0"</message>
+   <message level="Info" culprit="audio_0">Starting Generation of Audio Controller</message>
+   <message level="Info" culprit="audio_0"><![CDATA["<b>fir_16</b>" instantiated <b>altera_up_avalon_audio</b> "<b>audio_0</b>"]]></message>
+   <message level="Debug" culprit="fir_16">queue size: 1 starting:altera_up_avalon_audio_and_video_config "submodules/fir_16_audio_and_video_config_0"</message>
+   <message level="Info" culprit="audio_and_video_config_0">Starting Generation of Audio and Video Config</message>
+   <message level="Info" culprit="audio_and_video_config_0"><![CDATA["<b>fir_16</b>" instantiated <b>altera_up_avalon_audio_and_video_config</b> "<b>audio_and_video_config_0</b>"]]></message>
+   <message level="Debug" culprit="fir_16">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>fir_16</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_fir_compiler_ii:17.1:L_bandsFilter=1,MODE_STRING=None Set,ModeWidth=0,backPressure=false,bankCount=1,bankDisplay=0,bankInWidth=0,baseAddress=0,busAddressWidth=6,busDataWidth=16,chanPerInputInterface=1,chanPerOutputInterface=1,channelModes=0,1,2,3,clockRate=50,clockSlack=0,coeffBitWidth=3,coeffBitWidth_derived=3,coeffComplex=false,coeffFracBitWidth=0,coeffNum=63,coeffReload=false,coeffScaling=auto,coeffSetFixedValue=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,coeffSetFixedValueImag=0,0,0,0,0,0,0,0,coeffSetRealValue=-0.005782864359858162,-0.0025648221521494628,-0.0029933840893287557,-0.0033536114523214306,-0.0036082306416442994,-0.003719717209165507,-0.0036496160193587143,-0.0033561401871556587,-0.002798486565175044,-0.001944894509967708,-7.711758857304644E-4,7.508401493567783E-4,0.0026440493276360067,0.004893822796576416,0.007514453943765508,0.010478421568833277,0.01376087702832994,0.017321343491199938,0.021111957253287177,0.025072917882094214,0.029134724942678294,0.03322349833905958,0.03726104229595373,0.04116209924326623,0.044843442058007964,0.048227493707721426,0.05123448325548204,0.053797017293795844,0.05585527613071549,0.05736209690136674,0.05828003167670566,0.05858808421584094,0.05828003167670566,0.05736209690136674,0.05585527613071549,0.053797017293795844,0.05123448325548204,0.048227493707721426,0.044843442058007964,0.04116209924326623,0.03726104229595373,0.03322349833905958,0.029134724942678294,0.025072917882094214,0.021111957253287177,0.017321343491199938,0.01376087702832994,0.010478421568833277,0.007514453943765508,0.004893822796576416,0.0026440493276360067,7.508401493567783E-4,-7.711758857304644E-4,-0.001944894509967708,-0.002798486565175044,-0.0033561401871556587,-0.0036496160193587143,-0.003719717209165507,-0.0036082306416442994,-0.0033536114523214306,-0.0029933840893287557,-0.0025648221521494628,-0.005782864359858162,coeffSetRealValueImag=0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,coeffSetScaleValue=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.05858808421584094,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffSetScaleValueImag=0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,coeffType=int,coefficientReadback=false,coefficientWriteable=false,decimFactor=1,delayRAMBlockThreshold=20,deviceFamily=Cyclone V,dspCount=1,dualMemDistRAMThreshold=1280,errorList=0,filterType=single,funcResult=-interp=1 -decim=1 -incycles=1041 -len=63 -bankcount=1 -nsym -nband=1 -chans=1 -family=&quot;Cyclone V&quot; 
+|{}|1|1|1|1|25|0|16|3|noCode|LUTS: 168 DSPs: 1 RAM Bits: 1024|,hardMultiplierThreshold=-1,inputBitWidth=16,inputChannelNum=1,inputFracBitWidth=0,inputInterfaceNum=1,inputRate=0.048,inputType=int,interpFactor=1,karatsuba=false,latency=16,latency_realOnly=16,lutCount=168,mRAMThreshold=1000000,memBitCount=1024,modeFormatted=--,num_modes=2,outBitWidth=16,outFracBitWidth=0,outFullFracBitWidth=0,outFullFracBitWidth_realOnly=0,outLSBRound=trunc,outLsbBitRem=9,outMSBRound=trunc,outMsbBitRem=0,outType=int,outWidth=25,outWidth_realOnly=25,outputInterfaceNum=1,outputfifodepth=4,outputfifodepth_realOnly=3,readWriteMode=read_write,reconfigurable=false,reconfigurable_list=0,speedGrade=medium,symmetryMode=nsym"
+   instancePathKey="fir_16:.:FIR_LEFT"
+   kind="altera_fir_compiler_ii"
+   version="17.1"
+   name="fir_16_FIR_LEFT">
+  <parameter name="outBitWidth" value="16" />
+  <parameter name="inputFracBitWidth" value="0" />
+  <parameter
+     name="coeffSetRealValueImag"
+     value="0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.0530093, -0.04498, 0.0, 0.0749693, 0.159034, 0.224907, 0.249809, 0.224907, 0.159034, 0.0749693, 0.0, -0.04498, -0.0530093, -0.0321283, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0" />
+  <parameter name="inputInterfaceNum" value="1" />
+  <parameter name="MODE_STRING" value="None Set" />
+  <parameter
+     name="funcResult"
+     value="-interp=1 -decim=1 -incycles=1041 -len=63 -bankcount=1 -nsym -nband=1 -chans=1 -family=&quot;Cyclone V&quot; 
+|{}|1|1|1|1|25|0|16|3|noCode|LUTS: 168 DSPs: 1 RAM Bits: 1024|" />
+  <parameter name="speedGrade" value="medium" />
+  <parameter name="outFullFracBitWidth_realOnly" value="0" />
+  <parameter name="coeffBitWidth" value="3" />
+  <parameter name="coeffType" value="int" />
+  <parameter name="outMSBRound" value="trunc" />
+  <parameter name="outLSBRound" value="trunc" />
+  <parameter name="coeffReload" value="false" />
+  <parameter name="delayRAMBlockThreshold" value="20" />
+  <parameter name="inputType" value="int" />
+  <parameter name="chanPerOutputInterface" value="1" />
+  <parameter name="busAddressWidth" value="6" />
+  <parameter name="coefficientWriteable" value="false" />
+  <parameter name="coeffSetFixedValueImag" value="0,0,0,0,0,0,0,0" />
+  <parameter name="num_modes" value="2" />
+  <parameter name="karatsuba" value="false" />
+  <parameter name="coeffBitWidth_derived" value="3" />
+  <parameter name="bankDisplay" value="0" />
+  <parameter name="baseAddress" value="0" />
+  <parameter
+     name="coeffSetRealValue"
+     value="-0.005782864359858162,-0.0025648221521494628,-0.0029933840893287557,-0.0033536114523214306,-0.0036082306416442994,-0.003719717209165507,-0.0036496160193587143,-0.0033561401871556587,-0.002798486565175044,-0.001944894509967708,-7.711758857304644E-4,7.508401493567783E-4,0.0026440493276360067,0.004893822796576416,0.007514453943765508,0.010478421568833277,0.01376087702832994,0.017321343491199938,0.021111957253287177,0.025072917882094214,0.029134724942678294,0.03322349833905958,0.03726104229595373,0.04116209924326623,0.044843442058007964,0.048227493707721426,0.05123448325548204,0.053797017293795844,0.05585527613071549,0.05736209690136674,0.05828003167670566,0.05858808421584094,0.05828003167670566,0.05736209690136674,0.05585527613071549,0.053797017293795844,0.05123448325548204,0.048227493707721426,0.044843442058007964,0.04116209924326623,0.03726104229595373,0.03322349833905958,0.029134724942678294,0.025072917882094214,0.021111957253287177,0.017321343491199938,0.01376087702832994,0.010478421568833277,0.007514453943765508,0.004893822796576416,0.0026440493276360067,7.508401493567783E-4,-7.711758857304644E-4,-0.001944894509967708,-0.002798486565175044,-0.0033561401871556587,-0.0036496160193587143,-0.003719717209165507,-0.0036082306416442994,-0.0033536114523214306,-0.0029933840893287557,-0.0025648221521494628,-0.005782864359858162" />
+  <parameter name="coeffSetScaleValueImag" value="0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0" />
+  <parameter name="chanPerInputInterface" value="1" />
+  <parameter name="deviceFamily" value="Cyclone V" />
+  <parameter name="dspCount" value="1" />
+  <parameter name="outType" value="int" />
+  <parameter name="symmetryMode" value="nsym" />
+  <parameter name="outLsbBitRem" value="9" />
+  <parameter name="decimFactor" value="1" />
+  <parameter name="ModeWidth" value="0" />
+  <parameter name="memBitCount" value="1024" />
+  <parameter name="outputInterfaceNum" value="1" />
+  <parameter name="filterType" value="single" />
+  <parameter name="backPressure" value="false" />
+  <parameter name="inputBitWidth" value="16" />
+  <parameter name="coeffScaling" value="auto" />
+  <parameter name="outFullFracBitWidth" value="0" />
+  <parameter name="coeffNum" value="63" />
+  <parameter name="busDataWidth" value="16" />
+  <parameter name="coeffComplex" value="false" />
+  <parameter name="outputfifodepth_realOnly" value="3" />
+  <parameter name="inputChannelNum" value="1" />
+  <parameter name="channelModes" value="0,1,2,3" />
+  <parameter
+     name="coeffSetScaleValue"
+     value="0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.05858808421584094,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.03905872281056063,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.019529361405280315,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0" />
+  <parameter name="latency" value="16" />
+  <parameter name="lutCount" value="168" />
+  <parameter name="outFracBitWidth" value="0" />
+  <parameter name="outputfifodepth" value="4" />
+  <parameter name="clockRate" value="50" />
+  <parameter name="readWriteMode" value="read_write" />
+  <parameter name="reconfigurable" value="false" />
+  <parameter name="outWidth" value="25" />
+  <parameter name="coeffFracBitWidth" value="0" />
+  <parameter
+     name="coeffSetFixedValue"
+     value="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" />
+  <parameter name="modeFormatted" value="--" />
+  <parameter name="mRAMThreshold" value="1000000" />
+  <parameter name="bankCount" value="1" />
+  <parameter name="interpFactor" value="1" />
+  <parameter name="outWidth_realOnly" value="25" />
+  <parameter name="errorList" value="0" />
+  <parameter name="L_bandsFilter" value="1" />
+  <parameter name="clockSlack" value="0" />
+  <parameter name="outMsbBitRem" value="0" />
+  <parameter name="reconfigurable_list" value="0" />
+  <parameter name="dualMemDistRAMThreshold" value="1280" />
+  <parameter name="latency_realOnly" value="16" />
+  <parameter name="inputRate" value="0.048" />
+  <parameter name="coefficientReadback" value="false" />
+  <parameter name="bankInWidth" value="0" />
+  <parameter name="hardMultiplierThreshold" value="-1" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/dspba_library_package.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/dspba_library.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_math_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_lib_pkg_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_avalon_streaming_controller_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_avalon_streaming_sink_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_avalon_streaming_source_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/auk_dspip_roundsat_hpfir.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_avalon_sc_fifo.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_FIR_LEFT_rtl_core.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_FIR_LEFT_ast.vhd"
+       type="VHDL"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_FIR_LEFT.vhd"
+       type="VHDL"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/dsp/altera_fir_compiler_ii/src/HP_FIR_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="fir_16" as="FIR_LEFT,FIR_RIGHT" />
+  <messages>
+   <message level="Debug" culprit="fir_16">queue size: 4 starting:altera_fir_compiler_ii "submodules/fir_16_FIR_LEFT"</message>
+   <message level="Debug" culprit="FIR_LEFT"><![CDATA[C:/intelfpga_lite/17.1/quartus/dspba/backend/windows64/fir_ip_api_interface fir_16_FIR_LEFT_rtl_core . CYCLONEV medium 0 50 1 0.048 63 1 1 1 nsym 1 16 0 3 0 0 false false -- 16 6 20 1280 1000000 -1 true false 1 -- <<< 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ]]></message>
+   <message level="Debug" culprit="FIR_LEFT"><![CDATA[OUTPARAMS -interp=1 -decim=1 -incycles=1041 -len=63 -bankcount=1 -nsym -nband=1 -chans=1 -family="Cyclone V" 
+|{}|1|1|1|1|25|0|16|3|true|LUTS: 168 DSPs: 1 RAM Bits: 1024|fir_16_FIR_LEFT_rtl_core.vhd|]]></message>
+   <message level="Info" culprit="FIR_LEFT">PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 25, Bankcount 1, Latency 16, CoefBitWidth 3</message>
+   <message level="Info" culprit="FIR_LEFT"><![CDATA["<b>fir_16</b>" instantiated <b>altera_fir_compiler_ii</b> "<b>FIR_LEFT</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=16"
+   instancePathKey="fir_16:.:audio_0"
+   kind="altera_up_avalon_audio"
+   version="17.1"
+   name="fir_16_audio_0">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="dw" value="16" />
+  <parameter name="avalon_bus_type" value="Streaming" />
+  <parameter name="audio_in" value="true" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="audio_out" value="true" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_audio_bit_counter.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_audio_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_clock_edge.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_audio_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="fir_16" as="audio_0" />
+  <messages>
+   <message level="Debug" culprit="fir_16">queue size: 2 starting:altera_up_avalon_audio "submodules/fir_16_audio_0"</message>
+   <message level="Info" culprit="audio_0">Starting Generation of Audio Controller</message>
+   <message level="Info" culprit="audio_0"><![CDATA["<b>fir_16</b>" instantiated <b>altera_up_avalon_audio</b> "<b>audio_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=16,board=DE10-Standard,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC"
+   instancePathKey="fir_16:.:audio_and_video_config_0"
+   kind="altera_up_avalon_audio_and_video_config"
+   version="17.1"
+   name="fir_16_audio_and_video_config_0">
+  <parameter name="data_format" value="Left Justified" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="bosr" value="250fs/256fs" />
+  <parameter name="audio_in" value="Line In to ADC" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="d5m_resolution" value="2592 x 1944" />
+  <parameter name="video_format" value="NTSC" />
+  <parameter name="dac_enable" value="true" />
+  <parameter name="eai" value="true" />
+  <parameter name="line_in_bypass" value="false" />
+  <parameter name="bit_length" value="16" />
+  <parameter name="sampling_rate" value="48 kHz" />
+  <parameter name="sr_register" value="0" />
+  <parameter name="mic_bypass" value="false" />
+  <parameter name="exposure" value="false" />
+  <parameter name="mic_attenuation" value="-6dB" />
+  <parameter name="device" value="On-Board Peripherals" />
+  <parameter name="board" value="DE10-Standard" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_serial_bus_controller.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_slow_clock_generator.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_dc2.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_d5m.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_lcm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ltm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/fir_16_audio_and_video_config_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/altera_up_avalon_audio_and_video_config_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_serial_bus_controller.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_slow_clock_generator.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_dc2.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_d5m.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_lcm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ltm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de1_soc.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2_115.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2i_150.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de10_standard.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_audio.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7180.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7181.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="fir_16" as="audio_and_video_config_0" />
+  <messages>
+   <message level="Debug" culprit="fir_16">queue size: 1 starting:altera_up_avalon_audio_and_video_config "submodules/fir_16_audio_and_video_config_0"</message>
+   <message level="Info" culprit="audio_and_video_config_0">Starting Generation of Audio and Video Config</message>
+   <message level="Info" culprit="audio_and_video_config_0"><![CDATA["<b>fir_16</b>" instantiated <b>altera_up_avalon_audio_and_video_config</b> "<b>audio_and_video_config_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_reset_controller:17.1:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
+   instancePathKey="fir_16:.:rst_controller"
+   kind="altera_reset_controller"
+   version="17.1"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_16/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="fir_16" as="rst_controller" />
+  <messages>
+   <message level="Debug" culprit="fir_16">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>fir_16</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

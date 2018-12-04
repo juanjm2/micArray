@@ -1,8 +1,8 @@
 <sld_project_info>
   <sld_infos>
-    <sld_info hpath="Audio:aud_interface" name="aud_interface">
+    <sld_info hpath="aud_setup:fir_setup" name="fir_setup">
       <assignment_values>
-        <assignment_value text="QSYS_NAME Audio HAS_SOPCINFO 1 GENERATION_ID 1522803379"/>
+        <assignment_value text="QSYS_NAME aud_setup HAS_SOPCINFO 1 GENERATION_ID 1542768950"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="audio_pll:clock_gen" name="clock_gen">

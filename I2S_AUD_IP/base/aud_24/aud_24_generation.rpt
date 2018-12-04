@@ -1,0 +1,56 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\aud_24.qsys --block-symbol-file --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\aud_24 --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/aud_24.qsys
+Progress: Reading input file
+Progress: Adding FIR_LEFT [altera_fir_compiler_ii 17.1]
+Progress: Parameterizing module FIR_LEFT
+Progress: Adding FIR_RIGHT [altera_fir_compiler_ii 17.1]
+Progress: Parameterizing module FIR_RIGHT
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: aud_24.FIR_LEFT: PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 27, Bankcount 1, CoefBitWidth 5
+Info: aud_24.FIR_RIGHT: PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 27, Bankcount 1, CoefBitWidth 5
+Warning: aud_24.audio_and_video_config_0: audio_and_video_config_0.avalon_av_config_slave must be connected to an Avalon-MM master
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\aud_24.qsys --synthesis=VERILOG --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\aud_24\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/aud_24.qsys
+Progress: Reading input file
+Progress: Adding FIR_LEFT [altera_fir_compiler_ii 17.1]
+Progress: Parameterizing module FIR_LEFT
+Progress: Adding FIR_RIGHT [altera_fir_compiler_ii 17.1]
+Progress: Parameterizing module FIR_RIGHT
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: aud_24.FIR_LEFT: PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 27, Bankcount 1, CoefBitWidth 5
+Info: aud_24.FIR_RIGHT: PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 27, Bankcount 1, CoefBitWidth 5
+Warning: aud_24.audio_and_video_config_0: audio_and_video_config_0.avalon_av_config_slave must be connected to an Avalon-MM master
+Info: aud_24: Generating aud_24 "aud_24" for QUARTUS_SYNTH
+Info: FIR_LEFT: PhysChanIn 1, PhysChanOut 1, ChansPerPhyIn 1, ChansPerPhyOut 1, OutputFullBitWidth 27, Bankcount 1, Latency 16, CoefBitWidth 5
+Info: FIR_LEFT: "aud_24" instantiated altera_fir_compiler_ii "FIR_LEFT"
+Info: audio_0: Starting Generation of Audio Controller
+Info: audio_0: "aud_24" instantiated altera_up_avalon_audio "audio_0"
+Info: audio_and_video_config_0: Starting Generation of Audio and Video Config
+Info: audio_and_video_config_0: "aud_24" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config_0"
+Info: rst_controller: "aud_24" instantiated altera_reset_controller "rst_controller"
+Info: aud_24: Done "aud_24" with 5 modules, 37 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

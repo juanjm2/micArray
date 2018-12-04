@@ -1,0 +1,13 @@
+	component fir_test is
+		port (
+			clk_clk       : in  std_logic                     := 'X';             -- clk
+			input_data    : in  std_logic_vector(15 downto 0) := (others => 'X'); -- data
+			input_valid   : in  std_logic                     := 'X';             -- valid
+			input_error   : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- error
+			output_data   : out std_logic_vector(15 downto 0);                    -- data
+			output_valid  : out std_logic;                                        -- valid
+			output_error  : out std_logic_vector(1 downto 0);                     -- error
+			reset_reset_n : in  std_logic                     := 'X'              -- reset_n
+		);
+	end component fir_test;
+

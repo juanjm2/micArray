@@ -1,0 +1,38 @@
+	component aud_setup is
+		port (
+			clk_clk                : in    std_logic                     := 'X';             -- clk
+			ext_ADCDAT             : in    std_logic                     := 'X';             -- ADCDAT
+			ext_ADCLRCK            : in    std_logic                     := 'X';             -- ADCLRCK
+			ext_BCLK               : in    std_logic                     := 'X';             -- BCLK
+			ext_DACDAT             : out   std_logic;                                        -- DACDAT
+			ext_DACLRCK            : in    std_logic                     := 'X';             -- DACLRCK
+			ext_1_SDAT             : inout std_logic                     := 'X';             -- SDAT
+			ext_1_SCLK             : out   std_logic;                                        -- SCLK
+			fir_left_input_data    : in    std_logic_vector(15 downto 0) := (others => 'X'); -- data
+			fir_left_input_valid   : in    std_logic                     := 'X';             -- valid
+			fir_left_input_error   : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- error
+			fir_left_output_data   : out   std_logic_vector(31 downto 0);                    -- data
+			fir_left_output_valid  : out   std_logic;                                        -- valid
+			fir_left_output_error  : out   std_logic_vector(1 downto 0);                     -- error
+			fir_right_input_data   : in    std_logic_vector(15 downto 0) := (others => 'X'); -- data
+			fir_right_input_valid  : in    std_logic                     := 'X';             -- valid
+			fir_right_input_error  : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- error
+			fir_right_output_data  : out   std_logic_vector(31 downto 0);                    -- data
+			fir_right_output_valid : out   std_logic;                                        -- valid
+			fir_right_output_error : out   std_logic_vector(1 downto 0);                     -- error
+			left_input_data        : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
+			left_input_valid       : in    std_logic                     := 'X';             -- valid
+			left_input_ready       : out   std_logic;                                        -- ready
+			left_output_ready      : in    std_logic                     := 'X';             -- ready
+			left_output_data       : out   std_logic_vector(31 downto 0);                    -- data
+			left_output_valid      : out   std_logic;                                        -- valid
+			reset_reset_n          : in    std_logic                     := 'X';             -- reset_n
+			right_input_data       : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
+			right_input_valid      : in    std_logic                     := 'X';             -- valid
+			right_input_ready      : out   std_logic;                                        -- ready
+			right_output_ready     : in    std_logic                     := 'X';             -- ready
+			right_output_data      : out   std_logic_vector(31 downto 0);                    -- data
+			right_output_valid     : out   std_logic                                         -- valid
+		);
+	end component aud_setup;
+

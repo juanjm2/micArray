@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="73eb31c714586e4a7243"/>
+    <hash md5_digest_80b="061a9e6e4b173ba2e23f"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="part1.sof" usercode="0xFFFFFFFF"/>
@@ -15,26 +15,26 @@
         <parameter name="SLD_IP_VERSION" type="dec" value="6"/>
         <parameter name="SLD_IP_MINOR_VERSION" type="dec" value="0"/>
         <parameter name="SLD_COMMON_IP_VERSION" type="dec" value="0"/>
-        <parameter name="sld_data_bits" type="unknown" value="72"/>
-        <parameter name="sld_trigger_bits" type="unknown" value="72"/>
+        <parameter name="sld_data_bits" type="unknown" value="141"/>
+        <parameter name="sld_trigger_bits" type="unknown" value="141"/>
         <parameter name="SLD_NODE_CRC_BITS" type="dec" value="32"/>
         <parameter name="SLD_NODE_CRC_HIWORD" type="dec" value="41394"/>
         <parameter name="SLD_NODE_CRC_LOWORD" type="dec" value="50132"/>
         <parameter name="sld_incremental_routing" type="unknown" value="1"/>
-        <parameter name="sld_sample_depth" type="unknown" value="32768"/>
-        <parameter name="sld_segment_size" type="unknown" value="16384"/>
+        <parameter name="sld_sample_depth" type="unknown" value="8192"/>
+        <parameter name="sld_segment_size" type="unknown" value="4096"/>
         <parameter name="sld_ram_block_type" type="unknown" value="AUTO"/>
         <parameter name="sld_state_bits" type="unknown" value="11"/>
         <parameter name="sld_buffer_full_stop" type="unknown" value="1"/>
         <parameter name="SLD_MEM_ADDRESS_BITS" type="dec" value="7"/>
         <parameter name="SLD_DATA_BIT_CNTR_BITS" type="dec" value="4"/>
-        <parameter name="sld_trigger_level" type="unknown" value="2"/>
+        <parameter name="sld_trigger_level" type="unknown" value="1"/>
         <parameter name="sld_trigger_in_enabled" type="unknown" value="0"/>
         <parameter name="SLD_HPS_TRIGGER_IN_ENABLED" type="dec" value="0"/>
         <parameter name="SLD_HPS_TRIGGER_OUT_ENABLED" type="dec" value="0"/>
         <parameter name="SLD_HPS_EVENT_ENABLED" type="dec" value="0"/>
         <parameter name="SLD_HPS_EVENT_ID" type="dec" value="0"/>
-        <parameter name="sld_advanced_trigger_entity" type="unknown" value="basic,1,basic,1,"/>
+        <parameter name="sld_advanced_trigger_entity" type="unknown" value="basic,1,"/>
         <parameter name="sld_trigger_level_pipeline" type="unknown" value="1"/>
         <parameter name="sld_trigger_pipeline" type="unknown" value="0"/>
         <parameter name="sld_ram_pipeline" type="unknown" value="4"/>
@@ -50,14 +50,14 @@
         <parameter name="SLD_ADVANCED_TRIGGER_8" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_9" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_10" type="string" value="NONE"/>
-        <parameter name="sld_inversion_mask_length" type="unknown" value="460"/>
-        <parameter name="sld_inversion_mask" type="unknown" value="0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
+        <parameter name="sld_inversion_mask_length" type="unknown" value="449"/>
+        <parameter name="sld_inversion_mask" type="unknown" value="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
         <parameter name="sld_power_up_trigger" type="unknown" value="0"/>
         <parameter name="SLD_STATE_FLOW_MGR_ENTITY" type="string" value="state_flow_mgr_entity.vhd"/>
         <parameter name="sld_state_flow_use_generated" type="unknown" value="0"/>
         <parameter name="sld_current_resource_width" type="unknown" value="1"/>
         <parameter name="sld_attribute_mem_mode" type="unknown" value="OFF"/>
-        <parameter name="sld_storage_qualifier_bits" type="unknown" value="72"/>
+        <parameter name="sld_storage_qualifier_bits" type="unknown" value="141"/>
         <parameter name="SLD_STORAGE_QUALIFIER_GAP_RECORD" type="dec" value="0"/>
         <parameter name="SLD_STORAGE_QUALIFIER_MODE" type="string" value="OFF"/>
         <parameter name="SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION" type="dec" value="0"/>
@@ -72,9 +72,9 @@
     </node>
   </node_info>
   <sld_infos>
-    <sld_info hpath="Audio:aud_interface" name="aud_interface">
+    <sld_info hpath="aud_setup:fir_setup" name="fir_setup">
       <assignment_values>
-        <assignment_value text="QSYS_NAME Audio HAS_SOPCINFO 1 GENERATION_ID 1522803379"/>
+        <assignment_value text="QSYS_NAME aud_setup HAS_SOPCINFO 1 GENERATION_ID 1542768950"/>
       </assignment_values>
       <parameters/>
     </sld_info>

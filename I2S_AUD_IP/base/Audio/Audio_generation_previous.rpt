@@ -1,7 +1,9 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio.qsys --block-symbol-file --output-directory=C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio.qsys --block-symbol-file --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading base/Audio.qsys
 Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
 Progress: Adding clk_0 [clock_source 17.1]
 Progress: Parameterizing module clk_0
 Progress: Building connections
@@ -12,9 +14,11 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio.qsys --synthesis=VERILOG --output-directory=C:\Users\juanjm2\Desktop\RTL_2_Mics\RTL_2_Mics\base\Audio\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio.qsys --synthesis=VERILOG --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\Audio\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading base/Audio.qsys
 Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
 Progress: Adding clk_0 [clock_source 17.1]
 Progress: Parameterizing module clk_0
 Progress: Building connections
@@ -22,6 +26,9 @@ Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
 Info: Audio: Generating Audio "Audio" for QUARTUS_SYNTH
-Info: Audio: Done "Audio" with 1 modules, 1 files
+Info: audio_0: Starting Generation of Audio Controller
+Info: audio_0: "Audio" instantiated altera_up_avalon_audio "audio_0"
+Info: rst_controller: "Audio" instantiated altera_reset_controller "rst_controller"
+Info: Audio: Done "Audio" with 3 modules, 10 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

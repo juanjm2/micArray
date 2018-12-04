@@ -46,13 +46,33 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
-   name="audio_0_external_interface"
+   name="external"
    internal="audio_0.external_interface"
    type="conduit"
    dir="end" />
- <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface
+   name="left_input"
+   internal="audio_0.avalon_left_channel_sink"
+   type="avalon_streaming"
+   dir="end" />
+ <interface
+   name="left_output"
+   internal="audio_0.avalon_left_channel_source"
+   type="avalon_streaming"
+   dir="start" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="right_input"
+   internal="audio_0.avalon_right_channel_sink"
+   type="avalon_streaming"
+   dir="end" />
+ <interface
+   name="right_output"
+   internal="audio_0.avalon_right_channel_source"
+   type="avalon_streaming"
+   dir="start" />
  <module
    name="audio_0"
    kind="altera_up_avalon_audio"
@@ -62,7 +82,7 @@
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="audio_in" value="true" />
   <parameter name="audio_out" value="true" />
-  <parameter name="avalon_bus_type" value="Memory Mapped" />
+  <parameter name="avalon_bus_type" value="Streaming" />
   <parameter name="dw" value="16" />
  </module>
  <module name="clk_0" kind="clock_source" version="17.1" enabled="1">

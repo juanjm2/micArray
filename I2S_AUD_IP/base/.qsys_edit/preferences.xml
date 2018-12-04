@@ -3,10 +3,11 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="47" />
+   <connections preferredWidth="127" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
- <window width="1920" height="1040" x="0" y="0" />
+ <library
+   expandedCategories="Library/Processors and Peripherals/Co-Processors/Nios II Custom Instructions,Library/Processors and Peripherals,Project,Library/Processors and Peripherals/Co-Processors,Library,Library/DSP,Library/DSP/Primitive DSP" />
+ <window width="1936" height="1056" x="-8" y="32" />
 </preferences>

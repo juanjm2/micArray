@@ -1,0 +1,185 @@
+module mic_dma(
+    	// Avalon Clock Input
+	input logic CLK,
+	
+	// Avalon Reset Input
+	input logic RESET,
+
+	// Avalon-MM Master signals
+	output logic [31:0] AM_ADDR,
+	output logic [2:0]	AM_BURSTCOUNT,
+	output logic		AM_WRITE,
+	output logic [31:0] AM_WRITEDATA,
+	output logic [3:0]	AM_BYTEENABLE,
+	input logic			AM_WAITREQUEST,
+
+    // Mic input
+    input logic [31:0] mic_data,
+
+    // Avalon-MM Slave signals
+    input logic start,
+    input logic read_ready,
+    input logic [31:0] start_address,
+    input logic [31:0] number_samples
+);
+
+logic done;
+logic [31:0] starting_address, num_samples;
+
+enum logic [2:0]{
+    IDLE = 3'd0,
+    WAITDATA = 3'd1,
+    WRITEDATA = 3'd2,
+    LOADDATA = 3'd3,
+    WAITDATA2 = 3'd4,
+    WAITDATA3 = 3'd5,
+    WAITDATA4 = 3'd6,
+    FIN       = 3'd7
+} state, next_state;
+
+initial begin
+    state <= IDLE;
+    done <= 0;
+    starting_address <= 0;
+    num_samples <= 0;
+end
+
+always_ff @(posedge CLK)
+begin
+    if (RESET)
+    begin
+        state <= IDLE;
+        starting_address <= 0;
+        num_samples <= 0;
+    end
+    else
+    begin
+        state <= next_state;
+    end
+end
+
+always_comb 
+begin
+    next_state = state;
+    unique case (state)
+        IDLE:
+            if (start)
+            begin
+                next_state = WAITDATA;
+            end
+            else
+            begin
+                next_state = IDLE;
+            end
+        WAITDATA:
+            next_state = WAITDATA2;
+        WAITDATA2:
+            next_state = WAITDATA3;
+        WAITDATA3:
+            if (!AM_WAITREQUEST)
+            begin
+                next_state = WAITDATA4;
+            end
+            else
+            begin
+                next_state = WAITDATA3;
+            end
+        WAITDATA4:
+            next_state = LOADDATA;
+        LOADDATA:
+            if (!AM_WAITREQUEST)
+            begin
+                next_state = WRITEDATA;
+            end
+            else
+            begin
+                next_state = LOADDATA;
+            end
+        WRITEDATA:
+            if (done)
+            begin
+                next_state = FIN;
+            end
+            else if (!AM_WAITREQUEST)
+            begin
+                next_state = LOADDATA;
+            end
+            else
+            begin
+                next_state = WRITEDATA;
+            end
+        FIN:
+            if (START)
+            begin
+                next_state = FIN;
+            end
+            else
+            begin
+                next_state = IDLE;
+            end
+        default: next_state = FIN;        
+    endcase
+    done = 1'b0;
+    case(state)
+        IDLE:
+            AM_ADDR <= 0;
+            AM_BURSTCOUNT <= 0;
+            AM_WRITE <= 0;
+            AM_WRITEDATA <= 0;
+            AM_BYTEENABLE <= 0;
+            if (start)
+            begin
+                num_samples <= number_samples;
+                starting_address <= start_address;
+            end
+            else
+            begin
+                num_samples <= 0;
+                start_address <= 0;
+            end
+        WAITDATA: ;
+        WAITDATA2: ;
+        WAITDATA3: ;
+        WAITDATA4: ;
+        LOADDATA:
+            AM_ADDR <= start_address;
+            AM_BYTEENABLE <= 4'hF;
+            AM_BURSTCOUNT <= 3'b100;
+            num_samples <= number_samples;
+        WRITEDATA:
+            if (!AM_WAITREQUEST)
+            begin
+                if (read_ready)
+                begin
+                    if (num_samples > 0)
+                    begin
+                        AM_WRITE <= 1;
+                        AM_ADDR <= starting_address;
+                        starting_address = starting_address + 16;
+                        num_samples = num_samples - 1;
+                    end
+                    else
+                    begin
+                        AM_WRITE <= 0;
+                        AM_ADDR <= 0;
+                        done <= 1;
+                    end
+                end
+                else
+                begin
+                    AM_WRITE <= 0;
+                    AM_ADDR <= starting_address;
+                end
+            end
+        FIN:
+            AM_WRITE <= 0;
+            AM_ADDR <= start_address;
+            num_samples <= number_samples;
+            starting_address <= start_address;
+        default: ;
+    endcase
+end
+
+assign AM_WRITEDATA = mic_data;
+
+endmodule

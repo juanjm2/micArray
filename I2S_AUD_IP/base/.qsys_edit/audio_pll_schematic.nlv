@@ -2,14 +2,11 @@
 # 
 preplace inst audio_pll.audio_pll_0.reset_from_locked -pg 1
 preplace inst audio_pll.audio_pll_0 -pg 1 -lvl 2 -y 50
-preplace inst audio_pll.clk_0 -pg 1 -lvl 1 -y 50
 preplace inst audio_pll -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst audio_pll.audio_pll_0.audio_pll -pg 1
-preplace netloc EXPORT<net_container>audio_pll</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)audio_pll.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>audio_pll</net_container>(MASTER)audio_pll.audio_pll_0_reset_source,(MASTER)audio_pll_0.reset_source) 1 2 1 NJ
-preplace netloc POINT_TO_POINT<net_container>audio_pll</net_container>(SLAVE)audio_pll_0.ref_reset,(MASTER)clk_0.clk_reset) 1 1 1 N
-preplace netloc EXPORT<net_container>audio_pll</net_container>(SLAVE)clk_0.clk_in,(SLAVE)audio_pll.clk) 1 0 1 NJ
-preplace netloc EXPORT<net_container>audio_pll</net_container>(MASTER)audio_pll_0.audio_clk,(MASTER)audio_pll.audio_pll_0_audio_clk) 1 2 1 NJ
-preplace netloc POINT_TO_POINT<net_container>audio_pll</net_container>(SLAVE)audio_pll_0.ref_clk,(MASTER)clk_0.clk) 1 1 1 N
-levelinfo -pg 1 0 50 660
-levelinfo -hier audio_pll 60 90 320 480
+preplace netloc EXPORT<net_container>audio_pll</net_container>(SLAVE)audio_pll.audio_pll_0_ref_reset,(SLAVE)audio_pll_0.ref_reset) 1 0 2 NJ 80 NJ
+preplace netloc EXPORT<net_container>audio_pll</net_container>(MASTER)audio_pll.audio_pll_0_audio_clk,(MASTER)audio_pll_0.audio_clk) 1 2 1 NJ
+preplace netloc EXPORT<net_container>audio_pll</net_container>(MASTER)audio_pll_0.reset_source,(MASTER)audio_pll.audio_pll_0_reset_source) 1 2 1 NJ
+preplace netloc EXPORT<net_container>audio_pll</net_container>(SLAVE)audio_pll_0.ref_clk,(SLAVE)audio_pll.audio_pll_0_ref_clk) 1 0 2 NJ 60 NJ
+levelinfo -pg 1 0 140 740
+levelinfo -hier audio_pll 150 170 400 560

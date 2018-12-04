@@ -4,34 +4,49 @@
 
 `timescale 1 ps / 1 ps
 module Audio (
-		input  wire  audio_0_external_interface_ADCDAT,  // audio_0_external_interface.ADCDAT
-		input  wire  audio_0_external_interface_ADCLRCK, //                           .ADCLRCK
-		input  wire  audio_0_external_interface_BCLK,    //                           .BCLK
-		output wire  audio_0_external_interface_DACDAT,  //                           .DACDAT
-		input  wire  audio_0_external_interface_DACLRCK, //                           .DACLRCK
-		input  wire  clk_clk,                            //                        clk.clk
-		input  wire  reset_reset_n,                      //                      reset.reset_n
-		input	[15:0]	left_data,								 //		Left channel from I2S	
-		input [15:0]	right_data								 // 		Right channel from I2S  
-);
+		input  wire        clk_clk,            //          clk.clk
+		input  wire        external_ADCDAT,    //     external.ADCDAT
+		input  wire        external_ADCLRCK,   //             .ADCLRCK
+		input  wire        external_BCLK,      //             .BCLK
+		output wire        external_DACDAT,    //             .DACDAT
+		input  wire        external_DACLRCK,   //             .DACLRCK
+		input  wire [15:0] left_input_data,    //   left_input.data
+		input  wire        left_input_valid,   //             .valid
+		output wire        left_input_ready,   //             .ready
+		input  wire        left_output_ready,  //  left_output.ready
+		output wire [15:0] left_output_data,   //             .data
+		output wire        left_output_valid,  //             .valid
+		input  wire        reset_reset_n,      //        reset.reset_n
+		input  wire [15:0] right_input_data,   //  right_input.data
+		input  wire        right_input_valid,  //             .valid
+		output wire        right_input_ready,  //             .ready
+		input  wire        right_output_ready, // right_output.ready
+		output wire [15:0] right_output_data,  //             .data
+		output wire        right_output_valid  //             .valid
+	);
 
 	wire    rst_controller_reset_out_reset; // rst_controller:reset_out -> audio_0:reset
 
 	Audio_audio_0 audio_0 (
-		.clk         (clk_clk),                            //                clk.clk
-		.reset       (rst_controller_reset_out_reset),     //              reset.reset
-		.address     (),                                   // avalon_audio_slave.address
-		.chipselect  (),                                   //                   .chipselect
-		.read        (),                                   //                   .read
-		.write       (),                                   //                   .write
-		.writedata   ({left_data, right_data}),                                   //                   .writedata
-		.readdata    (),                                   //                   .readdata
-		.irq         (),                                   //          interrupt.irq
-		.AUD_ADCDAT  (audio_0_external_interface_ADCDAT),  // external_interface.export
-		.AUD_ADCLRCK (audio_0_external_interface_ADCLRCK), //                   .export
-		.AUD_BCLK    (audio_0_external_interface_BCLK),    //                   .export
-		.AUD_DACDAT  (audio_0_external_interface_DACDAT),  //                   .export
-		.AUD_DACLRCK (audio_0_external_interface_DACLRCK)  //                   .export
+		.clk                          (clk_clk),                        //                         clk.clk
+		.reset                        (rst_controller_reset_out_reset), //                       reset.reset
+		.from_adc_left_channel_ready  (left_output_ready),              //  avalon_left_channel_source.ready
+		.from_adc_left_channel_data   (left_output_data),               //                            .data
+		.from_adc_left_channel_valid  (left_output_valid),              //                            .valid
+		.from_adc_right_channel_ready (right_output_ready),             // avalon_right_channel_source.ready
+		.from_adc_right_channel_data  (right_output_data),              //                            .data
+		.from_adc_right_channel_valid (right_output_valid),             //                            .valid
+		.to_dac_left_channel_data     (left_input_data),                //    avalon_left_channel_sink.data
+		.to_dac_left_channel_valid    (left_input_valid),               //                            .valid
+		.to_dac_left_channel_ready    (left_input_ready),               //                            .ready
+		.to_dac_right_channel_data    (right_input_data),               //   avalon_right_channel_sink.data
+		.to_dac_right_channel_valid   (right_input_valid),              //                            .valid
+		.to_dac_right_channel_ready   (right_input_ready),              //                            .ready
+		.AUD_ADCDAT                   (external_ADCDAT),                //          external_interface.export
+		.AUD_ADCLRCK                  (external_ADCLRCK),               //                            .export
+		.AUD_BCLK                     (external_BCLK),                  //                            .export
+		.AUD_DACDAT                   (external_DACDAT),                //                            .export
+		.AUD_DACLRCK                  (external_DACLRCK)                //                            .export
 	);
 
 	altera_reset_controller #(

@@ -1,0 +1,67 @@
+module testbench();
+
+timeunit 10ns;
+timeprecision 1ns;
+
+//module temp_top(	input logic CLOCK_50,
+//						input logic AUD_ADCDAT,
+//						output logic AUD_DACDAT,
+//						input logic address,
+//						input logic chipselect,
+//						input logic read,
+//						input logic write,
+//						input logic [31:0] writedata,
+//						output logic [31:0] readdata,
+//						output logic interrupt,
+//						input logic reset
+//);
+
+logic CLOCK_50;
+logic AUD_ADCDAT;
+logic AUD_DACDAT;
+logic [1:0] address;
+logic chipselect;
+logic read;
+logic write;
+logic [31:0] writedata;
+logic [31:0] readdata;
+logic interrupt;
+logic reset;
+
+//temp_top top(.*);
+
+initial begin : CLOCK_INITIALIZATION
+	CLOCK_50 = 0;
+end
+
+initial begin : INIT_VARS
+	AUD_ADCDAT <= 0;
+	address <= 2'b0;
+	chipselect <= 0;
+	read <= 0;
+	write <= 0;
+	writedata <= 32'b0;
+	reset <= 0;
+end
+
+always begin :	CLOCK_GENERATION
+#1	CLOCK_50 = ~CLOCK_50;
+end
+
+always_ff @ (posedge CLOCK_50)
+begin
+	AUD_ADCDAT = $urandom_range(0,1);
+end
+
+initial begin : TEST_VECTORS
+	#2 address <= 0;
+		chipselect <= 1;
+		write <= 1;
+		writedata <= 32'h00000004;
+	#8 address <= 0;
+		chipselect <= 1;
+		write <= 1;
+		writedata <= 32'h00000001;
+end
+
+endmodule

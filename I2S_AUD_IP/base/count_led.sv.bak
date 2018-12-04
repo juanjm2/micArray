@@ -1,0 +1,34 @@
+module count_led(
+	output wire [9:0] leds,
+	input wire inter
+);
+
+int counter;
+
+initial begin
+	leds = 0;
+end
+
+initial begin
+	counter = 0;
+end
+
+always_comb begin
+	if (inter)
+	begin
+		if (counter <= 1024)
+		begin
+			counter <= counter + 1;
+		end
+		else
+		begin
+			counter <= 0;
+		end
+	end
+end
+
+always_comb begin
+	leds <= counter;
+end
+
+endmodule

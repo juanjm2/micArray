@@ -1,0 +1,4 @@
+module temp_top(
+);
+
+endmodule
