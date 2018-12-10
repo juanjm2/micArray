@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="30" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Project,Library/Processors and Peripherals/Co-Processors/Nios II Custom Instructions,Project/System,Library/DSP/Primitive DSP,Library,Library/Processors and Peripherals/Co-Processors,Library/DSP,Library/Processors and Peripherals" />
+ <window width="1100" height="676" x="612" y="164" />
+</preferences>

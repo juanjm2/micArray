@@ -1,0 +1,34 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\sd_card_backup\floating_point_tb\float.qsys --block-symbol-file --output-directory=D:\sd_card_backup\floating_point_tb\float --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading floating_point_tb/float.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding nios_custom_instr_floating_point_2_0 [altera_nios_custom_instr_floating_point_2 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\sd_card_backup\floating_point_tb\float.qsys --synthesis=VERILOG --output-directory=D:\sd_card_backup\floating_point_tb\float\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading floating_point_tb/float.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding nios_custom_instr_floating_point_2_0 [altera_nios_custom_instr_floating_point_2 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_2_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: float: Generating float "float" for QUARTUS_SYNTH
+Info: nios_custom_instr_floating_point_2_0: "float" instantiated altera_nios_custom_instr_floating_point_2 "nios_custom_instr_floating_point_2_0"
+Info: fpci_combi: "nios_custom_instr_floating_point_2_0" instantiated altera_nios_custom_instr_floating_point_2_combi "fpci_combi"
+Info: fpci_multi: "nios_custom_instr_floating_point_2_0" instantiated altera_nios_custom_instr_floating_point_2_multi "fpci_multi"
+Info: float: Done "float" with 4 modules, 21 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

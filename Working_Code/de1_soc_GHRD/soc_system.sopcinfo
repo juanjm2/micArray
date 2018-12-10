@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="soc_system" kind="soc_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2018.10.13.17:17:47 -->
+ <!-- 2018.12.08.16:16:00 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1539469065</value>
+  <value>1544307359</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -25470,8 +25470,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>mic_system_0</moduleName>
     <slaveName>mic_slave</slaveName>
     <name>mic_system_0.mic_slave</name>
-    <baseAddress>16</baseAddress>
-    <span>16</span>
+    <baseAddress>32</baseAddress>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -51515,8 +51515,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>mic_system_0</moduleName>
     <slaveName>mic_slave</slaveName>
     <name>mic_system_0.mic_slave</name>
-    <baseAddress>16</baseAddress>
-    <span>16</span>
+    <baseAddress>32</baseAddress>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -53100,8 +53100,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>mic_system_0</moduleName>
     <slaveName>mic_slave</slaveName>
     <name>mic_system_0.mic_slave</name>
-    <baseAddress>4280287248</baseAddress>
-    <span>16</span>
+    <baseAddress>4280287264</baseAddress>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -53931,8 +53931,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>mic_system_0</moduleName>
     <slaveName>mic_slave</slaveName>
     <name>mic_system_0.mic_slave</name>
-    <baseAddress>4280287248</baseAddress>
-    <span>16</span>
+    <baseAddress>4280287264</baseAddress>
+    <span>32</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -82002,7 +82002,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>16</value>
+    <value>32</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -82301,7 +82301,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>AVL_ADDR</name>
     <direction>Input</direction>
-    <width>2</width>
+    <width>3</width>
     <role>address</role>
    </port>
    <port>
@@ -82692,6 +82692,186 @@ parameters are a RESULT of the module parameters. -->
     <name>adc_data</name>
     <direction>Input</direction>
     <width>32</width>
+    <role>new_signal</role>
+   </port>
+  </interface>
+  <interface name="fir_left_data" kind="conduit_end" version="17.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>CLK</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value>RESET</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>fir_left_data</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>new_signal</role>
+   </port>
+  </interface>
+  <interface name="fir_right_data" kind="conduit_end" version="17.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>CLK</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value>RESET</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>fir_right_data</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>new_signal</role>
+   </port>
+  </interface>
+  <interface name="volume_level" kind="conduit_end" version="17.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>CLK</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value>RESET</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>volume_level</name>
+    <direction>Output</direction>
+    <width>32</width>
+    <role>new_signal</role>
+   </port>
+  </interface>
+  <interface name="sample_ready" kind="conduit_end" version="17.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value>CLK</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value>RESET</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>sample_ready</name>
+    <direction>Output</direction>
+    <width>1</width>
     <role>new_signal</role>
    </port>
   </interface>
@@ -90696,7 +90876,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0010</value>
+   <value>0x0020</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -91319,7 +91499,7 @@ parameters are a RESULT of the module parameters. -->
   <version>17.1</version>
  </plugin>
  <plugin>
-  <instanceCount>15</instanceCount>
+  <instanceCount>19</instanceCount>
   <name>conduit_end</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>

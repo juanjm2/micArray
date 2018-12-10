@@ -51,20 +51,9 @@
  */
 #define MIC_SYSTEM_0_COMPONENT_TYPE mic_system
 #define MIC_SYSTEM_0_COMPONENT_NAME mic_system_0
-#define MIC_SYSTEM_0_BASE 0x10
-#define MIC_SYSTEM_0_SPAN 16
-#define MIC_SYSTEM_0_END 0x1f
-
-/*
- * Macros for device 'mic_system_2_0', class 'mic_system_2'
- * The macros are prefixed with 'MIC_SYSTEM_2_0_'.
- * The prefix is the slave descriptor.
- */
-#define MIC_SYSTEM_2_0_COMPONENT_TYPE mic_system_2
-#define MIC_SYSTEM_2_0_COMPONENT_NAME mic_system_2_0
-#define MIC_SYSTEM_2_0_BASE 0x20
-#define MIC_SYSTEM_2_0_SPAN 16
-#define MIC_SYSTEM_2_0_END 0x2f
+#define MIC_SYSTEM_0_BASE 0x20
+#define MIC_SYSTEM_0_SPAN 32
+#define MIC_SYSTEM_0_END 0x3f
 
 
 #endif /* _ALTERA_HPS_0_H_ */

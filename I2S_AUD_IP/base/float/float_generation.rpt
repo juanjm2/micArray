@@ -2,8 +2,6 @@ Info: Starting: Create block symbol file (.bsf)
 Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\float.qsys --block-symbol-file --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\float --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading base/float.qsys
 Progress: Reading input file
-Progress: Adding clk_0 [clock_source 17.1]
-Progress: Parameterizing module clk_0
 Progress: Adding nios_custom_instr_floating_point_2_0 [altera_nios_custom_instr_floating_point_2 17.1]
 Progress: Parameterizing module nios_custom_instr_floating_point_2_0
 Progress: Building connections
@@ -17,8 +15,6 @@ Info: Starting: Create HDL design files for synthesis
 Info: qsys-generate H:\juanjm2_git\micArray\I2S_AUD_IP\base\float.qsys --synthesis=VERILOG --output-directory=H:\juanjm2_git\micArray\I2S_AUD_IP\base\float\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading base/float.qsys
 Progress: Reading input file
-Progress: Adding clk_0 [clock_source 17.1]
-Progress: Parameterizing module clk_0
 Progress: Adding nios_custom_instr_floating_point_2_0 [altera_nios_custom_instr_floating_point_2 17.1]
 Progress: Parameterizing module nios_custom_instr_floating_point_2_0
 Progress: Building connections

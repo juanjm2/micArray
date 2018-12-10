@@ -72,16 +72,20 @@
 			hps_io_hps_io_gpio_inst_GPIO53         : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO53
 			hps_io_hps_io_gpio_inst_GPIO54         : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO54
 			hps_io_hps_io_gpio_inst_GPIO61         : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO61
-			mic_system_0_aud_adclrck_new_signal    : in    std_logic                     := 'X';             -- new_signal
+			pushbuttons_external_connection_export : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+			reset_reset_n                          : in    std_logic                     := 'X';             -- reset_n
 			mic_system_0_aud_bclk_new_signal       : in    std_logic                     := 'X';             -- new_signal
-			mic_system_0_codec_stream_new_signal   : out   std_logic_vector(31 downto 0);                    -- new_signal
+			mic_system_0_aud_adclrck_new_signal    : in    std_logic                     := 'X';             -- new_signal
 			mic_system_0_gpio_din1_new_signal      : in    std_logic                     := 'X';             -- new_signal
 			mic_system_0_gpio_din2_new_signal      : in    std_logic                     := 'X';             -- new_signal
 			mic_system_0_gpio_din3_new_signal      : in    std_logic                     := 'X';             -- new_signal
 			mic_system_0_gpio_din4_new_signal      : in    std_logic                     := 'X';             -- new_signal
-			pushbuttons_external_connection_export : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
-			reset_reset_n                          : in    std_logic                     := 'X';             -- reset_n
-			mic_system_0_adc_data_new_signal       : in    std_logic_vector(31 downto 0) := (others => 'X')  -- new_signal
+			mic_system_0_codec_stream_new_signal   : out   std_logic_vector(31 downto 0);                    -- new_signal
+			mic_system_0_adc_data_new_signal       : in    std_logic_vector(31 downto 0) := (others => 'X'); -- new_signal
+			mic_system_0_fir_left_data_new_signal  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- new_signal
+			mic_system_0_fir_right_data_new_signal : in    std_logic_vector(31 downto 0) := (others => 'X'); -- new_signal
+			mic_system_0_volume_level_new_signal   : out   std_logic_vector(31 downto 0);                    -- new_signal
+			mic_system_0_sample_ready_new_signal   : out   std_logic                                         -- new_signal
 		);
 	end component soc_system;
 
@@ -159,15 +163,19 @@
 			hps_io_hps_io_gpio_inst_GPIO53         => CONNECTED_TO_hps_io_hps_io_gpio_inst_GPIO53,         --                                .hps_io_gpio_inst_GPIO53
 			hps_io_hps_io_gpio_inst_GPIO54         => CONNECTED_TO_hps_io_hps_io_gpio_inst_GPIO54,         --                                .hps_io_gpio_inst_GPIO54
 			hps_io_hps_io_gpio_inst_GPIO61         => CONNECTED_TO_hps_io_hps_io_gpio_inst_GPIO61,         --                                .hps_io_gpio_inst_GPIO61
-			mic_system_0_aud_adclrck_new_signal    => CONNECTED_TO_mic_system_0_aud_adclrck_new_signal,    --        mic_system_0_aud_adclrck.new_signal
+			pushbuttons_external_connection_export => CONNECTED_TO_pushbuttons_external_connection_export, -- pushbuttons_external_connection.export
+			reset_reset_n                          => CONNECTED_TO_reset_reset_n,                          --                           reset.reset_n
 			mic_system_0_aud_bclk_new_signal       => CONNECTED_TO_mic_system_0_aud_bclk_new_signal,       --           mic_system_0_aud_bclk.new_signal
-			mic_system_0_codec_stream_new_signal   => CONNECTED_TO_mic_system_0_codec_stream_new_signal,   --       mic_system_0_codec_stream.new_signal
+			mic_system_0_aud_adclrck_new_signal    => CONNECTED_TO_mic_system_0_aud_adclrck_new_signal,    --        mic_system_0_aud_adclrck.new_signal
 			mic_system_0_gpio_din1_new_signal      => CONNECTED_TO_mic_system_0_gpio_din1_new_signal,      --          mic_system_0_gpio_din1.new_signal
 			mic_system_0_gpio_din2_new_signal      => CONNECTED_TO_mic_system_0_gpio_din2_new_signal,      --          mic_system_0_gpio_din2.new_signal
 			mic_system_0_gpio_din3_new_signal      => CONNECTED_TO_mic_system_0_gpio_din3_new_signal,      --          mic_system_0_gpio_din3.new_signal
 			mic_system_0_gpio_din4_new_signal      => CONNECTED_TO_mic_system_0_gpio_din4_new_signal,      --          mic_system_0_gpio_din4.new_signal
-			pushbuttons_external_connection_export => CONNECTED_TO_pushbuttons_external_connection_export, -- pushbuttons_external_connection.export
-			reset_reset_n                          => CONNECTED_TO_reset_reset_n,                          --                           reset.reset_n
-			mic_system_0_adc_data_new_signal       => CONNECTED_TO_mic_system_0_adc_data_new_signal        --           mic_system_0_adc_data.new_signal
+			mic_system_0_codec_stream_new_signal   => CONNECTED_TO_mic_system_0_codec_stream_new_signal,   --       mic_system_0_codec_stream.new_signal
+			mic_system_0_adc_data_new_signal       => CONNECTED_TO_mic_system_0_adc_data_new_signal,       --           mic_system_0_adc_data.new_signal
+			mic_system_0_fir_left_data_new_signal  => CONNECTED_TO_mic_system_0_fir_left_data_new_signal,  --      mic_system_0_fir_left_data.new_signal
+			mic_system_0_fir_right_data_new_signal => CONNECTED_TO_mic_system_0_fir_right_data_new_signal, --     mic_system_0_fir_right_data.new_signal
+			mic_system_0_volume_level_new_signal   => CONNECTED_TO_mic_system_0_volume_level_new_signal,   --       mic_system_0_volume_level.new_signal
+			mic_system_0_sample_ready_new_signal   => CONNECTED_TO_mic_system_0_sample_ready_new_signal    --       mic_system_0_sample_ready.new_signal
 		);
 

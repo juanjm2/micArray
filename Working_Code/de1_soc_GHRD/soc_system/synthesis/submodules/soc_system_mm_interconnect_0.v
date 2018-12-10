@@ -46,7 +46,7 @@ module soc_system_mm_interconnect_0 (
 		input  wire        Primary_PLL_outclk0_clk,                                             //                                           Primary_PLL_outclk0.clk
 		input  wire        hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset_reset, // hps_0_h2f_lw_axi_master_agent_clk_reset_reset_bridge_in_reset.reset
 		input  wire        mic_system_0_RESET_reset_bridge_in_reset_reset,                      //                      mic_system_0_RESET_reset_bridge_in_reset.reset
-		output wire [1:0]  mic_system_0_mic_slave_address,                                      //                                        mic_system_0_mic_slave.address
+		output wire [2:0]  mic_system_0_mic_slave_address,                                      //                                        mic_system_0_mic_slave.address
 		output wire        mic_system_0_mic_slave_write,                                        //                                                              .write
 		output wire        mic_system_0_mic_slave_read,                                         //                                                              .read
 		input  wire [31:0] mic_system_0_mic_slave_readdata,                                     //                                                              .readdata
@@ -275,7 +275,7 @@ module soc_system_mm_interconnect_0 (
 	wire    [0:0] avalon_st_adapter_001_out_0_error;                          // avalon_st_adapter_001:out_0_error -> Pushbuttons_s1_agent:rdata_fifo_sink_error
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (2),
+		.AV_ADDRESS_W                   (3),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),

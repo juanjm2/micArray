@@ -1,0 +1,401 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "output_sample[0]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[1]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[2]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[3]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[4]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[5]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[6]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[7]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[8]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[9]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[10]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[11]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[12]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[13]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[14]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[15]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[16]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[17]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[18]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[19]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[20]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[21]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[22]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[23]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[24]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[25]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[26]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[27]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[28]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[29]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[30]",
+					"strict" : false
+				},
+				{
+					"name" : "output_sample[31]",
+					"strict" : false
+				},
+				{
+					"name" : "s2_clk",
+					"strict" : false
+				},
+				{
+					"name" : "sample_ready",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[31]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[24]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[25]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[28]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[27]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[23]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[21]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[22]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[20]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[30]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[0]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[27]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[28]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[29]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[30]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[23]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[24]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[25]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[26]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[29]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[16]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[17]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[15]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[18]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[19]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sample_aud[5]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[5]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[3]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[6]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[7]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[8]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[9]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[10]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[2]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[1]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[0]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[4]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[19]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[12]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[13]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[14]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[15]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[16]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[17]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[18]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[20]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[21]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[22]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[11]",
+					"strict" : false
+				},
+				{
+					"name" : "float_val[31]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

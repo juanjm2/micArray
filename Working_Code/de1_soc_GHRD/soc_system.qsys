@@ -80,9 +80,14 @@
    }
    element mic_system_0.mic_slave
    {
+      datum _lockedAddress
+      {
+         value = "0";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "16";
+         value = "32";
          type = "String";
       }
    }
@@ -163,6 +168,16 @@
    type="conduit"
    dir="end" />
  <interface
+   name="mic_system_0_fir_left_data"
+   internal="mic_system_0.fir_left_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mic_system_0_fir_right_data"
+   internal="mic_system_0.fir_right_data"
+   type="conduit"
+   dir="end" />
+ <interface
    name="mic_system_0_gpio_din1"
    internal="mic_system_0.GPIO_DIN1"
    type="conduit"
@@ -180,6 +195,16 @@
  <interface
    name="mic_system_0_gpio_din4"
    internal="mic_system_0.GPIO_DIN4"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mic_system_0_sample_ready"
+   internal="mic_system_0.sample_ready"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mic_system_0_volume_level"
+   internal="mic_system_0.volume_level"
    type="conduit"
    dir="end" />
  <interface
@@ -1155,7 +1180,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="mic_system_0.mic_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="baseAddress" value="0x0020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection

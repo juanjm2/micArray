@@ -17,7 +17,7 @@ module avalon_microphone_system (
 	input  logic AVL_READ,					// Avalon-MM Read
 	input  logic AVL_WRITE,					// Avalon-MM Write
 	input  logic AVL_CS,						// Avalon-MM Chip Select
-	input  logic [1:0] AVL_ADDR,					// Avalon-MM Address
+	input  logic [2:0] AVL_ADDR,					// Avalon-MM Address
 	input  logic [31:0] AVL_WRITEDATA,	// Avalon-MM Write Data
 	output logic [31:0] AVL_READDATA,	// Avalon-MM Read Data
 	
@@ -30,15 +30,26 @@ module avalon_microphone_system (
 	input logic GPIO_DIN2,
 	input logic GPIO_DIN3,
 	input logic GPIO_DIN4,
-	input logic [31:0] fir_data,
+	input logic [31:0] fir_left_data,
+	input logic [31:0] fir_right_data,
 
 	// Start button signal
 	//	input logic KEY,
 	input logic [31:0] adc_data,
+	
+	// Volume level
+	output logic [31:0] volume_level,
+	output logic sample_ready,
 
 	// Output to codec
 	output logic [31:0] codec_stream
 );
+
+initial begin
+	volume_level = 32'd20;
+end
+
+assign sample_ready = ready_read_now;
 
 logic saw_rise, saw_fall;
 logic start;
@@ -134,12 +145,11 @@ begin
 	end
 	else if (mic_sel == 3'b011)
 	begin
-		ready_data_choice <= ready_data_3;
+		ready_data_choice <= fir_left_data;
 	end
 	else if (mic_sel == 3'b100)
 	begin
-//		ready_data_choice <= ready_data_4;
-		ready_data_choice <= fir_data;
+		ready_data_choice <= fir_right_data;
 	end
 	else if (mic_sel == 3'b101)
 	begin
@@ -192,24 +202,32 @@ begin
 		start_addr <= 32'd0;
 		num_samps <= 32'd0;
 		restart_sig <= 1'b0;
+		volume_level <= 32'd20;
 	end 
 	else if (AVL_CS && AVL_WRITE)
 	begin
-		if (AVL_ADDR == 2'd0)
+		if (AVL_ADDR == 3'd0)
 		begin
 			start <= AVL_WRITEDATA[0];
 		end
-		else if (AVL_ADDR == 2'd1)
+		else if (AVL_ADDR == 3'd1)
 		begin
 			start_addr <= AVL_WRITEDATA;
 		end
-		else if (AVL_ADDR == 2'd2)
+		else if (AVL_ADDR == 3'd2)
 		begin
 			num_samps = AVL_WRITEDATA;
 		end
-		else if (AVL_ADDR == 2'b11)
+		else if (AVL_ADDR == 3'd3)
 		begin 
 			restart_sig = AVL_WRITEDATA;
+		end
+		else if (AVL_ADDR == 3'd4)
+		begin
+			volume_level = AVL_WRITEDATA;
+		end
+		else
+		begin
 		end
 	end
 end
@@ -252,15 +270,15 @@ always_comb
 	begin
 		  if (AVL_CS && AVL_READ)
 		  begin
-				if (AVL_ADDR == 2'd0)
+				if (AVL_ADDR == 3'd0)
 					begin
 					AVL_READDATA = {30'd0,saw_rise,saw_fall};
 					end
-				else if (AVL_ADDR == 2'd1)
+				else if (AVL_ADDR == 3'd1)
 					begin
 					AVL_READDATA = {mic_l, mic_r};
 					end
-				else if (AVL_ADDR == 2'd2)
+				else if (AVL_ADDR == 3'd2)
 					begin
 					AVL_READDATA = {31'd0, fin_signal};
 					end

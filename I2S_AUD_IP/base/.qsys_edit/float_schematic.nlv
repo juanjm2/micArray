@@ -1,10 +1,13 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
+preplace inst float.nios_custom_instr_floating_point_2_0.fpci_combi -pg 1
+preplace inst float.nios_custom_instr_floating_point_2_0 -pg 1 -lvl 1 -y 50
+preplace inst float.nios_custom_instr_floating_point_2_0.fpci_multi -pg 1
 preplace inst float -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst float.nios_custom_instr_floating_point_0 -pg 1 -lvl 1 -y 30
-preplace inst float.clk_0 -pg 1 -lvl 1 -y 70
-preplace netloc EXPORT<net_container>float</net_container>(SLAVE)float.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>float</net_container>(SLAVE)float.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
-preplace netloc EXPORT<net_container>float</net_container>(SLAVE)nios_custom_instr_floating_point_0.s1,(SLAVE)float.nios_custom_instr_floating_point_0_s1) 1 0 1 NJ
+preplace inst float.clk_0 -pg 1 -lvl 1 -y 130
+preplace netloc EXPORT<net_container>float</net_container>(SLAVE)nios_custom_instr_floating_point_2_0.s1,(SLAVE)float.nios_custom_instr_floating_point_2_0_s1) 1 0 1 NJ
+preplace netloc EXPORT<net_container>float</net_container>(SLAVE)nios_custom_instr_floating_point_2_0.s2,(SLAVE)float.nios_custom_instr_floating_point_2_0_s2) 1 0 1 NJ
+preplace netloc EXPORT<net_container>float</net_container>(SLAVE)clk_0.clk_in,(SLAVE)float.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>float</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)float.reset) 1 0 1 NJ
 levelinfo -pg 1 0 220 480
 levelinfo -hier float 230 300 470

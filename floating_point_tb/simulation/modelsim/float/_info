@@ -1,0 +1,759 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/sd_card_backup/floating_point_tb/simulation/modelsim
+vfloat
+Z1 !s110 1544318098
+!i10b 1
+!s100 28RWdkJla?QSf]0:c<f6K0
+IE1b>2h?H=K_?WL810_hl22
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1543791673
+8D:/sd_card_backup/floating_point_tb/float/synthesis/float.v
+FD:/sd_card_backup/floating_point_tb/float/synthesis/float.v
+L0 6
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1544318097.000000
+!s107 D:/sd_card_backup/floating_point_tb/float/synthesis/float.v|
+!s90 -reportprogress|300|-vlog01compat|-work|float|+incdir+D:/sd_card_backup/floating_point_tb/float/synthesis|D:/sd_card_backup/floating_point_tb/float/synthesis/float.v|
+!i113 1
+Z4 o-vlog01compat -work float
+!s92 -vlog01compat -work float +incdir+D:/sd_card_backup/floating_point_tb/float/synthesis
+Z5 tCvgOpt 0
+vfloat_nios_custom_instr_floating_point_2_0
+R1
+!i10b 1
+!s100 YcU7>3biLhC;`<D[K;9j33
+IkH3ikDDj51TBW_a:Dg`bL2
+R2
+R0
+Z6 w1543791674
+8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/float_nios_custom_instr_floating_point_2_0.v
+FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/float_nios_custom_instr_floating_point_2_0.v
+L0 9
+R3
+r1
+!s85 0
+31
+Z7 !s108 1544318098.000000
+!s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/float_nios_custom_instr_floating_point_2_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|float|+incdir+D:/sd_card_backup/floating_point_tb/float/synthesis/submodules|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/float_nios_custom_instr_floating_point_2_0.v|
+!i113 1
+R4
+!s92 -vlog01compat -work float +incdir+D:/sd_card_backup/floating_point_tb/float/synthesis/submodules
+R5
+Efloattoint
+R6
+Z8 DPx3 lpm 14 lpm_components 0 22 LL[@dD@lm0N5G7N5gC9bn1
+Z9 DPx9 altera_mf 20 altera_mf_components 0 22 Sn8Ol<dGSW99iM6NfOU>g1
+Z10 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+Z11 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z14 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FloatToInt/FloatToInt.vhd
+Z15 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FloatToInt/FloatToInt.vhd
+l0
+L47
+Vk@7ZARAXna8kA`4bKff?T2
+!s100 b43>>9lJWA<FA=V9OOR;80
+Z16 OV;C;10.5b;63
+31
+Z17 !s110 1544318099
+!i10b 1
+Z18 !s108 1544318099.000000
+Z19 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FloatToInt/FloatToInt.vhd|
+Z20 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FloatToInt/FloatToInt.vhd|
+!i113 1
+Z21 o-93 -work float
+Z22 tExplicit 1 CvgOpt 0
+Anormal
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 10 floattoint 0 22 k@7ZARAXna8kA`4bKff?T2
+l132
+L55
+VNjPZ]Wj<BnQUM1`1bSCCX1
+!s100 nP<h;k]T2YMC5JG6[;jUK3
+R16
+31
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R21
+R22
+Efpabs
+R6
+R8
+R9
+R10
+R11
+R12
+R13
+R0
+Z23 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPAbs.vhd
+Z24 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPAbs.vhd
+l0
+L26
+V18fdf2<`1`@AA_K2mXfKX3
+!s100 MQNJz9T14WWPLfWCnWDWK2
+R16
+31
+Z25 !s110 1544318100
+!i10b 1
+Z26 !s108 1544318100.000000
+Z27 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPAbs.vhd|
+Z28 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPAbs.vhd|
+!i113 1
+R21
+R22
+Anormal
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 5 fpabs 0 22 18fdf2<`1`@AA_K2mXfKX3
+l35
+L34
+Voj0^NSGG1<ThXKC;[Sh[92
+!s100 JD7Pa:ag>^W:JmUMSY39f1
+R16
+31
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R21
+R22
+Efpaddsub
+R6
+R8
+R9
+Z29 DPx4 work 35 fpoint2_multi_dspba_library_package 0 22 7[>QY0GgzLY:2Gn2fne7;2
+R10
+R11
+R12
+R13
+R0
+Z30 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPAddSub/FPAddSub.vhd
+Z31 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPAddSub/FPAddSub.vhd
+l0
+L48
+Va7WA5Il[knV62=2a>[zFI3
+!s100 LVR??_@MmmCQLSTPM6]X43
+R16
+31
+R25
+!i10b 1
+R26
+Z32 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPAddSub/FPAddSub.vhd|
+Z33 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPAddSub/FPAddSub.vhd|
+!i113 1
+R21
+R22
+Anormal
+R8
+R9
+R29
+R10
+R11
+R12
+R13
+DEx4 work 8 fpaddsub 0 22 a7WA5Il[knV62=2a>[zFI3
+l526
+L59
+V;:Ae7_=i>P9XTo7J]1jUF0
+!s100 Z24nb<gfOP7E84dJP=k<g1
+R16
+31
+R25
+!i10b 1
+R26
+R32
+R33
+!i113 1
+R21
+R22
+Efpcomparefused
+R6
+R8
+R9
+R10
+R11
+R12
+R13
+R0
+Z34 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPCompareFused/FPCompareFused.vhd
+Z35 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPCompareFused/FPCompareFused.vhd
+l0
+L47
+VB^m;<4U=a7C<az4inZVzY0
+!s100 FdHiM:LEa=ED6JQcWBnh40
+R16
+31
+R17
+!i10b 1
+R18
+Z36 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPCompareFused/FPCompareFused.vhd|
+Z37 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPCompareFused/FPCompareFused.vhd|
+!i113 1
+R21
+R22
+Anormal
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 14 fpcomparefused 0 22 B^m;<4U=a7C<az4inZVzY0
+l212
+L56
+V4h>^HlhaiSR4m_UATUfF@1
+!s100 3O<EJm4lhjVoMC<YJ3GG52
+R16
+31
+R17
+!i10b 1
+R18
+R36
+R37
+!i113 1
+R21
+R22
+Efpdiv
+R6
+R11
+R12
+R13
+R0
+Z38 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPDiv/FPDiv.vhd
+Z39 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPDiv/FPDiv.vhd
+l0
+L24
+V6@K=kfOejUz>hY1h_H1J_0
+!s100 Omc;5kMm6fB?1H76VQZg80
+R16
+31
+R17
+!i10b 1
+R18
+Z40 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPDiv/FPDiv.vhd|
+Z41 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPDiv/FPDiv.vhd|
+!i113 1
+R21
+R22
+Abeh
+R11
+R12
+R13
+DEx4 work 5 fpdiv 0 22 6@K=kfOejUz>hY1h_H1J_0
+l119
+L37
+VkSDjKL3WEoSZ:;dafzU5T1
+!s100 jCL05EOM1fm4W9FS;[W161
+R16
+31
+R17
+!i10b 1
+R18
+R40
+R41
+!i113 1
+R21
+R22
+Efpminmaxfused
+R6
+R8
+R9
+R10
+R11
+R12
+R13
+R0
+Z42 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMinMaxFused/FPMinMaxFused.vhd
+Z43 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMinMaxFused/FPMinMaxFused.vhd
+l0
+L48
+VQL07FLIc`B<bY>J;ZmN<H3
+!s100 a_?=Tin8Db;daP=>>zkKI0
+R16
+31
+R17
+!i10b 1
+R18
+Z44 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMinMaxFused/FPMinMaxFused.vhd|
+Z45 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMinMaxFused/FPMinMaxFused.vhd|
+!i113 1
+R21
+R22
+Anormal
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 13 fpminmaxfused 0 22 QL07FLIc`B<bY>J;ZmN<H3
+l158
+L57
+VO[Wd3K[<g5:amfl6Z]Q;30
+!s100 4CkYY4EEIhHjHV@THkRnE1
+R16
+31
+R17
+!i10b 1
+R18
+R44
+R45
+!i113 1
+R21
+R22
+Efpmult
+R6
+R8
+R9
+R29
+R10
+R11
+R12
+R13
+R0
+Z46 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMult/FPMult.vhd
+Z47 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMult/FPMult.vhd
+l0
+L48
+V4:e6HLDS0hW?omSdTJ;_X0
+!s100 bbA9i;haXK40d5DENVCUS0
+R16
+31
+R25
+!i10b 1
+R26
+Z48 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMult/FPMult.vhd|
+Z49 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMult/FPMult.vhd|
+!i113 1
+R21
+R22
+Anormal
+R8
+R9
+R29
+R10
+R11
+R12
+R13
+DEx4 work 6 fpmult 0 22 4:e6HLDS0hW?omSdTJ;_X0
+l297
+L58
+V^i]m;mX0JlORME9i2N7b?2
+!s100 2GMLZ>e@Y5XHfRMz>5QFm0
+R16
+31
+R25
+!i10b 1
+R26
+R48
+R49
+!i113 1
+R21
+R22
+Efpneg
+R6
+R8
+R9
+R10
+R11
+R12
+R13
+R0
+Z50 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPNeg.vhd
+Z51 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPNeg.vhd
+l0
+L26
+V7GC1YLXjiU:E6kA52`PNB1
+!s100 ^Z=APD^6H0fVUMb@DPmXf0
+R16
+31
+R25
+!i10b 1
+R18
+Z52 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPNeg.vhd|
+Z53 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPNeg.vhd|
+!i113 1
+R21
+R22
+Anormal
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 5 fpneg 0 22 7GC1YLXjiU:E6kA52`PNB1
+l35
+L34
+VJmSdzHQBS3X3Q;BBa43cU2
+!s100 =K;;ij[X7C1PJDGX?TKAn3
+R16
+31
+R25
+!i10b 1
+R18
+R52
+R53
+!i113 1
+R21
+R22
+Efpoint2_combi
+R6
+R10
+R11
+R12
+R13
+R0
+Z54 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_combi.vhd
+Z55 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_combi.vhd
+l0
+L20
+Vc_VDz4=T9cB1dzROmIVM_1
+!s100 L7S]l3:HPGH]CT^8?<SRd1
+R16
+31
+R17
+!i10b 1
+R18
+Z56 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_combi.vhd|
+Z57 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_combi.vhd|
+!i113 1
+R21
+R22
+Afpcombi
+R10
+R11
+R12
+R13
+DEx4 work 13 fpoint2_combi 0 22 c_VDz4=T9cB1dzROmIVM_1
+l72
+L33
+V7bbg8O]YfEz^iKPkYA@8=0
+!s100 5F1N5nA`k5b;E9bf5`V0R1
+R16
+31
+R17
+!i10b 1
+R18
+R56
+R57
+!i113 1
+R21
+R22
+Efpoint2_multi
+R6
+Z58 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z59 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+R12
+R13
+R0
+Z60 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi.vhd
+Z61 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi.vhd
+l0
+L18
+VYLWUG1`Qd_l`CF>^WAkMX1
+!s100 _6V>NAUgn[6=fzomCDcQ?3
+R16
+31
+R1
+!i10b 1
+R7
+Z62 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi.vhd|
+Z63 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi.vhd|
+!i113 1
+R21
+R22
+Afpmulti
+R58
+R59
+R12
+R13
+DEx4 work 13 fpoint2_multi 0 22 YLWUG1`Qd_l`CF>^WAkMX1
+l72
+L37
+VbYRk1]`X?WPOGDUdmMLI<3
+!s100 aQ`^I00kM^FRebR:K5UN21
+R16
+31
+R1
+!i10b 1
+R7
+R62
+R63
+!i113 1
+R21
+R22
+Efpoint2_multi_datapath
+R6
+R10
+R11
+R12
+R13
+R0
+Z64 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_datapath.vhd
+Z65 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_datapath.vhd
+l0
+L19
+VKIiz841;@`QWSMR_Lbj^90
+!s100 j@V@Un5L^dz8Rid`R`cCA2
+R16
+31
+R17
+!i10b 1
+R18
+Z66 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_datapath.vhd|
+Z67 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_datapath.vhd|
+!i113 1
+R21
+R22
+Afp_data_path
+R10
+R11
+R12
+R13
+DEx4 work 22 fpoint2_multi_datapath 0 22 KIiz841;@`QWSMR_Lbj^90
+l102
+L37
+VinBbmkmSR><>ka@de3fao3
+!s100 _F=R9C2mlXXgXRdQn11;H0
+R16
+31
+R17
+!i10b 1
+R18
+R66
+R67
+!i113 1
+R21
+R22
+Efpoint2_multi_dspba_delay
+R6
+R29
+R12
+R13
+R0
+Z68 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library.vhd
+Z69 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library.vhd
+l0
+L30
+VVD<?S9f9F8T=5a=aJU[S12
+!s100 J>1j_hOg@gB7K:czCD>SB1
+R16
+31
+R25
+!i10b 1
+R26
+Z70 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library.vhd|
+Z71 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library.vhd|
+!i113 1
+R21
+R22
+Adelay
+R29
+R12
+R13
+DEx4 work 25 fpoint2_multi_dspba_delay 0 22 VD<?S9f9F8T=5a=aJU[S12
+l48
+L45
+V^RAAo9=?G]LNV<ODE6c]@1
+!s100 6PXP8Vd=VadD0_RBB5nzR1
+R16
+31
+R25
+!i10b 1
+R26
+R70
+R71
+!i113 1
+R21
+R22
+Pfpoint2_multi_dspba_library_package
+R12
+R13
+R6
+R0
+8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library_package.vhd
+FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library_package.vhd
+l0
+L29
+V7[>QY0GgzLY:2Gn2fne7;2
+!s100 [PbhoEVWSGU[6lcONmF9o2
+R16
+31
+R17
+!i10b 1
+R18
+!s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library_package.vhd|
+!s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library_package.vhd|
+!i113 1
+R21
+R22
+Efpsqrt
+R6
+Z72 DPx4 work 16 fpsqrt_safe_path 0 22 =<__DDZLR87XhH9EZHMF?0
+R8
+R9
+R29
+R10
+R11
+R12
+R13
+R0
+Z73 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt.vhd
+Z74 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt.vhd
+l0
+L48
+Vef1c6=T>Zgz;hN?VAMHe42
+!s100 [iY^SlQO32LFOOo8LW>683
+R16
+31
+R25
+!i10b 1
+R26
+Z75 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt.vhd|
+Z76 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt.vhd|
+!i113 1
+R21
+R22
+Anormal
+R72
+R8
+R9
+R29
+R10
+R11
+R12
+R13
+Z77 DEx4 work 6 fpsqrt 0 22 ef1c6=T>Zgz;hN?VAMHe42
+l287
+L60
+Z78 VC:P5WlB]mM]`TDZbFgFQ91
+Z79 !s100 =`fH@`m809ZBW<D9`;>XR0
+R16
+31
+R25
+!i10b 1
+R26
+R75
+R76
+!i113 1
+R21
+R22
+Pfpsqrt_safe_path
+R12
+R13
+R6
+R0
+Z80 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt_safe_path.vhd
+Z81 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt_safe_path.vhd
+l0
+L18
+V=<__DDZLR87XhH9EZHMF?0
+!s100 >_>g`=j@_>]]nVz=oaMeH3
+R16
+31
+b1
+R17
+!i10b 1
+R18
+Z82 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt_safe_path.vhd|
+Z83 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt_safe_path.vhd|
+!i113 1
+R21
+R22
+Bbody
+R72
+R12
+R13
+l0
+L22
+VVC0>[6M<zhCL?M6jUL<Si3
+!s100 @PKAdB1DCbT<<bge:GDOd3
+R16
+31
+R17
+!i10b 1
+R18
+R82
+R83
+!i113 1
+R21
+R22
+Einttofloat
+R6
+R8
+R9
+R29
+R10
+R11
+R12
+R13
+R0
+Z84 8D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/IntToFloat/IntToFloat.vhd
+Z85 FD:/sd_card_backup/floating_point_tb/float/synthesis/submodules/IntToFloat/IntToFloat.vhd
+l0
+L49
+VgD6UE:WW65j@D]nTIkKLE0
+!s100 OJN^2W:LXC>9iaAni7@B41
+R16
+31
+R25
+!i10b 1
+R26
+Z86 !s90 -reportprogress|300|-93|-work|float|D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/IntToFloat/IntToFloat.vhd|
+Z87 !s107 D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/IntToFloat/IntToFloat.vhd|
+!i113 1
+R21
+R22
+Anormal
+R8
+R9
+R29
+R10
+R11
+R12
+R13
+DEx4 work 10 inttofloat 0 22 gD6UE:WW65j@D]nTIkKLE0
+l200
+L58
+VgUf?^jM;@f=zoZ`Rdbh_M2
+!s100 nZTl42LL@UcH2<K?z=R5]2
+R16
+31
+R25
+!i10b 1
+R26
+R86
+R87
+!i113 1
+R21
+R22

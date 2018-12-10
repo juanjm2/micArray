@@ -1,0 +1,10 @@
+
+State Machine - |float_test|gain_dma:fsm|state
+Name state.FIN state.FIXSI_WAIT state.INTER_2 state.FMULS_WAIT state.INTER_1 state.FLOATIS_WAIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.FLOATIS_WAIT 0 0 0 0 0 1 1 
+state.INTER_1 0 0 0 0 1 0 1 
+state.FMULS_WAIT 0 0 0 1 0 0 1 
+state.INTER_2 0 0 1 0 0 0 1 
+state.FIXSI_WAIT 0 1 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 1 

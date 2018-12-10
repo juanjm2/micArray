@@ -1,4 +1,24 @@
 
+State Machine - |part1|volumeControl:vol|gain_fsm:fsm_R|state
+Name state.FIN state.FIXSI_WAIT state.INTER_2 state.FMULS_WAIT state.INTER_1 state.FLOATIS_WAIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.FLOATIS_WAIT 0 0 0 0 0 1 1 
+state.INTER_1 0 0 0 0 1 0 1 
+state.FMULS_WAIT 0 0 0 1 0 0 1 
+state.INTER_2 0 0 1 0 0 0 1 
+state.FIXSI_WAIT 0 1 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 1 
+
+State Machine - |part1|volumeControl:vol|gain_fsm:fsm_L|state
+Name state.FIN state.FIXSI_WAIT state.INTER_2 state.FMULS_WAIT state.INTER_1 state.FLOATIS_WAIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.FLOATIS_WAIT 0 0 0 0 0 1 1 
+state.INTER_1 0 0 0 0 1 0 1 
+state.FMULS_WAIT 0 0 0 1 0 0 1 
+state.INTER_2 0 0 1 0 0 0 1 
+state.FIXSI_WAIT 0 1 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 1 
+
 State Machine - |part1|aud_setup:fir_setup|aud_setup_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer
 Name s_serial_transfer.STATE_6_POST_READ s_serial_transfer.STATE_5_READ_TRANSFER s_serial_transfer.STATE_4_PRE_READ s_serial_transfer.STATE_3_POST_WRITE s_serial_transfer.STATE_2_WRITE_TRANSFER s_serial_transfer.STATE_1_PRE_WRITE s_serial_transfer.STATE_0_IDLE 
 s_serial_transfer.STATE_0_IDLE 0 0 0 0 0 0 0 

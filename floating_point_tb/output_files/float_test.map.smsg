@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at gain_dma.sv(58): always construct contains both blocking and non-blocking assignments File: D:/sd_card_backup/floating_point_tb/gain_dma.sv Line: 58

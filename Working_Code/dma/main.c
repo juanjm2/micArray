@@ -16,9 +16,9 @@
 #define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
 #define DDR_BASE ( 0x00000000 )
 #define DDR_SPAN ( 0x3FFFFFFF )
-#define BUF_SIZE 0x00130B00
+#define BUF_SIZE 0x000AFC80
 #define SAMPLING_RATE 48000
-#define START_ADDRESS 0x02000000
+#define START_ADDRESS 0x01000000
 //48000 sampling rate
 int main() {
 	void *virtual_base;
@@ -92,6 +92,7 @@ int main() {
 			FILE * f;
 			unsigned int i;
 			uint16_t left, right;
+			uint32_t fir_left, fir_right;
 			f = fopen("OUT.dat", "w");
 			if (f == NULL)
 			{
@@ -100,7 +101,7 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
+			for(i = 0x00000000; i < BUF_SIZE; i = i + 0x00000001)
 			{
 				left = (alt_read_word(ddr3 + i) >> 16) & 0x0000FFFF;
 				right = alt_read_word(ddr3 + i) & 0x0000FFFF;
@@ -119,7 +120,7 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
+			for(i = 0x00000000; i < BUF_SIZE; i = i + 0x00000001)
 			{
 				left = (alt_read_word(ddr3_2 + i) >> 16) & 0x0000FFFF;
 				right = alt_read_word(ddr3_2 + i) & 0x0000FFFF;
@@ -138,11 +139,10 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
+			for(i = 0x00000000; i < BUF_SIZE; i = i + 0x00000001)
 			{
-				left = (alt_read_word(ddr3_3 + i) >> 16) & 0x0000FFFF;
-				right = alt_read_word(ddr3_3 + i) & 0x0000FFFF;
-				fprintf(f3, "%hX %hX\n", left, right);
+				fir_left = alt_read_word(ddr3_3 + i) & 0xFFFFFFFF;
+				fprintf(f3, "%d\n", fir_left);
 			}
 
 			fclose(f3);	// Closing file
@@ -157,11 +157,10 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
+			for(i = 0x00000000; i < BUF_SIZE; i = i + 0x00000001)
 			{
-				left = (alt_read_word(ddr3_4 + i) >> 16) & 0x0000FFFF;
-				right = alt_read_word(ddr3_4 + i) & 0x0000FFFF;
-				fprintf(f4, "%hX %hX\n", left, right);
+				fir_right = alt_read_word(ddr3_4 + i) & 0xFFFFFFFF;
+				fprintf(f4, "%d\n", fir_right);
 			}
 
 			fclose(f4);	// Closing file
@@ -176,7 +175,7 @@ int main() {
 
 			// Writing to the file
 
-			for(i = 0x00000000; i < 0x00124F80; i = i + 0x00000001)
+			for(i = 0x00000000; i < BUF_SIZE; i = i + 0x00000001)
 			{
 				left = (alt_read_word(ddr3_5 + i) >> 16) & 0x0000FFFF;
 				right = alt_read_word(ddr3_5 + i) & 0x0000FFFF;

@@ -80,11 +80,14 @@ module soc_system (
 		input  wire        mic_system_0_aud_adclrck_new_signal,    //        mic_system_0_aud_adclrck.new_signal
 		input  wire        mic_system_0_aud_bclk_new_signal,       //           mic_system_0_aud_bclk.new_signal
 		output wire [31:0] mic_system_0_codec_stream_new_signal,   //       mic_system_0_codec_stream.new_signal
+		input  wire [31:0] mic_system_0_fir_left_data_new_signal,  //      mic_system_0_fir_left_data.new_signal
+		input  wire [31:0] mic_system_0_fir_right_data_new_signal, //     mic_system_0_fir_right_data.new_signal
 		input  wire        mic_system_0_gpio_din1_new_signal,      //          mic_system_0_gpio_din1.new_signal
 		input  wire        mic_system_0_gpio_din2_new_signal,      //          mic_system_0_gpio_din2.new_signal
 		input  wire        mic_system_0_gpio_din3_new_signal,      //          mic_system_0_gpio_din3.new_signal
 		input  wire        mic_system_0_gpio_din4_new_signal,      //          mic_system_0_gpio_din4.new_signal
-		input  wire [31:0] mic_system_0_fir_data_new_signal,		  //			  Fir data from adc {left, right} 32 bits total
+		output wire        mic_system_0_sample_ready_new_signal,   //       mic_system_0_sample_ready.new_signal
+		output wire [31:0] mic_system_0_volume_level_new_signal,   //       mic_system_0_volume_level.new_signal
 		input  wire [3:0]  pushbuttons_external_connection_export, // pushbuttons_external_connection.export
 		input  wire        reset_reset_n                           //                           reset.reset_n
 	);
@@ -130,7 +133,7 @@ module soc_system (
 	wire         hps_0_h2f_lw_axi_master_rvalid;                        // mm_interconnect_0:hps_0_h2f_lw_axi_master_rvalid -> hps_0:h2f_lw_RVALID
 	wire         mm_interconnect_0_mic_system_0_mic_slave_chipselect;   // mm_interconnect_0:mic_system_0_mic_slave_chipselect -> mic_system_0:AVL_CS
 	wire  [31:0] mm_interconnect_0_mic_system_0_mic_slave_readdata;     // mic_system_0:AVL_READDATA -> mm_interconnect_0:mic_system_0_mic_slave_readdata
-	wire   [1:0] mm_interconnect_0_mic_system_0_mic_slave_address;      // mm_interconnect_0:mic_system_0_mic_slave_address -> mic_system_0:AVL_ADDR
+	wire   [2:0] mm_interconnect_0_mic_system_0_mic_slave_address;      // mm_interconnect_0:mic_system_0_mic_slave_address -> mic_system_0:AVL_ADDR
 	wire         mm_interconnect_0_mic_system_0_mic_slave_read;         // mm_interconnect_0:mic_system_0_mic_slave_read -> mic_system_0:AVL_READ
 	wire         mm_interconnect_0_mic_system_0_mic_slave_write;        // mm_interconnect_0:mic_system_0_mic_slave_write -> mic_system_0:AVL_WRITE
 	wire  [31:0] mm_interconnect_0_mic_system_0_mic_slave_writedata;    // mm_interconnect_0:mic_system_0_mic_slave_writedata -> mic_system_0:AVL_WRITEDATA
@@ -320,29 +323,32 @@ module soc_system (
 	);
 
 	avalon_microphone_system mic_system_0 (
-		.CLK            (primary_pll_outclk0_clk),                             //          CLK.clk
-		.RESET          (rst_controller_001_reset_out_reset),                  //        RESET.reset
-		.AM_ADDR        (mic_system_0_mic_master_address),                     //   mic_master.address
-		.AM_BURSTCOUNT  (mic_system_0_mic_master_burstcount),                  //             .burstcount
-		.AM_WRITE       (mic_system_0_mic_master_write),                       //             .write
-		.AM_WRITEDATA   (mic_system_0_mic_master_writedata),                   //             .writedata
-		.AM_BYTEENABLE  (mic_system_0_mic_master_byteenable),                  //             .byteenable
-		.AM_WAITREQUEST (mic_system_0_mic_master_waitrequest),                 //             .waitrequest
-		.AVL_ADDR       (mm_interconnect_0_mic_system_0_mic_slave_address),    //    mic_slave.address
-		.AVL_CS         (mm_interconnect_0_mic_system_0_mic_slave_chipselect), //             .chipselect
-		.AVL_READ       (mm_interconnect_0_mic_system_0_mic_slave_read),       //             .read
-		.AVL_WRITE      (mm_interconnect_0_mic_system_0_mic_slave_write),      //             .write
-		.AVL_READDATA   (mm_interconnect_0_mic_system_0_mic_slave_readdata),   //             .readdata
-		.AVL_WRITEDATA  (mm_interconnect_0_mic_system_0_mic_slave_writedata),  //             .writedata
-		.AUD_BCLK       (mic_system_0_aud_bclk_new_signal),                    //     AUD_BCLK.new_signal
-		.AUD_ADCLRCK    (mic_system_0_aud_adclrck_new_signal),                 //  AUD_ADCLRCK.new_signal
-		.GPIO_DIN1      (mic_system_0_gpio_din1_new_signal),                   //    GPIO_DIN1.new_signal
-		.GPIO_DIN2      (mic_system_0_gpio_din2_new_signal),                   //    GPIO_DIN2.new_signal
-		.GPIO_DIN3      (mic_system_0_gpio_din3_new_signal),                   //    GPIO_DIN3.new_signal
-		.GPIO_DIN4      (mic_system_0_gpio_din4_new_signal),                   //    GPIO_DIN4.new_signal
-		.fir_data		 (mic_system_0_fir_data_new_signal),
-		.codec_stream   (mic_system_0_codec_stream_new_signal),                // codec_stream.new_signal
-		.adc_data       (mic_system_0_adc_data_new_signal)                     //     adc_data.new_signal
+		.CLK            (primary_pll_outclk0_clk),                             //            CLK.clk
+		.RESET          (rst_controller_001_reset_out_reset),                  //          RESET.reset
+		.AM_ADDR        (mic_system_0_mic_master_address),                     //     mic_master.address
+		.AM_BURSTCOUNT  (mic_system_0_mic_master_burstcount),                  //               .burstcount
+		.AM_WRITE       (mic_system_0_mic_master_write),                       //               .write
+		.AM_WRITEDATA   (mic_system_0_mic_master_writedata),                   //               .writedata
+		.AM_BYTEENABLE  (mic_system_0_mic_master_byteenable),                  //               .byteenable
+		.AM_WAITREQUEST (mic_system_0_mic_master_waitrequest),                 //               .waitrequest
+		.AVL_ADDR       (mm_interconnect_0_mic_system_0_mic_slave_address),    //      mic_slave.address
+		.AVL_CS         (mm_interconnect_0_mic_system_0_mic_slave_chipselect), //               .chipselect
+		.AVL_READ       (mm_interconnect_0_mic_system_0_mic_slave_read),       //               .read
+		.AVL_WRITE      (mm_interconnect_0_mic_system_0_mic_slave_write),      //               .write
+		.AVL_READDATA   (mm_interconnect_0_mic_system_0_mic_slave_readdata),   //               .readdata
+		.AVL_WRITEDATA  (mm_interconnect_0_mic_system_0_mic_slave_writedata),  //               .writedata
+		.AUD_BCLK       (mic_system_0_aud_bclk_new_signal),                    //       AUD_BCLK.new_signal
+		.AUD_ADCLRCK    (mic_system_0_aud_adclrck_new_signal),                 //    AUD_ADCLRCK.new_signal
+		.GPIO_DIN1      (mic_system_0_gpio_din1_new_signal),                   //      GPIO_DIN1.new_signal
+		.GPIO_DIN2      (mic_system_0_gpio_din2_new_signal),                   //      GPIO_DIN2.new_signal
+		.GPIO_DIN3      (mic_system_0_gpio_din3_new_signal),                   //      GPIO_DIN3.new_signal
+		.GPIO_DIN4      (mic_system_0_gpio_din4_new_signal),                   //      GPIO_DIN4.new_signal
+		.codec_stream   (mic_system_0_codec_stream_new_signal),                //   codec_stream.new_signal
+		.adc_data       (mic_system_0_adc_data_new_signal),                    //       adc_data.new_signal
+		.fir_left_data  (mic_system_0_fir_left_data_new_signal),               //  fir_left_data.new_signal
+		.fir_right_data (mic_system_0_fir_right_data_new_signal),              // fir_right_data.new_signal
+		.volume_level   (mic_system_0_volume_level_new_signal),                //   volume_level.new_signal
+		.sample_ready   (mic_system_0_sample_ready_new_signal)                 //   sample_ready.new_signal
 	);
 
 	soc_system_mm_interconnect_0 mm_interconnect_0 (

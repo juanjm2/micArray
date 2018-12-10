@@ -1,0 +1,6 @@
+module gain_dma(
+	input logic CLK
+	output logic
+);
+
+endmodule

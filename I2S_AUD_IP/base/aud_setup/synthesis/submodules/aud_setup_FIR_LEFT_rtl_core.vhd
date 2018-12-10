@@ -16,7 +16,7 @@
 -- ---------------------------------------------------------------------------
 
 -- VHDL created from aud_setup_FIR_LEFT_rtl_core
--- VHDL created on Sun Dec 02 15:33:33 2018
+-- VHDL created on Fri Dec 07 00:55:16 2018
 
 
 library IEEE;

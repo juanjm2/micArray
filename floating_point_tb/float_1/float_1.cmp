@@ -1,0 +1,14 @@
+	component float_1 is
+		port (
+			s1_clk    : in  std_logic                     := 'X';             -- clk
+			s1_clk_en : in  std_logic                     := 'X';             -- clk_en
+			s1_dataa  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- dataa
+			s1_datab  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- datab
+			s1_n      : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- n
+			s1_reset  : in  std_logic                     := 'X';             -- reset
+			s1_start  : in  std_logic                     := 'X';             -- start
+			s1_done   : out std_logic;                                        -- done
+			s1_result : out std_logic_vector(31 downto 0)                     -- result
+		);
+	end component float_1;
+

@@ -1,0 +1,155 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 256 336)
+	(text "float" (rect 116 -1 132 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 320 20 332)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "s1_dataa[31..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "s1_dataa[31..0]" (rect 4 61 94 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 96 72)(line_width 3))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "s1_datab[31..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "s1_datab[31..0]" (rect 4 77 94 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 96 88)(line_width 3))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "s1_n[3..0]" (rect 0 0 38 12)(font "Arial" (font_size 8)))
+		(text "s1_n[3..0]" (rect 4 93 64 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 96 104)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "s2_clk" (rect 0 0 25 12)(font "Arial" (font_size 8)))
+		(text "s2_clk" (rect 4 149 40 160)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 96 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "s2_clk_en" (rect 0 0 41 12)(font "Arial" (font_size 8)))
+		(text "s2_clk_en" (rect 4 165 58 176)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 96 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "s2_dataa[31..0]" (rect 0 0 60 12)(font "Arial" (font_size 8)))
+		(text "s2_dataa[31..0]" (rect 4 181 94 192)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 96 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "s2_datab[31..0]" (rect 0 0 60 12)(font "Arial" (font_size 8)))
+		(text "s2_datab[31..0]" (rect 4 197 94 208)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 96 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "s2_n[2..0]" (rect 0 0 40 12)(font "Arial" (font_size 8)))
+		(text "s2_n[2..0]" (rect 4 213 64 224)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 96 224)(line_width 3))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "s2_reset" (rect 0 0 35 12)(font "Arial" (font_size 8)))
+		(text "s2_reset" (rect 4 229 52 240)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 96 240)(line_width 1))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "s2_reset_req" (rect 0 0 54 12)(font "Arial" (font_size 8)))
+		(text "s2_reset_req" (rect 4 245 76 256)(font "Arial" (font_size 8)))
+		(line (pt 0 256)(pt 96 256)(line_width 1))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "s2_start" (rect 0 0 33 12)(font "Arial" (font_size 8)))
+		(text "s2_start" (rect 4 261 52 272)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 96 272)(line_width 1))
+	)
+	(port
+		(pt 0 120)
+		(output)
+		(text "s1_result[31..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "s1_result[31..0]" (rect 4 109 100 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 96 120)(line_width 3))
+	)
+	(port
+		(pt 0 288)
+		(output)
+		(text "s2_done" (rect 0 0 34 12)(font "Arial" (font_size 8)))
+		(text "s2_done" (rect 4 277 46 288)(font "Arial" (font_size 8)))
+		(line (pt 0 288)(pt 96 288)(line_width 1))
+	)
+	(port
+		(pt 0 304)
+		(output)
+		(text "s2_result[31..0]" (rect 0 0 60 12)(font "Arial" (font_size 8)))
+		(text "s2_result[31..0]" (rect 4 293 100 304)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 96 304)(line_width 3))
+	)
+	(drawing
+		(text "s1" (rect 85 43 182 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "dataa" (rect 101 67 232 144)(font "Arial" (color 0 0 0)))
+		(text "datab" (rect 101 83 232 176)(font "Arial" (color 0 0 0)))
+		(text "n" (rect 101 99 208 208)(font "Arial" (color 0 0 0)))
+		(text "result" (rect 101 115 238 240)(font "Arial" (color 0 0 0)))
+		(text "s2" (rect 83 131 178 275)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 101 155 220 320)(font "Arial" (color 0 0 0)))
+		(text "clk_en" (rect 101 171 238 352)(font "Arial" (color 0 0 0)))
+		(text "dataa" (rect 101 187 232 384)(font "Arial" (color 0 0 0)))
+		(text "datab" (rect 101 203 232 416)(font "Arial" (color 0 0 0)))
+		(text "n" (rect 101 219 208 448)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 101 235 232 480)(font "Arial" (color 0 0 0)))
+		(text "reset_req" (rect 101 251 256 512)(font "Arial" (color 0 0 0)))
+		(text "start" (rect 101 267 232 544)(font "Arial" (color 0 0 0)))
+		(text "done" (rect 101 283 226 576)(font "Arial" (color 0 0 0)))
+		(text "result" (rect 101 299 238 608)(font "Arial" (color 0 0 0)))
+		(text " system " (rect 221 320 490 650)(font "Arial" ))
+		(line (pt 96 32)(pt 160 32)(line_width 1))
+		(line (pt 160 32)(pt 160 320)(line_width 1))
+		(line (pt 96 320)(pt 160 320)(line_width 1))
+		(line (pt 96 32)(pt 96 320)(line_width 1))
+		(line (pt 97 52)(pt 97 124)(line_width 1))
+		(line (pt 98 52)(pt 98 124)(line_width 1))
+		(line (pt 97 140)(pt 97 308)(line_width 1))
+		(line (pt 98 140)(pt 98 308)(line_width 1))
+		(line (pt 0 0)(pt 256 0)(line_width 1))
+		(line (pt 256 0)(pt 256 336)(line_width 1))
+		(line (pt 0 336)(pt 256 336)(line_width 1))
+		(line (pt 0 0)(pt 0 336)(line_width 1))
+	)
+)

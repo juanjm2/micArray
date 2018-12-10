@@ -12,8 +12,6 @@ Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_conf
 Progress: Parameterizing module audio_and_video_config_0
 Progress: Adding clk_0 [clock_source 17.1]
 Progress: Parameterizing module clk_0
-Progress: Adding nios_custom_instr_floating_point_0 [altera_nios_custom_instr_floating_point 17.1]
-Progress: Parameterizing module nios_custom_instr_floating_point_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -38,8 +36,6 @@ Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_conf
 Progress: Parameterizing module audio_and_video_config_0
 Progress: Adding clk_0 [clock_source 17.1]
 Progress: Parameterizing module clk_0
-Progress: Adding nios_custom_instr_floating_point_0 [altera_nios_custom_instr_floating_point 17.1]
-Progress: Parameterizing module nios_custom_instr_floating_point_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -54,8 +50,7 @@ Info: audio_0: Starting Generation of Audio Controller
 Info: audio_0: "aud_setup" instantiated altera_up_avalon_audio "audio_0"
 Info: audio_and_video_config_0: Starting Generation of Audio and Video Config
 Info: audio_and_video_config_0: "aud_setup" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config_0"
-Info: nios_custom_instr_floating_point_0: "aud_setup" instantiated altera_nios_custom_instr_floating_point "nios_custom_instr_floating_point_0"
 Info: rst_controller: "aud_setup" instantiated altera_reset_controller "rst_controller"
-Info: aud_setup: Done "aud_setup" with 6 modules, 40 files
+Info: aud_setup: Done "aud_setup" with 5 modules, 37 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

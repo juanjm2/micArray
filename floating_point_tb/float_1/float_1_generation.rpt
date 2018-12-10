@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\sd_card_backup\floating_point_tb\float_1.qsys --block-symbol-file --output-directory=D:\sd_card_backup\floating_point_tb\float_1 --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading floating_point_tb/float_1.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_0 [altera_nios_custom_instr_floating_point 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\sd_card_backup\floating_point_tb\float_1.qsys --synthesis=VERILOG --output-directory=D:\sd_card_backup\floating_point_tb\float_1\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading floating_point_tb/float_1.qsys
+Progress: Reading input file
+Progress: Adding nios_custom_instr_floating_point_0 [altera_nios_custom_instr_floating_point 17.1]
+Progress: Parameterizing module nios_custom_instr_floating_point_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: float_1: Generating float_1 "float_1" for QUARTUS_SYNTH
+Info: nios_custom_instr_floating_point_0: "float_1" instantiated altera_nios_custom_instr_floating_point "nios_custom_instr_floating_point_0"
+Info: float_1: Done "float_1" with 2 modules, 4 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

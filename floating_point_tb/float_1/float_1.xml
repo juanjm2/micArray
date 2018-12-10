@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2018.12.08.19:07:34"
+ outputDirectory="D:/sd_card_backup/floating_point_tb/float_1/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA5F31C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="s1" kind="nios_custom_instruction" start="0">
+   <property name="CIName" value="" />
+   <property name="NPort" value="2" />
+   <property name="clockCycle" value="1" />
+   <property name="clockCycleType" value="VARIABLE" />
+   <property name="opcodeExtension" value="0" />
+   <property name="opcodeExtensionLocked" value="true" />
+   <property name="opcodeExtensionLockedValue" value="252" />
+   <property name="operands" value="2" />
+   <port name="s1_clk" direction="input" role="clk" width="1" />
+   <port name="s1_clk_en" direction="input" role="clk_en" width="1" />
+   <port name="s1_dataa" direction="input" role="dataa" width="32" />
+   <port name="s1_datab" direction="input" role="datab" width="32" />
+   <port name="s1_n" direction="input" role="n" width="2" />
+   <port name="s1_reset" direction="input" role="reset" width="1" />
+   <port name="s1_start" direction="input" role="start" width="1" />
+   <port name="s1_done" direction="output" role="done" width="1" />
+   <port name="s1_result" direction="output" role="result" width="32" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="float_1:1.0:AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1544317652,AUTO_UNIQUE_ID=(altera_nios_custom_instr_floating_point:17.1:useDivider=0)"
+   instancePathKey="float_1"
+   kind="float_1"
+   version="1.0"
+   name="float_1">
+  <parameter name="AUTO_GENERATION_ID" value="1544317652" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="D:/sd_card_backup/floating_point_tb/float_1/synthesis/float_1.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="D:/sd_card_backup/floating_point_tb/float_1/synthesis/submodules/fpoint_wrapper.v"
+       type="VERILOG" />
+   <file
+       path="D:/sd_card_backup/floating_point_tb/float_1/synthesis/submodules/fpoint_qsys.v"
+       type="VERILOG" />
+   <file
+       path="D:/sd_card_backup/floating_point_tb/float_1/synthesis/submodules/fpoint_hw_qsys.v"
+       type="VERILOG" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="D:/sd_card_backup/floating_point_tb/float_1.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_qsys_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_wrapper.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_qsys.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_hw_qsys.v" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="float_1">queue size: 0 starting:float_1 "float_1"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="float_1"><![CDATA["<b>float_1</b>" reuses <b>altera_nios_custom_instr_floating_point</b> "<b>submodules/fpoint_wrapper</b>"]]></message>
+   <message level="Debug" culprit="float_1">queue size: 0 starting:altera_nios_custom_instr_floating_point "submodules/fpoint_wrapper"</message>
+   <message level="Info" culprit="nios_custom_instr_floating_point_0"><![CDATA["<b>float_1</b>" instantiated <b>altera_nios_custom_instr_floating_point</b> "<b>nios_custom_instr_floating_point_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_nios_custom_instr_floating_point:17.1:useDivider=0"
+   instancePathKey="float_1:.:nios_custom_instr_floating_point_0"
+   kind="altera_nios_custom_instr_floating_point"
+   version="17.1"
+   name="fpoint_wrapper">
+  <generatedFiles>
+   <file
+       path="D:/sd_card_backup/floating_point_tb/float_1/synthesis/submodules/fpoint_wrapper.v"
+       type="VERILOG" />
+   <file
+       path="D:/sd_card_backup/floating_point_tb/float_1/synthesis/submodules/fpoint_qsys.v"
+       type="VERILOG" />
+   <file
+       path="D:/sd_card_backup/floating_point_tb/float_1/synthesis/submodules/fpoint_hw_qsys.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_qsys_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_wrapper.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_qsys.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/sopc_builder_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_hw_qsys.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="float_1" as="nios_custom_instr_floating_point_0" />
+  <messages>
+   <message level="Debug" culprit="float_1">queue size: 0 starting:altera_nios_custom_instr_floating_point "submodules/fpoint_wrapper"</message>
+   <message level="Info" culprit="nios_custom_instr_floating_point_0"><![CDATA["<b>float_1</b>" instantiated <b>altera_nios_custom_instr_floating_point</b> "<b>nios_custom_instr_floating_point_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

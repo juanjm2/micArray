@@ -1,0 +1,40 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlib float
+vmap float float
+vlog -vlog01compat -work float +incdir+D:/sd_card_backup/floating_point_tb/float/synthesis {D:/sd_card_backup/floating_point_tb/float/synthesis/float.v}
+vlog -vlog01compat -work float +incdir+D:/sd_card_backup/floating_point_tb/float/synthesis/submodules {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/float_nios_custom_instr_floating_point_2_0.v}
+vlog -vlog01compat -work work +incdir+D:/sd_card_backup/floating_point_tb/db {D:/sd_card_backup/floating_point_tb/db/mult_rau.v}
+vlog -vlog01compat -work work +incdir+D:/sd_card_backup/floating_point_tb/db {D:/sd_card_backup/floating_point_tb/db/mult_sau.v}
+vlog -vlog01compat -work work +incdir+D:/sd_card_backup/floating_point_tb/db {D:/sd_card_backup/floating_point_tb/db/mult_1eu.v}
+vlog -sv -work work +incdir+D:/sd_card_backup/floating_point_tb {D:/sd_card_backup/floating_point_tb/float_test.sv}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_datapath.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library_package.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPDiv/FPDiv.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FloatToInt/FloatToInt.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt_safe_path.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_combi.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMinMaxFused/FPMinMaxFused.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPCompareFused/FPCompareFused.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPNeg.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPNeg_Abs/FPAbs.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/fpoint2_multi_dspba_library.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPAddSub/FPAddSub.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPMult/FPMult.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/IntToFloat/IntToFloat.vhd}
+vcom -93 -work float {D:/sd_card_backup/floating_point_tb/float/synthesis/submodules/FPSqrt/FPSqrt.vhd}
+
+vlog -sv -work work +incdir+D:/sd_card_backup/floating_point_tb {D:/sd_card_backup/floating_point_tb/testbench.sv}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -L float -voptargs="+acc"  testbench
+
+add wave *
+view structure
+view signals
+run -all

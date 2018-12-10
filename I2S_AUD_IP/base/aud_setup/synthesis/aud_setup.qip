@@ -2,7 +2,7 @@ set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_TOOL_NAM
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_TOOL_VERSION "17.1"
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "aud_setup" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../aud_setup.sopcinfo"]
-set_global_assignment -entity "aud_setup" -library "aud_setup" -name SLD_INFO "QSYS_NAME aud_setup HAS_SOPCINFO 1 GENERATION_ID 1543786411"
+set_global_assignment -entity "aud_setup" -library "aud_setup" -name SLD_INFO "QSYS_NAME aud_setup HAS_SOPCINFO 1 GENERATION_ID 1544165713"
 set_global_assignment -library "aud_setup" -name MISC_FILE [file join $::quartus(qip_path) "../aud_setup.cmp"]
 set_global_assignment -library "aud_setup" -name SLD_FILE [file join $::quartus(qip_path) "aud_setup.debuginfo"]
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
@@ -15,7 +15,7 @@ set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONEN
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU0Mzc4NjQxMQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU0NDE2NTcxMw==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "aud_setup" -library "aud_setup" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

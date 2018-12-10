@@ -312,28 +312,53 @@ soc_system u0 (
         .hps_io_hps_io_gpio_inst_GPIO54  ( HPS_KEY),                  //                               .hps_io_gpio_inst_GPIO54
         .hps_io_hps_io_gpio_inst_GPIO61  ( HPS_GSENSOR_INT),          //                               .hps_io_gpio_inst_GPIO61
 		  
+
+//		input  wire [31:0] mic_system_0_adc_data_new_signal,       //           mic_system_0_adc_data.new_signal
 //		input  wire        mic_system_0_aud_adclrck_new_signal,    //        mic_system_0_aud_adclrck.new_signal
 //		input  wire        mic_system_0_aud_bclk_new_signal,       //           mic_system_0_aud_bclk.new_signal
 //		output wire [31:0] mic_system_0_codec_stream_new_signal,   //       mic_system_0_codec_stream.new_signal
+//		input  wire [31:0] mic_system_0_fir_left_data_new_signal,  //      mic_system_0_fir_left_data.new_signal
+//		input  wire [31:0] mic_system_0_fir_right_data_new_signal, //     mic_system_0_fir_right_data.new_signal
 //		input  wire        mic_system_0_gpio_din1_new_signal,      //          mic_system_0_gpio_din1.new_signal
 //		input  wire        mic_system_0_gpio_din2_new_signal,      //          mic_system_0_gpio_din2.new_signal
 //		input  wire        mic_system_0_gpio_din3_new_signal,      //          mic_system_0_gpio_din3.new_signal
 //		input  wire        mic_system_0_gpio_din4_new_signal,      //          mic_system_0_gpio_din4.new_signal
+//		output wire        mic_system_0_sample_ready_new_signal,   //       mic_system_0_sample_ready.new_signal
+//		output wire [31:0] mic_system_0_volume_level_new_signal,   //       mic_system_0_volume_level.new_signal
 
+		  
 			// Audio signals
-			.mic_system_0_adc_data_new_signal(adc_mic_data),
+			.mic_system_0_adc_data_new_signal({new_left_fuck[31:16], new_right_fuck[31:16]}),
 			.mic_system_0_aud_adclrck_new_signal(AUD_ADCLRCK),
 			.mic_system_0_aud_bclk_new_signal(AUD_BCLK),
 		   .mic_system_0_codec_stream_new_signal(inter_data),
+			.mic_system_0_fir_left_data_new_signal(fir_left_data),
+			.mic_system_0_fir_right_data_new_signal(fir_right_data),
 			.mic_system_0_gpio_din1_new_signal(GPIO_DIN),
 			.mic_system_0_gpio_din2_new_signal(GPIO_DIN2),
 			.mic_system_0_gpio_din3_new_signal(GPIO_DIN3),
 			.mic_system_0_gpio_din4_new_signal(GPIO_DIN4),
-			.mic_system_0_fir_data_new_signal({fir_left, fir_right}),
+			.mic_system_0_sample_ready_new_signal(sample_ready),
+			.mic_system_0_volume_level_new_signal(volume_level),
 			.pushbuttons_external_connection_export(~KEY[3:0])
     );
 	 
-wire [31:0] inter_data;
+wire [31:0] inter_data, volume_level;
+wire sample_ready;
+
+wire [31:0] left_vol_out;
+wire [31:0] right_vol_out;
+
+volumeControl vol(
+	.CLK(CLOCK_50),
+	.RESET(~KEY[0]),
+	.sample_ready(sample_ready),
+	.hps_vol_level(volume_level),
+	.line_in_left(new_left_fuck),
+	.line_in_right(new_right_fuck),
+	.left_output(left_vol_out),
+	.right_output(right_vol_out)
+);
 
 audio_pll clock_gen(
 	.audio_pll_0_audio_clk_clk(AUD_XCK),
@@ -342,68 +367,128 @@ audio_pll clock_gen(
 	.audio_pll_0_ref_reset_source_reset()
 );
 
-//module fir_test (
-//		input  wire        clk_clk,       //    clk.clk
-//		input  wire [15:0] input_data,    //  input.data
-//		input  wire        input_valid,   //       .valid
-//		input  wire [1:0]  input_error,   //       .error
-//		output wire [16:0] output_data,   // output.data
-//		output wire        output_valid,  //       .valid
-//		output wire [1:0]  output_error,  //       .error
-//		input  wire        reset_reset_n  //  reset.reset_n
+
+//aud_setup fir_setup(
+//		.clk_clk(CLOCK_50),                //              clk.clk
+//		.ext_ADCDAT(AUD_ADCDAT),             //              ext.ADCDAT
+//		.ext_ADCLRCK(AUD_ADCLRCK),            //                 .ADCLRCK
+//		.ext_BCLK(AUD_BCLK),               //                 .BCLK
+//		.ext_DACDAT(AUD_DACDAT),             //                 .DACDAT
+//		.ext_DACLRCK(AUD_DACLRCK),            //                 .DACLRCK
+//		.ext_1_SDAT(FPGA_I2C_SDAT),             //            ext_1.SDAT
+//		.ext_1_SCLK(FPGA_I2C_SCLK),             //                 .SCLK
+//		.fir_left_input_data(left_mux_out),    //   fir_left_input.data
+//		.fir_left_input_valid(left_valid),   //                 .valid
+//		.fir_left_input_error(),   //                 .error
+//		.fir_left_output_data(fir_left_data),   //  fir_left_output.data
+//		.fir_left_output_valid(fir_left_out_valid),  //                 .valid
+//		.fir_left_output_error(),  //                 .error
+//		.fir_right_input_data(right_mux_out),   //  fir_right_input.data
+//		.fir_right_input_valid(right_valid),  //                 .valid
+//		.fir_right_input_error(),  //                 .error
+//		.fir_right_output_data(fir_right_data),  // fir_right_output.data
+//		.fir_right_output_valid(fir_right_out_valid), //                 .valid
+//		.fir_right_output_error(), //                 .error
+//		.left_input_data(left_vol_out),        //       left_input.data
+//		.left_input_valid(fir_left_out_valid),       //                 .valid
+//		.left_input_ready(left_ready),       //                 .ready
+//		.left_output_ready(left_ready),      //      left_output.ready
+//		.left_output_data(left_data),       //                 .data
+//		.left_output_valid(left_valid),      //                 .valid
+//		.reset_reset_n(1'b1),          //            reset.reset_n
+//		.right_input_data(right_vol_out),       //      right_input.data
+//		.right_input_valid(fir_right_out_valid),      //                 .valid
+//		.right_input_ready(right_ready),      	//                 .ready
+//		.right_output_ready(right_ready),     	//     right_output.ready
+//		.right_output_data(new_right_fuck),      	//                 .data
+//		.right_output_valid(right_valid)      //                 .valid
 //	);
 
-wire [15:0] fir_left, fir_right;
+//module aud_32 (
+//		input  wire        clk_clk,            //          clk.clk
+//		input  wire        ext_ADCDAT,         //          ext.ADCDAT
+//		input  wire        ext_ADCLRCK,        //             .ADCLRCK
+//		input  wire        ext_BCLK,           //             .BCLK
+//		output wire        ext_DACDAT,         //             .DACDAT
+//		input  wire        ext_DACLRCK,        //             .DACLRCK
+//		inout  wire        ext_1_SDAT,         //        ext_1.SDAT
+//		output wire        ext_1_SCLK,         //             .SCLK
+//		input  wire [31:0] left_input_data,    //   left_input.data
+//		input  wire        left_input_valid,   //             .valid
+//		output wire        left_input_ready,   //             .ready
+//		input  wire        left_output_ready,  //  left_output.ready
+//		output wire [31:0] left_output_data,   //             .data
+//		output wire        left_output_valid,  //             .valid
+//		input  wire        reset_reset_n,      //        reset.reset_n
+//		input  wire [31:0] right_input_data,   //  right_input.data
+//		input  wire        right_input_valid,  //             .valid
+//		output wire        right_input_ready,  //             .ready
+//		input  wire        right_output_ready, // right_output.ready
+//		output wire [31:0] right_output_data,  //             .data
+//		output wire        right_output_valid  //             .valid
+//	);
 
-fir_test fir_L(
+aud_32 line32(
 	.clk_clk(CLOCK_50),
-	.input_data(adc_mic_data[31:16]),
-	.input_valid(1'b1),
-	.input_error(),
-	.output_data(fir_left),
-	.output_valid(1'b1),
-	.output_error(),
-	.reset_reset_n(1'b1)
-);
-
-fir_test fir_R(
-	.clk_clk(CLOCK_50),
-	.input_data(adc_mic_data[15:0]),
-	.input_valid(1'b1),
-	.input_error(),
-	.output_data(fir_right),
-	.output_valid(1'b1),
-	.output_error(),
-	.reset_reset_n(1'b1)
-);
-
-Audio aud_interface(
-	.audio_0_external_interface_ADCDAT(AUD_ADCDAT),
-	.audio_0_external_interface_ADCLRCK(AUD_ADCLRCK),
-	.audio_0_external_interface_BCLK(AUD_BCLK),
-	.audio_0_external_interface_DACDAT(AUD_DACDAT),
-	.audio_0_external_interface_DACLRCK(AUD_DACLRCK),
-	.clk_clk(CLOCK_50),
+	.ext_ADCDAT(AUD_ADCDAT),
+	.ext_ADCLRCK(AUD_ADCLRCK),
+	.ext_BCLK(AUD_BCLK),
+	.ext_DACDAT(AUD_DACDAT),
+	.ext_DACLRCK(AUD_DACLRCK),
+	.ext_1_SDAT(FPGA_I2C_SDAT),
+	.ext_1_SCLK(FPGA_I2C_SCLK),
+	.left_input_data(left_vol_out),
+	.left_input_valid(left_valid),
+	.left_input_ready(left_ready),
+	.left_output_ready(left_ready),
+	.left_output_data(new_left_fuck),
+	.left_output_valid(left_valid),
 	.reset_reset_n(1'b1),
-	.left_data(inter_data[31:16]),
-	.right_data(inter_data[15:0]),
-	.adcdata(adc_mic_data)
+	.right_input_data(new_right_fuck),
+	.right_input_valid(right_valid),
+	.right_input_ready(right_ready),
+	.right_output_ready(right_ready),
+	.right_output_data(new_right_fuck),
+	.right_output_valid(right_valid)
 );
 
+wire [31:0] left_data, right_data, fir_left_data, fir_right_data;
+wire left_valid, right_valid, left_ready, right_ready, fir_left_out_valid, fir_right_out_valid;
+	
 wire [31:0] adc_mic_data;
+
+wire [31:0] new_left_fuck;
+
+wire [31:0] new_right_fuck;
 
 assign GPIO_LRCLK = AUD_ADCLRCK;
 assign GPIO_BCLK = AUD_BCLK;
 
-audio_and_video_config cfg(
-	// Inputs
-	.clk(CLOCK_50),
-	.reset(1'b0),
 
-	// Bidirectionals
-	.I2C_SDAT(FPGA_I2C_SDAT),
-	.I2C_SCLK(FPGA_I2C_SCLK)
+wire [15:0] left_mux_out, right_mux_out;
+assign left_mux_out = SW[1] ? left_data[31:16] : mic_l;
+assign right_mux_out = SW[0] ? right_data[31:16] : mic_r;
+
+
+wire [15:0] mic_l, mic_r;
+
+i2s_master m1(
+	.sck(AUD_BCLK),
+	.ws(AUD_ADCLRCK),
+	.sd(GPIO_DIN),
+	.data_left(mic_l),
+	.data_right(mic_r)
 );
+
+//audio_and_video_config cfg(
+//	// Inputs
+//	.clk(CLOCK_50),
+//	.reset(1'b0),
+//
+//	// Bidirectionals
+//	.I2C_SDAT(FPGA_I2C_SDAT),
+//	.I2C_SCLK(FPGA_I2C_SCLK)
+//);
 
 endmodule
 

@@ -1,5 +1,5 @@
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate C:\Terasic\Demonstrations\SOC_FPGA\de1_soc_GHRD\soc_system.qsys --synthesis=VERILOG --output-directory=C:\Terasic\Demonstrations\SOC_FPGA\de1_soc_GHRD\soc_system\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Info: qsys-generate H:\juanjm2_git\micArray\Working_Code\de1_soc_GHRD\soc_system.qsys --synthesis=VERILOG --output-directory=H:\juanjm2_git\micArray\Working_Code\de1_soc_GHRD\soc_system\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
 Progress: Loading de1_soc_GHRD/soc_system.qsys
 Progress: Reading input file
 Progress: Adding Primary_PLL [altera_pll 17.1]
@@ -40,7 +40,7 @@ Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
 Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: Primary_PLL: "soc_system" instantiated altera_pll "Primary_PLL"
 Info: Pushbuttons: Starting RTL generation for module 'soc_system_Pushbuttons'
-Info: Pushbuttons:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_Pushbuttons --dir=C:/Users/JJ/AppData/Local/Temp/alt7665_975972096325974292.dir/0006_Pushbuttons_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7665_975972096325974292.dir/0006_Pushbuttons_gen//soc_system_Pushbuttons_component_configuration.pl  --do_build_sim=0  ]
+Info: Pushbuttons:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_Pushbuttons --dir=C:/Users/JJ/AppData/Local/Temp/alt7817_1991336781000476510.dir/0004_Pushbuttons_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/JJ/AppData/Local/Temp/alt7817_1991336781000476510.dir/0004_Pushbuttons_gen//soc_system_Pushbuttons_component_configuration.pl  --do_build_sim=0  ]
 Info: Pushbuttons: Done RTL generation for module 'soc_system_Pushbuttons'
 Info: Pushbuttons: "soc_system" instantiated altera_avalon_pio "Pushbuttons"
 Info: Secondary_PLL: "soc_system" instantiated altera_pll "Secondary_PLL"
@@ -70,15 +70,15 @@ Info: mic_system_0_mic_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated al
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: mic_system_0_mic_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "mic_system_0_mic_slave_burst_adapter"
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: mic_system_0_mic_master_translator: "mm_interconnect_1" instantiated altera_merlin_master_translator "mic_system_0_mic_master_translator"
 Info: mic_system_0_mic_master_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "mic_system_0_mic_master_agent"
@@ -86,12 +86,12 @@ Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: crosser: "mm_interconnect_1" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file C:/Terasic/Demonstrations/SOC_FPGA/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: soc_system: Done "soc_system" with 37 modules, 103 files

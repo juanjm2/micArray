@@ -2,7 +2,7 @@ set_global_assignment -entity "float" -library "float" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "float" -library "float" -name IP_TOOL_VERSION "17.1"
 set_global_assignment -entity "float" -library "float" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "float" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../float.sopcinfo"]
-set_global_assignment -entity "float" -library "float" -name SLD_INFO "QSYS_NAME float HAS_SOPCINFO 1 GENERATION_ID 1543787532"
+set_global_assignment -entity "float" -library "float" -name SLD_INFO "QSYS_NAME float HAS_SOPCINFO 1 GENERATION_ID 1544159946"
 set_global_assignment -library "float" -name MISC_FILE [file join $::quartus(qip_path) "../float.cmp"]
 set_global_assignment -library "float" -name SLD_FILE [file join $::quartus(qip_path) "float.debuginfo"]
 set_global_assignment -entity "float" -library "float" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
@@ -15,13 +15,10 @@ set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_DISPLA
 set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU0Mzc4NzUzMg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTU0NDE1OTk0Ng==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
-set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfUkFURQ==::LTE=::QXV0byBDTE9DS19SQVRF"
-set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfQ0xPQ0tfRE9NQUlO::LTE=::QXV0byBDTE9DS19ET01BSU4="
-set_global_assignment -entity "float" -library "float" -name IP_COMPONENT_PARAMETER "QVVUT19DTEtfUkVTRVRfRE9NQUlO::LTE=::QXV0byBSRVNFVF9ET01BSU4="
 set_global_assignment -entity "float_nios_custom_instr_floating_point_2_0" -library "float" -name IP_COMPONENT_NAME "ZmxvYXRfbmlvc19jdXN0b21faW5zdHJfZmxvYXRpbmdfcG9pbnRfMl8w"
 set_global_assignment -entity "float_nios_custom_instr_floating_point_2_0" -library "float" -name IP_COMPONENT_DISPLAY_NAME "RmxvYXRpbmcgUG9pbnQgSGFyZHdhcmUgMg=="
 set_global_assignment -entity "float_nios_custom_instr_floating_point_2_0" -library "float" -name IP_COMPONENT_REPORT_HIERARCHY "Off"

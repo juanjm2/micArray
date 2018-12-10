@@ -4,13 +4,13 @@ preplace inst soc_system.hps_0.uart0 -pg 1
 preplace inst soc_system.hps_0.gmac0 -pg 1
 preplace inst soc_system.hps_0.uart1 -pg 1
 preplace inst soc_system.hps_0.clkmgr -pg 1
-preplace inst soc_system.Pushbuttons -pg 1 -lvl 5 -y 90
+preplace inst soc_system.Pushbuttons -pg 1 -lvl 5 -y 60
 preplace inst soc_system.hps_0.axi_ocram -pg 1
 preplace inst soc_system.hps_0.sdrctl -pg 1
 preplace inst soc_system.hps_0.gmac1 -pg 1
 preplace inst soc_system.hps_0.qspi -pg 1
 preplace inst soc_system.hps_0.sysmgr -pg 1
-preplace inst soc_system.Primary_PLL -pg 1 -lvl 2 -y 100
+preplace inst soc_system.Primary_PLL -pg 1 -lvl 2 -y 90
 preplace inst soc_system.hps_0.l3regs -pg 1
 preplace inst soc_system.hps_0.usb0 -pg 1
 preplace inst soc_system.hps_0.i2c0 -pg 1
@@ -25,7 +25,7 @@ preplace inst soc_system.hps_0.wd_timer0 -pg 1
 preplace inst soc_system.hps_0.rstmgr -pg 1
 preplace inst soc_system.hps_0.dma -pg 1
 preplace inst soc_system.hps_0.f2s_sdram_ref_clk -pg 1
-preplace inst soc_system.Secondary_PLL -pg 1 -lvl 3 -y 120
+preplace inst soc_system.Secondary_PLL -pg 1 -lvl 3 -y 110
 preplace inst soc_system.hps_0.i2c3 -pg 1
 preplace inst soc_system.hps_0.wd_timer1 -pg 1
 preplace inst soc_system.hps_0.timer0 -pg 1
@@ -37,7 +37,7 @@ preplace inst soc_system.hps_0.timer1 -pg 1
 preplace inst soc_system.hps_0.L2 -pg 1
 preplace inst soc_system.hps_0.eosc2 -pg 1
 preplace inst soc_system.hps_0.hps_io.border -pg 1
-preplace inst soc_system.mic_system_0 -pg 1 -lvl 5 -y 390
+preplace inst soc_system.mic_system_0 -pg 1 -lvl 5 -y 380
 preplace inst soc_system.hps_0.scu -pg 1
 preplace inst soc_system.hps_0.dcan1 -pg 1
 preplace inst soc_system.hps_0.sdmmc -pg 1
@@ -52,31 +52,31 @@ preplace inst soc_system.hps_0.arm_a9_1 -pg 1
 preplace inst soc_system.hps_0.nand0 -pg 1
 preplace inst soc_system.hps_0.gpio2 -pg 1
 preplace inst soc_system.hps_0.arm_gic_0 -pg 1
-preplace inst soc_system.hps_0 -pg 1 -lvl 8 -y 240
-preplace inst soc_system.clk_0 -pg 1 -lvl 1 -y 200
+preplace inst soc_system.hps_0 -pg 1 -lvl 8 -y 230
+preplace inst soc_system.clk_0 -pg 1 -lvl 1 -y 190
 preplace inst soc_system.hps_0.f2s_periph_ref_clk -pg 1
 preplace inst soc_system.hps_0.fpga_interfaces -pg 1
 preplace inst soc_system.hps_0.axi_sdram -pg 1
-preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)Secondary_PLL.outclk1,(SLAVE)hps_0.f2h_sdram0_clock) 1 3 5 NJ 50 NJ 60 NJ 160 NJ 160 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.GPIO_DIN2,(SLAVE)soc_system.mic_system_0_gpio_din2) 1 0 5 NJ 480 NJ 480 NJ 480 NJ 480 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_codec_stream,(SLAVE)mic_system_0.codec_stream) 1 0 5 NJ 580 NJ 580 NJ 580 NJ 580 NJ
-preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)hps_0.f2h_irq0,(SLAVE)Pushbuttons.irq) 1 4 5 1230 220 NJ 200 NJ 200 NJ 160 2760
-preplace netloc FAN_OUT<net_container>soc_system</net_container>(SLAVE)mic_system_0.mic_slave,(SLAVE)Pushbuttons.s1,(MASTER)hps_0.h2f_lw_axi_master) 1 4 5 1250 260 NJ 260 NJ 260 NJ 200 2740
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_gpio_din3,(SLAVE)mic_system_0.GPIO_DIN3) 1 0 5 NJ 500 NJ 500 NJ 500 NJ 500 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)hps_0.hps_io,(SLAVE)soc_system.hps_io) 1 0 8 NJ 50 NJ 50 NJ 50 NJ 30 NJ 40 NJ 140 NJ 140 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.GPIO_DIN1,(SLAVE)soc_system.mic_system_0_gpio_din1) 1 0 5 NJ 450 NJ 450 NJ 450 NJ 450 NJ
+preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)Secondary_PLL.outclk1,(SLAVE)hps_0.f2h_sdram0_clock) 1 3 5 NJ 40 NJ 50 NJ 150 NJ 150 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.GPIO_DIN2,(SLAVE)soc_system.mic_system_0_gpio_din2) 1 0 5 NJ 470 NJ 470 NJ 470 NJ 470 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)hps_0.memory,(SLAVE)soc_system.hps_0_addr) 1 0 8 NJ 320 NJ 320 NJ 320 NJ 320 NJ 320 NJ 320 NJ 320 NJ
+preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)hps_0.f2h_irq0,(SLAVE)Pushbuttons.irq) 1 4 5 1210 210 NJ 190 NJ 190 NJ 150 2740
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_gpio_din3,(SLAVE)mic_system_0.GPIO_DIN3) 1 0 5 NJ 490 NJ 490 NJ 490 NJ 490 NJ
+preplace netloc FAN_OUT<net_container>soc_system</net_container>(SLAVE)Pushbuttons.s1,(SLAVE)mic_system_0.mic_slave,(MASTER)hps_0.h2f_lw_axi_master) 1 4 5 1230 190 NJ 130 NJ 130 NJ 130 2760
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_adc_data,(SLAVE)mic_system_0.adc_data) 1 0 5 NJ 550 NJ 550 NJ 550 NJ 550 NJ
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>soc_system</net_container>(SLAVE)mic_system_0.RESET,(SLAVE)Primary_PLL.reset,(MASTER)hps_0.h2f_reset,(SLAVE)Secondary_PLL.reset,(SLAVE)Pushbuttons.reset,(MASTER)clk_0.clk_reset) 1 1 8 410 90 640 100 NJ 100 1170 240 NJ 240 NJ 240 NJ 180 2780
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.hps_0_addr,(SLAVE)hps_0.memory) 1 0 8 NJ 280 NJ 280 NJ 280 NJ 280 NJ 320 NJ 320 NJ 370 NJ
-preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(SLAVE)Primary_PLL.cascade_out,(SLAVE)Secondary_PLL.adjpllin) 1 1 2 430 70 NJ
+preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)clk_0.clk,(SLAVE)Primary_PLL.refclk) 1 1 1 410
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.codec_stream,(SLAVE)soc_system.mic_system_0_codec_stream) 1 0 5 NJ 570 NJ 570 NJ 570 NJ 570 NJ
+preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(SLAVE)Primary_PLL.cascade_out,(SLAVE)Secondary_PLL.adjpllin) 1 1 2 410 60 NJ
 preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(MASTER)mic_system_0.mic_master,(SLAVE)hps_0.f2h_sdram0_data) 1 5 3 NJ 500 NJ 500 2280
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)Pushbuttons.external_connection,(SLAVE)soc_system.pushbuttons_external_connection) 1 0 5 NJ 190 NJ 190 NJ 210 NJ 120 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_aud_bclk,(SLAVE)mic_system_0.AUD_BCLK) 1 0 5 NJ 420 NJ 420 NJ 420 NJ 420 NJ
-preplace netloc FAN_OUT<net_container>soc_system</net_container>(MASTER)Primary_PLL.outclk0,(SLAVE)mic_system_0.CLK,(SLAVE)Secondary_PLL.refclk,(SLAVE)Pushbuttons.clk,(SLAVE)hps_0.h2f_lw_axi_clock) 1 2 6 680 80 NJ 80 1210 80 NJ 180 NJ 180 2160
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_gpio_din1,(SLAVE)mic_system_0.GPIO_DIN1) 1 0 5 NJ 460 NJ 460 NJ 460 NJ 460 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.adc_data,(SLAVE)soc_system.mic_system_0_adc_data) 1 0 5 NJ 560 NJ 560 NJ 560 NJ 560 NJ
-preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(SLAVE)Primary_PLL.refclk,(MASTER)clk_0.clk) 1 1 1 430
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.GPIO_DIN4,(SLAVE)soc_system.mic_system_0_gpio_din4) 1 0 5 NJ 520 NJ 520 NJ 520 NJ 520 NJ
-preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_aud_adclrck,(SLAVE)mic_system_0.AUD_ADCLRCK) 1 0 5 NJ 400 NJ 400 NJ 400 NJ 400 NJ
-levelinfo -pg 1 0 200 2820
-levelinfo -hier soc_system 210 240 510 870 1150 1470 1890 2140 2550 2800
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.hps_io,(SLAVE)hps_0.hps_io) 1 0 8 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 NJ 280 NJ
+preplace netloc FAN_OUT<net_container>soc_system</net_container>(SLAVE)hps_0.h2f_lw_axi_clock,(SLAVE)Pushbuttons.clk,(MASTER)Primary_PLL.outclk0,(SLAVE)mic_system_0.CLK,(SLAVE)Secondary_PLL.refclk) 1 2 6 660 70 NJ 70 1170 340 NJ 340 NJ 340 2180
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.pushbuttons_external_connection,(SLAVE)Pushbuttons.external_connection) 1 0 5 NJ 40 NJ 40 NJ 90 NJ 90 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.GPIO_DIN4,(SLAVE)soc_system.mic_system_0_gpio_din4) 1 0 5 NJ 510 NJ 510 NJ 510 NJ 510 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)mic_system_0.AUD_BCLK,(SLAVE)soc_system.mic_system_0_aud_bclk) 1 0 5 NJ 410 NJ 410 NJ 410 NJ 410 NJ
+preplace netloc EXPORT<net_container>soc_system</net_container>(SLAVE)soc_system.mic_system_0_aud_adclrck,(SLAVE)mic_system_0.AUD_ADCLRCK) 1 0 5 NJ 390 NJ 390 NJ 390 NJ 390 NJ
+preplace netloc INTERCONNECT<net_container>soc_system</net_container>(MASTER)clk_0.clk_reset,(MASTER)hps_0.h2f_reset,(SLAVE)Secondary_PLL.reset,(SLAVE)Pushbuttons.reset,(SLAVE)mic_system_0.RESET,(SLAVE)Primary_PLL.reset) 1 1 8 430 180 660 200 NJ 200 1190 370 NJ 370 NJ 370 NJ 370 2740
+preplace netloc POINT_TO_POINT<net_container>soc_system</net_container>(SLAVE)hps_0.f2h_sdram0_data,(MASTER)mic_system_0.mic_master) 1 5 3 1630 260 NJ 260 NJ
+levelinfo -pg 1 0 200 2800
+levelinfo -hier soc_system 210 240 510 870 1150 1470 1890 2140 2550 2780

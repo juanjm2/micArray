@@ -40,7 +40,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[2]",
+					"name" : "SW[3]",
 					"strict" : false
 				},
 				{
@@ -49,10 +49,6 @@
 				},
 				{
 					"name" : "KEY[1]",
-					"strict" : false
-				},
-				{
-					"name" : "GPIO_DIN",
 					"strict" : false
 				}
 			]

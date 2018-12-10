@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2018.12.08.17:04:00"
+ outputDirectory="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA5F31C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="ext" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="ext_ADCDAT" direction="input" role="ADCDAT" width="1" />
+   <port name="ext_ADCLRCK" direction="input" role="ADCLRCK" width="1" />
+   <port name="ext_BCLK" direction="input" role="BCLK" width="1" />
+   <port name="ext_DACDAT" direction="output" role="DACDAT" width="1" />
+   <port name="ext_DACLRCK" direction="input" role="DACLRCK" width="1" />
+  </interface>
+  <interface name="ext_1" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="ext_1_SDAT" direction="bidir" role="SDAT" width="1" />
+   <port name="ext_1_SCLK" direction="output" role="SCLK" width="1" />
+  </interface>
+  <interface name="left_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="left_input_data" direction="input" role="data" width="32" />
+   <port name="left_input_valid" direction="input" role="valid" width="1" />
+   <port name="left_input_ready" direction="output" role="ready" width="1" />
+  </interface>
+  <interface name="left_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="left_output_ready" direction="input" role="ready" width="1" />
+   <port name="left_output_data" direction="output" role="data" width="32" />
+   <port name="left_output_valid" direction="output" role="valid" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="right_input" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="right_input_data" direction="input" role="data" width="32" />
+   <port name="right_input_valid" direction="input" role="valid" width="1" />
+   <port name="right_input_ready" direction="output" role="ready" width="1" />
+  </interface>
+  <interface name="right_output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="right_output_ready" direction="input" role="ready" width="1" />
+   <port name="right_output_data" direction="output" role="data" width="32" />
+   <port name="right_output_valid" direction="output" role="valid" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="aud_32:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1544310238,AUTO_UNIQUE_ID=(altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=32)(altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=32,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC)(clock_source:17.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(clock:17.1:)(clock:17.1:)(reset:17.1:)(reset:17.1:)"
+   instancePathKey="aud_32"
+   kind="aud_32"
+   version="1.0"
+   name="aud_32">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1544310238" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/aud_32.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_audio_bit_counter.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_audio_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_clock_edge.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/aud_32_audio_0.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_serial_bus_controller.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_slow_clock_generator.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_dc2.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_d5m.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_lcm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ltm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/aud_32_audio_and_video_config_0.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/altera_up_avalon_audio_and_video_config_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_serial_bus_controller.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_slow_clock_generator.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_dc2.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_d5m.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_lcm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ltm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de1_soc.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2_115.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2i_150.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de10_standard.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_audio.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7180.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7181.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="aud_32">queue size: 0 starting:aud_32 "aud_32"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>3</b> modules, <b>4</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>4</b> modules, <b>6</b> connections]]></message>
+   <message level="Debug" culprit="aud_32"><![CDATA["<b>aud_32</b>" reuses <b>altera_up_avalon_audio</b> "<b>submodules/aud_32_audio_0</b>"]]></message>
+   <message level="Debug" culprit="aud_32"><![CDATA["<b>aud_32</b>" reuses <b>altera_up_avalon_audio_and_video_config</b> "<b>submodules/aud_32_audio_and_video_config_0</b>"]]></message>
+   <message level="Debug" culprit="aud_32"><![CDATA["<b>aud_32</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="aud_32">queue size: 2 starting:altera_up_avalon_audio "submodules/aud_32_audio_0"</message>
+   <message level="Info" culprit="audio_0">Starting Generation of Audio Controller</message>
+   <message level="Info" culprit="audio_0"><![CDATA["<b>aud_32</b>" instantiated <b>altera_up_avalon_audio</b> "<b>audio_0</b>"]]></message>
+   <message level="Debug" culprit="aud_32">queue size: 1 starting:altera_up_avalon_audio_and_video_config "submodules/aud_32_audio_and_video_config_0"</message>
+   <message level="Info" culprit="audio_and_video_config_0">Starting Generation of Audio and Video Config</message>
+   <message level="Info" culprit="audio_and_video_config_0"><![CDATA["<b>aud_32</b>" instantiated <b>altera_up_avalon_audio_and_video_config</b> "<b>audio_and_video_config_0</b>"]]></message>
+   <message level="Debug" culprit="aud_32">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>aud_32</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_audio:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=true,audio_out=true,avalon_bus_type=Streaming,dw=32"
+   instancePathKey="aud_32:.:audio_0"
+   kind="altera_up_avalon_audio"
+   version="17.1"
+   name="aud_32_audio_0">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="dw" value="32" />
+  <parameter name="avalon_bus_type" value="Streaming" />
+  <parameter name="audio_in" value="true" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="audio_out" value="true" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_audio_bit_counter.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_audio_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_audio_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_clock_edge.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/aud_32_audio_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/altera_up_avalon_audio_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_bit_counter.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_in_deserializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_audio_out_serializer.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_clock_edge.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio/hdl/altera_up_sync_fifo.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="aud_32" as="audio_0" />
+  <messages>
+   <message level="Debug" culprit="aud_32">queue size: 2 starting:altera_up_avalon_audio "submodules/aud_32_audio_0"</message>
+   <message level="Info" culprit="audio_0">Starting Generation of Audio Controller</message>
+   <message level="Info" culprit="audio_0"><![CDATA["<b>aud_32</b>" instantiated <b>altera_up_avalon_audio</b> "<b>audio_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_audio_and_video_config:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone V,audio_in=Line In to ADC,bit_length=32,board=DE1-SoC,bosr=250fs/256fs,d5m_resolution=2592 x 1944,dac_enable=true,data_format=Left Justified,device=On-Board Peripherals,eai=true,exposure=false,line_in_bypass=false,mic_attenuation=-6dB,mic_bypass=false,sampling_rate=48 kHz,sr_register=0,video_format=NTSC"
+   instancePathKey="aud_32:.:audio_and_video_config_0"
+   kind="altera_up_avalon_audio_and_video_config"
+   version="17.1"
+   name="aud_32_audio_and_video_config_0">
+  <parameter name="data_format" value="Left Justified" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="bosr" value="250fs/256fs" />
+  <parameter name="audio_in" value="Line In to ADC" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="d5m_resolution" value="2592 x 1944" />
+  <parameter name="video_format" value="NTSC" />
+  <parameter name="dac_enable" value="true" />
+  <parameter name="eai" value="true" />
+  <parameter name="line_in_bypass" value="false" />
+  <parameter name="bit_length" value="32" />
+  <parameter name="sampling_rate" value="48 kHz" />
+  <parameter name="sr_register" value="0" />
+  <parameter name="mic_bypass" value="false" />
+  <parameter name="exposure" value="false" />
+  <parameter name="mic_attenuation" value="-6dB" />
+  <parameter name="device" value="On-Board Peripherals" />
+  <parameter name="board" value="DE1-SoC" />
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_serial_bus_controller.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_slow_clock_generator.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_dc2.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_d5m.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_lcm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ltm.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de1_soc.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de2_115.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de2i_150.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_de10_standard.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_audio.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7180.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_up_av_config_auto_init_ob_adv7181.v"
+       type="VERILOG" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/aud_32_audio_and_video_config_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/altera_up_avalon_audio_and_video_config_hw.tcl" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_serial_bus_controller.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_slow_clock_generator.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_dc2.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_d5m.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_lcm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ltm.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de1_soc.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2_115.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de2i_150.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_de10_standard.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_audio.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7180.v" />
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/university_program/audio_video/altera_up_avalon_audio_and_video_config/hdl/altera_up_av_config_auto_init_ob_adv7181.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="aud_32" as="audio_and_video_config_0" />
+  <messages>
+   <message level="Debug" culprit="aud_32">queue size: 1 starting:altera_up_avalon_audio_and_video_config "submodules/aud_32_audio_and_video_config_0"</message>
+   <message level="Info" culprit="audio_and_video_config_0">Starting Generation of Audio and Video Config</message>
+   <message level="Info" culprit="audio_and_video_config_0"><![CDATA["<b>aud_32</b>" instantiated <b>altera_up_avalon_audio_and_video_config</b> "<b>audio_and_video_config_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_reset_controller:17.1:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
+   instancePathKey="aud_32:.:rst_controller"
+   kind="altera_reset_controller"
+   version="17.1"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="H:/juanjm2_git/micArray/Working_Code/de1_soc_GHRD/aud_32/synthesis/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/17.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="aud_32" as="rst_controller" />
+  <messages>
+   <message level="Debug" culprit="aud_32">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>aud_32</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

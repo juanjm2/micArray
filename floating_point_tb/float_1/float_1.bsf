@@ -1,0 +1,112 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 208 232)
+	(text "float_1" (rect 85 -1 110 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 216 20 228)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "s1_clk" (rect 0 0 24 12)(font "Arial" (font_size 8)))
+		(text "s1_clk" (rect 4 61 40 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 80 72)(line_width 1))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "s1_clk_en" (rect 0 0 40 12)(font "Arial" (font_size 8)))
+		(text "s1_clk_en" (rect 4 77 58 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 80 88)(line_width 1))
+	)
+	(port
+		(pt 0 104)
+		(input)
+		(text "s1_dataa[31..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "s1_dataa[31..0]" (rect 4 93 94 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 80 104)(line_width 3))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "s1_datab[31..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "s1_datab[31..0]" (rect 4 109 94 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 80 120)(line_width 3))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "s1_n[1..0]" (rect 0 0 37 12)(font "Arial" (font_size 8)))
+		(text "s1_n[1..0]" (rect 4 125 64 136)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 80 136)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "s1_reset" (rect 0 0 34 12)(font "Arial" (font_size 8)))
+		(text "s1_reset" (rect 4 141 52 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 80 152)(line_width 1))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "s1_start" (rect 0 0 31 12)(font "Arial" (font_size 8)))
+		(text "s1_start" (rect 4 157 52 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 80 168)(line_width 1))
+	)
+	(port
+		(pt 0 184)
+		(output)
+		(text "s1_done" (rect 0 0 33 12)(font "Arial" (font_size 8)))
+		(text "s1_done" (rect 4 173 46 184)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 80 184)(line_width 1))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "s1_result[31..0]" (rect 0 0 59 12)(font "Arial" (font_size 8)))
+		(text "s1_result[31..0]" (rect 4 189 100 200)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 80 200)(line_width 3))
+	)
+	(drawing
+		(text "s1" (rect 69 43 150 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 85 67 188 144)(font "Arial" (color 0 0 0)))
+		(text "clk_en" (rect 85 83 206 176)(font "Arial" (color 0 0 0)))
+		(text "dataa" (rect 85 99 200 208)(font "Arial" (color 0 0 0)))
+		(text "datab" (rect 85 115 200 240)(font "Arial" (color 0 0 0)))
+		(text "n" (rect 85 131 176 272)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 85 147 200 304)(font "Arial" (color 0 0 0)))
+		(text "start" (rect 85 163 200 336)(font "Arial" (color 0 0 0)))
+		(text "done" (rect 85 179 194 368)(font "Arial" (color 0 0 0)))
+		(text "result" (rect 85 195 206 400)(font "Arial" (color 0 0 0)))
+		(text " float_1 " (rect 176 216 406 442)(font "Arial" ))
+		(line (pt 80 32)(pt 128 32)(line_width 1))
+		(line (pt 128 32)(pt 128 216)(line_width 1))
+		(line (pt 80 216)(pt 128 216)(line_width 1))
+		(line (pt 80 32)(pt 80 216)(line_width 1))
+		(line (pt 81 52)(pt 81 204)(line_width 1))
+		(line (pt 82 52)(pt 82 204)(line_width 1))
+		(line (pt 0 0)(pt 208 0)(line_width 1))
+		(line (pt 208 0)(pt 208 232)(line_width 1))
+		(line (pt 0 232)(pt 208 232)(line_width 1))
+		(line (pt 0 0)(pt 0 232)(line_width 1))
+	)
+)

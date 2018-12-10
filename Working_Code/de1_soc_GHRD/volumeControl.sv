@@ -1,0 +1,135 @@
+module volumeControl(
+	input logic CLK,
+	input logic RESET,
+	input logic sample_ready,
+	input logic [31:0] hps_vol_level,
+	input logic [31:0] line_in_left,
+	input logic [31:0] line_in_right,
+	output logic [31:0] left_output,
+	output logic [31:0] right_output
+);
+logic [31:0] operand;
+logic [5:0] volume_level;
+
+initial begin
+	volume_level = 6'd20;
+end
+
+assign volume_level = hps_vol_level[5:0]; 
+
+logic [31:0] s2_result_wire, s2_dataa_wire, s2_datab_wire;
+logic [2:0] s2_n_wire;
+logic s2_start_wire, s2_done_wire;
+
+
+gain_fsm fsm_L(
+	.CLK(CLK),
+	.RESET(RESET),
+	.READY(sample_ready),
+	.sample(line_in_left),
+	.float_multiplier(operand),
+	.modified_sample(left_output),
+	.s2_result(s2_result_wire),
+	.s2_dataa(s2_dataa_wire),
+	.s2_datab(s2_datab_wire),
+	.s2_n(s2_n_wire),
+	.s2_start(s2_start_wire),
+	.s2_done(s2_done_wire)
+);
+
+float inst_L(
+	.s2_clk(CLK),
+	.s2_clk_en(1'b1),
+	.s2_dataa(s2_dataa_wire),
+	.s2_datab(s2_datab_wire),
+	.s2_n(s2_n_wire),
+	.s2_reset(RESET),
+	.s2_reset_req(1'b0),
+	.s2_start(s2_start_wire),
+	.s2_done(s2_done_wire),
+	.s2_result(s2_result_wire)
+);
+
+logic [31:0] s2_result_wire_2, s2_dataa_wire_2, s2_datab_wire_2;
+logic [2:0] s2_n_wire_2;
+logic s2_start_wire_2, s2_done_wire_2;
+
+
+gain_fsm fsm_R(
+	.CLK(CLK),
+	.RESET(RESET),
+	.READY(sample_ready),
+	.sample(line_in_right),
+	.float_multiplier(operand),
+	.modified_sample(right_output),
+	.s2_result(s2_result_wire_2),
+	.s2_dataa(s2_dataa_wire_2),
+	.s2_datab(s2_datab_wire_2),
+	.s2_n(s2_n_wire_2),
+	.s2_start(s2_start_wire_2),
+	.s2_done(s2_done_wire_2)
+);
+
+float inst_R(
+	.s2_clk(CLK),
+	.s2_clk_en(1'b1),
+	.s2_dataa(s2_dataa_wire_2),
+	.s2_datab(s2_datab_wire_2),
+	.s2_n(s2_n_wire_2),
+	.s2_reset(RESET),
+	.s2_reset_req(1'b0),
+	.s2_start(s2_start_wire_2),
+	.s2_done(s2_done_wire_2),
+	.s2_result(s2_result_wire_2)
+);
+
+
+
+always_comb begin
+	case (volume_level)
+		6'd0	:	operand = 32'h3dcccccd;
+		6'd1	:	operand = 32'h3de5ca15;
+		6'd2	:	operand = 32'h3e00e9f9;
+		6'd3	:	operand = 32'h3e10a4d3;
+		6'd4	:	operand = 32'h3e224b06;
+		6'd5	:	operand = 32'h3e361887;
+		6'd6	:	operand = 32'h3e4c509b;
+		6'd7	:	operand = 32'h3e653ebb;
+		6'd8	:	operand = 32'h3e809bcc;
+		6'd9	:	operand = 32'h3e904d1c;
+		6'd10	:	operand = 32'h3ea1e89b;
+		6'd11	:	operand = 32'h3eb5aa1a;
+		6'd12	:	operand = 32'h3ecbd4b4;
+		6'd13	:	operand = 32'h3ee4b3b6;
+		6'd14	:	operand = 32'h3f004dce;
+		6'd15	:	operand = 32'h3f0ff59a;
+		6'd16	:	operand = 32'h3f21866c;
+		6'd17	:	operand = 32'h3f353bef;
+		6'd18	:	operand = 32'h3f4b5918;
+		6'd19	:	operand = 32'h3f642905;
+		6'd20	:	operand = 32'h3f800000;
+		6'd21	:	operand = 32'h3f8f9e4d;
+		6'd22	:	operand = 32'h3fa12478;
+		6'd23	:	operand = 32'h3fb4ce08;
+		6'd24	:	operand = 32'h3fcaddc8;
+		6'd25	:	operand = 32'h3fe39ea9;
+		6'd26	: 	operand = 32'h3fff64c1;
+		6'd27	:	operand = 32'h400f4735;
+		6'd28	:	operand = 32'h4020c2bf;
+		6'd29	:	operand = 32'h40346063;
+		6'd30 :	operand = 32'h404a62c2;
+		6'd31	:	operand = 32'h406314a0;
+		6'd32	:	operand = 32'h407ec9e1;
+		6'd33	:	operand = 32'h408ef052;
+		6'd34	:	operand = 32'h40a06142;
+		6'd35	:	operand = 32'h40b3f300;
+		6'd36	:	operand = 32'h40c9e807;
+		6'd37	:	operand = 32'h40e28aeb;
+		6'd38	:	operand = 32'h40fe2f5e;
+		6'd39	:	operand = 32'h410e99a3;
+		6'd40	:	operand = 32'h41200000;
+		default	:	operand = 32'd0;
+	endcase
+end
+
+endmodule
